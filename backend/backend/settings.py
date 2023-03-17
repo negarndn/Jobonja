@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'job-api',
+        'USER': 'postgres',
+        'PASSWORD': '13791389',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
@@ -122,3 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
+GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'
