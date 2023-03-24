@@ -12,31 +12,31 @@ def return_date_time():
 
 
 class JobType(models.TextChoices):
-    Permanent = 'تمام وقت'
-    Temporary = 'پاره وقت'
-    Internship = 'کارآموزی'
+    Permanent = 'Permanent'
+    Temporary = 'Temporary'
+    Internship = 'Internship'
 
 
 class Education(models.TextChoices):
-    Bachelors = 'کارشناسی'
-    Masters = 'کارشناسی ارشد'
-    Phd = 'دکتری'
+    Bachelors = 'Bachelors'
+    Masters = 'Masters'
+    Phd = 'Phd'
 
 
 class Industry(models.TextChoices):
-    Business = 'تجارت'
-    IT = 'فناوری اطلاعات'
-    Banking = 'حسابداری'
-    Education = 'آموزش'
-    Telecommunication = 'مخابرات'
-    Others = 'دیگر'
+    Business = 'Business'
+    IT = 'IT'
+    Banking = 'Banking'
+    Education = 'Education'
+    Telecommunication = 'Telecommunication'
+    Others = 'Others'
 
 
 class Experience(models.TextChoices):
-    noExperience = 'بدون تجربه'
-    oneYear = '1 سال'
-    twoYear = '2 سال'
-    threeYearAbove = 'بیشتر از 3 سال'
+    noExperience = 'No Experience'
+    oneYear = '1 Year'
+    twoYear = '2 Years'
+    threeYearAbove = '3 Years Above'
 
 
 
