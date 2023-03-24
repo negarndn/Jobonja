@@ -1,4 +1,4 @@
-from datetime import *
+from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -10,7 +10,7 @@ import os
 
 def return_date_time():
     now = datetime.now()
-    return now + datetime.timedelta(days=10)
+    return datetime.now() + timedelta(days=10)
 
 
 class JobType(models.TextChoices):
@@ -35,10 +35,10 @@ class Industry(models.TextChoices):
 
 
 class Experience(models.TextChoices):
-    noExperience = 'No Experience'
-    oneYear = '1 Year'
-    twoYear = '2 Years'
-    threeYearAbove = '3 Years Above'
+    No_Experience = 'No Experience'
+    One_Year = '1 Year'
+    Two_Years = '2 Years'
+    Three_Years_Above = '3 Years Above'
 
 
 
@@ -65,7 +65,7 @@ class Job(models.Model):
     experience = models.CharField(
         max_length=20,
         choices=Experience.choices,
-        default=Experience.noExperience
+        default=Experience.No_Experience
     )
     salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100000000)])
     positions = models.IntegerField(default=1)
