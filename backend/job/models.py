@@ -4,6 +4,8 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.gis.db import models as gismodels
 from django.contrib.gis.geos import Point
+import geocoder
+import os
 
 
 def return_date_time():
@@ -72,3 +74,13 @@ class Job(models.Model):
     lastDate = models.DateTimeField(default=return_date_time)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     createAt = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        g = geocoder.mapquest(self.address, key=os.environ.get('GEOCODER_API'))
+
+        print(g)
+
+        lng = g.lng
+        lat = g.lat
+        self.point = Point(lng, lat)
+        super(Job, self).save(*args, **kwargs)
