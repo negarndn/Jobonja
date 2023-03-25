@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
+    # 'django.contrib.gis',
     'rest_framework',
     #'corsheaders',
     #'storages',
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
@@ -136,5 +136,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
-GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'
+# GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
+# GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'
