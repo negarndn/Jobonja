@@ -4,6 +4,7 @@ from .models import Job
 from .serializers import JobSerializer
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework import status
 # Create your views here.
 
 
@@ -49,3 +50,10 @@ def updateJob(request, pk):
 
     serializer = JobSerializer(job, many=False)
     return Response(serializer.data)
+
+
+@api_view(['DELETE'])
+def deleteJob(request, pk):
+    job = get_object_or_404(Job, id=pk)
+    job.delete()
+    return Response({'message': 'Job is Deleted.'}, status=status.HTTP_200_OK)
