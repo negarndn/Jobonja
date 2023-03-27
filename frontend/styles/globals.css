@@ -362,3 +362,17 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* 404 Page */
+
+.page-not-found-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 68vh;
+}
+.page-not-found-wrapper h5 {
+  color: grey;
+}

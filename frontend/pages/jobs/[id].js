@@ -1,11 +1,11 @@
 import Layout from "../../components/layout/Layout";
-// import NotFound from "../../components/layout/NotFound";
+import NotFound from "../../components/layout/NotFound";
 import JobDetails from "../../components/job/JobDetails";
 
 import axios from "axios";
 
 export default function JobDetailsPage({ job, candidates, error }) {
-  //   if (error?.includes("Not found")) return <NotFound />;
+  if (error?.includes("Not found")) return <NotFound />;
   return (
     <Layout title={job.title}>
       <JobDetails job={job} candidates={candidates} />
