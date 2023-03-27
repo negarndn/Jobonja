@@ -1,22 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
-const JobItem = () => {
+import FromNow from "../../utils/FromNow";
+
+const JobItem = ({ job }) => {
   return (
-    <Link href="/jobdetail">
+    <Link href={`/job/${job.id}`}>
       <div className="job-listing">
         <div className="job-listing-details">
           <div className="job-listing-description">
-            <h4 className="job-listing-company">فرادرس</h4>
-            <h3 className="job-listing-title">
-              استخدام برنامه‌نویس Laravel) PHP-دورکاری)
-            </h3>
+            <h4 className="job-listing-company">{job.company}</h4>
+            <h3 className="job-listing-title">{job.title}</h3>
             <p className="job-listing-text">
-              ما در مجموعه علمی آموزشی «فرادرس»، در حال جذب همکار برای موقعیت
-              شغلی «برنامه‌نویس PHP/Laravel» هستیم.اگر به فعالیت در یک محیط
-              علمی، جوان و پویا علاقه‌مند هستید. و برای خود یک مسیر حرفه‌ای
-              همراه با رشد و پیشرفت را در نظر گرفته‌اید، از شما دعوت می‌کنیم به
-              تیم خلاق، جوان و پویای ما بپیوندید.
+              {job.description.substring(0, 200)}...
             </p>
           </div>
         </div>
@@ -24,17 +20,20 @@ const JobItem = () => {
         <div className="job-listing-footer">
           <ul>
             <li>
-              <i className="fas fa-industry"></i> کامپیوتر، فناوری اطلاعات و
-              اینترنت
+              <i className="fas fa-industry"></i>
+              {job.industry}
             </li>
             <li>
-              <i className="fas fa-briefcase"></i> تمام وقت
+              <i className="fas fa-briefcase"></i>
+              {job.jobType}
             </li>
             <li>
-              <i className="fas fa-money-check-alt"></i>توافقی
+              <i className="fas fa-money-check-alt"></i>
+              {job.salary}
             </li>
             <li>
-              <i className="far fa-clock"></i> تاریخ انتشار: 2 ماه پیش
+              <i className="far fa-clock"></i>
+              {FromNow(job.createAt)}
             </li>
           </ul>
         </div>
