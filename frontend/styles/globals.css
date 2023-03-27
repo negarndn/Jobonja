@@ -319,11 +319,14 @@ body {
 }
 
 /* Job Details Page */
-
+.details-row{
+  flex-direction: row;
+}
 .job-details-wrapper {
   background: #f5f7fa;
   padding-top: 50px;
   padding-bottom: 100px;
+  text-align: right;
 }
 .job-details,
 .job-contact-details {
@@ -345,7 +348,7 @@ body {
 }
 .job-contact-details p {
   color: rgb(20, 20, 20);
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .apply-btn {
   border-radius: 20px;

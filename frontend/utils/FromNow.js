@@ -1,4 +1,5 @@
 import moment from "moment";
+import eArabic from "./eArabic";
 
 const FromNow = (createdAt) => {
   let now = new Date();
@@ -15,10 +16,10 @@ const FromNow = (createdAt) => {
   let hours = timeDiff % 24;
   timeDiff = Math.floor(timeDiff / 24);
   let days = timeDiff;
-  if (days) return `${days} روز پیش`;
-  else if (hours) return `${hours} ساعت پیش`;
-  else if (minutesAsString) return `${minutesAsString} دقیقه پیش`;
-  else return `${secondsAsString} ثانیه پیش`;
+  if (days) return `${eArabic(days)} روز پیش`;
+  else if (hours) return `${eArabic(hours)} ساعت پیش`;
+  else if (minutesAsString) return `${eArabic(minutesAsString)} دقیقه پیش`;
+  else return `${eArabic(secondsAsString)} ثانیه پیش`;
 };
 
 export default FromNow;

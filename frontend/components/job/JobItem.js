@@ -5,7 +5,7 @@ import FromNow from "../../utils/FromNow";
 
 const JobItem = ({ job }) => {
   return (
-    <Link href={`/job/${job.id}`}>
+    <Link href={`/jobs/${job.id}`}>
       <div className="job-listing">
         <div className="job-listing-details">
           <div className="job-listing-description">
