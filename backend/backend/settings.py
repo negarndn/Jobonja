@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     #'storages',
     'django_filters',
     'job.apps.JobConfig'
+
 ]
 
 MIDDLEWARE = [
