@@ -1,11 +1,17 @@
-from django.db import models
-from datetime import *
+from datetime import datetime, timedelta
 from django.contrib.auth.models import User
-import os
+from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+# from django.contrib.gis.db import models as gismodels
+# from django.contrib.gis.geos import Point
+# import geocoder
+# import os
 
 
-# Create your models here.
+def return_date_time():
+    now = datetime.now()
+    return datetime.now() + timedelta(days=10)
+
 
 class JobType(models.TextChoices):
     Permanent = 'Permanent'
@@ -21,23 +27,19 @@ class Education(models.TextChoices):
 
 class Industry(models.TextChoices):
     Business = 'Business'
-    IT = 'Information Technology'
+    IT = 'IT'
     Banking = 'Banking'
-    Education = 'Education/Training'
+    Education = 'Education'
     Telecommunication = 'Telecommunication'
     Others = 'Others'
 
 
 class Experience(models.TextChoices):
-    NO_EXPERIENCE = 'No Experience'
-    ONE_YEAR = '1 Years'
-    TWO_YEAR = '2 Years'
-    THREE_YEAR_PLUS = '3 Years above'
+    No_Experience = 'No Experience'
+    One_Year = '1 Year'
+    Two_Years = '2 Years'
+    Three_Years_Above = '3 Years Above'
 
-
-def return_date_time():
-    now = datetime.now()
-    return now + timedelta(days=10)
 
 
 class Job(models.Model):
@@ -46,31 +48,39 @@ class Job(models.Model):
     email = models.EmailField(null=True)
     address = models.CharField(max_length=100, null=True)
     jobType = models.CharField(
-        max_length=10,
+        max_length=20,
         choices=JobType.choices,
         default=JobType.Permanent
     )
     education = models.CharField(
-        max_length=10,
+        max_length=20,
         choices=Education.choices,
         default=Education.Bachelors
     )
     industry = models.CharField(
-        max_length=30,
+        max_length=50,
         choices=Industry.choices,
-        default=Industry.IT
+        default=Industry.Business
     )
     experience = models.CharField(
         max_length=20,
         choices=Experience.choices,
-        default=Experience.NO_EXPERIENCE
+        default=Experience.No_Experience
     )
-    salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(1000000)])
+    salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100000000)])
     positions = models.IntegerField(default=1)
-    company = models.CharField(max_length=100, null=True)
+    company = models.CharField(max_length=250, null=True)
+    # point = gismodels.PointField(default=Point(0.0, 0.0))
     lastDate = models.DateTimeField(default=return_date_time)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    createdAt = models.DateTimeField(auto_now_add=True)
+    createAt = models.DateTimeField(auto_now_add=True)
 
     # def save(self, *args, **kwargs):
+    #     g = geocoder.mapquest(self.address, key=os.environ.get('GEOCODER_API'))
+    #
+    #     print(g)
+    #
+    #     lng = g.lng
+    #     lat = g.lat
+    #     self.point = Point(lng, lat)
     #     super(Job, self).save(*args, **kwargs)
