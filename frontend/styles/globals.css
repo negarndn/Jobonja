@@ -319,7 +319,7 @@ body {
 }
 
 /* Job Details Page */
-.details-row{
+.details-row {
   flex-direction: row;
 }
 .job-details-wrapper {
@@ -377,6 +377,20 @@ footer {
   color: grey;
 }
 
+/* no result */
+
+.no-results {
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.1);
+  padding-bottom: 14.5%;
+}
+
+.no-results h5 {
+  color: grey;
+}
+
 /* Search */
 
 .inputBox i {
@@ -397,4 +411,13 @@ footer {
 
 .page-link:hover {
   color: #2557a7;
+}
+
+/* Sidebar */
+
+.sidebar {
+  text-align: right;
+}
+.form-check-label {
+  margin-right: 20px;
 }
