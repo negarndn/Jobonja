@@ -376,3 +376,10 @@ footer {
 .page-not-found-wrapper h5 {
   color: grey;
 }
+
+/* Search */
+
+.inputBox i {
+  font-size: 12px;
+  display: flex;
+}
