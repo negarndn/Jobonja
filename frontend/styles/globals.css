@@ -383,3 +383,18 @@ footer {
   font-size: 12px;
   display: flex;
 }
+
+/* Pagination */
+
+.page-item.active .page-link {
+  background-color: #2557a7;
+  border-color: #2557a7;
+}
+
+.page-link {
+  color: #2557a7;
+}
+
+.page-link:hover {
+  color: #2557a7;
+}

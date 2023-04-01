@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import Pagination from "react-js-pagination";
 
 import JobItem from "./job/JobItem";
 import Search from "./Search";
@@ -9,7 +11,25 @@ const Home = ({ data }) => {
 
   const router = useRouter();
 
-  let { keyword } = router.query;
+  let { page = 1, keyword } = router.query;
+  page = Number(page);
+
+  let queryParams;
+  if (typeof window !== "undefined") {
+    queryParams = new URLSearchParams(window.location.search);
+  }
+
+  const handlePageClick = (currentPage) => {
+    if (queryParams.has("page")) {
+      queryParams.set("page", currentPage);
+    } else {
+      queryParams.append("page", currentPage);
+    }
+
+    router.push({
+      search: queryParams.toString(),
+    });
+  };
 
   return (
     <div className="container container-fluid">
@@ -24,6 +44,22 @@ const Home = ({ data }) => {
             <Search />
           </div>
           {jobs && jobs.map((job) => <JobItem key={job.id} job={job} />)}
+          {resPerPage < count && (
+            <div className="d-flex justify-content-center mt-5">
+              <Pagination
+                activePage={page}
+                itemsCountPerPage={resPerPage}
+                totalItemsCount={count}
+                onChange={handlePageClick}
+                nextPageText={"بعدی"}
+                prevPageText={"قبلی"}
+                // firstPageText={"ابتدا"}
+                // lastPageText={"انتها"}
+                itemClass="page-item"
+                linkClass="page-link"
+              />
+            </div>
+          )}
         </div>
         <div className="col-xl-3 col-lg-4">{/* <Filters /> */}</div>
       </div>
