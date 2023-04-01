@@ -10,7 +10,6 @@ from rest_framework.permissions import IsAuthenticated
 
 from django.contrib.auth.models import User
 
-
 # Create your views here.
 
 @api_view(['POST'])
@@ -21,15 +20,15 @@ def register(request):
 
     if user.is_valid():
         if not User.objects.filter(username=data['email']).exists():
-            user = User.objects.create(
-                first_name=data['first_name'],
-                last_name=data['last_name'],
-                username=data['email'],
-                email=data['email'],
-                password=make_password(data['password'])
-            )
+           user = User.objects.create(
+               first_name = data['first_name'],
+               last_name = data['last_name'],
+               username = data['email'],
+               email = data['email'],
+               password = make_password(data['password'])
+           )
 
-            return Response({
+           return Response({
                 'message': 'User registered.'},
                 status=status.HTTP_200_OK
             )
@@ -42,4 +41,17 @@ def register(request):
     else:
         return Response(user.errors)
 
-# Create your views here.
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def currentUser(request):
+
+    user = UserSerializer(request.user)
+
+    return Response(user.data)
+
+
+
+
+
+
