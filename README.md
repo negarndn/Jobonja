@@ -14,7 +14,7 @@ After the packages are installed, you can start the development server by runnin
 npm run dev
 ```
 
-This will start the development server on http://localhost:3000.
+This will start the development server on `http://localhost:3000`.
 
 ## Features
 The frontend of Jobonja has the following features:
