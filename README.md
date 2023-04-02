@@ -60,3 +60,5 @@ The Jobonja website API endpoints are as follows:
 - /api/jobs/: List all jobs or create a new job.
 - /api/jobs/{job_id}/: Retrieve, update or delete a job.
 - ...
+## Contributing
+If you would like to contribute to the backend of Jobonja, please fork the repository and submit a pull request with your changes. Before submitting a pull request, please make sure that your changes are well-tested and follow the project's coding standards.
