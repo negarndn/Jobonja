@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import AuthContext from "../../context/AuthContext";
+
 const Header = () => {
+  const { loading, user, logout } = useContext(AuthContext);
+
+  const logoutHandler = () => {
+    logout();
+  };
   return (
     <div className="navWrapper">
       <div className="navContainer">
@@ -21,12 +28,57 @@ const Header = () => {
               <span>درج آگهی استخدام</span>
             </button>
           </Link>
+          {user ? (
+            <div className="dropdown ml-3">
+              <a
+                className="btn dropdown-toggle mr-4"
+                id="dropDownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i aria-hidden className="fas fa-user"></i>
+                <span>{user.first_name || "خوش آمدید"}</span>
+              </a>
 
-          <Link href="/login">
-            <button className="loginButtonHeader">
-              <span>ورود</span>
-            </button>
-          </Link>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropDownMenuButton"
+              >
+                <Link href="/employeer/jobs" className="dropdown-item">
+                  آگهی‌های شغلی من
+                </Link>
+
+                <Link href="/me/applied" className="dropdown-item">
+                  درخواست‌های من
+                </Link>
+
+                <Link href="/me" className="dropdown-item">
+                  تنظیمات حساب کاربری من
+                </Link>
+
+                <Link href="/upload/resume" className="dropdown-item">
+                  بارگذاری رزومه
+                </Link>
+
+                <Link
+                  href="/"
+                  className="dropdown-item text-danger"
+                  onClick={logoutHandler}
+                >
+                  خروج
+                </Link>
+              </div>
+            </div>
+          ) : (
+            !loading && (
+              <Link href="/login">
+                <button className="loginButtonHeader">
+                  <span>ورود</span>
+                </button>
+              </Link>
+            )
+          )}
         </div>
       </div>
     </div>

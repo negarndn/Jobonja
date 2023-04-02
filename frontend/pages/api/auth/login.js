@@ -35,7 +35,7 @@ export default async (req, res) => {
         });
       } else {
         res.status(response.status).json({
-          error: "Authentication failed",
+          error: "احراز هویت با خطا مواجه شد.",
         });
       }
     } catch (error) {

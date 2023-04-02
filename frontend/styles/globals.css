@@ -610,3 +610,17 @@ footer {
     margin-top: 10px;
   }
 }
+.dropdown-menu{
+  text-align: right;
+}
+.dropdown i{
+  margin-left: 0.6em;
+  opacity: 0.8;
+  font-size: smaller;
+}
+.dropdown-toggle::after{
+  margin-right: 0.5em;
+  margin-left: unset;
+  vertical-align: unset;
+  opacity: 0.9;
+}
