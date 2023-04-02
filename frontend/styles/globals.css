@@ -446,7 +446,7 @@ footer {
   height: 60%;
 }
 .right {
-  border-left: 1px solid rgb(196, 196, 196);
+  /* border-left: 1px solid rgb(196, 196, 196); */
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -490,7 +490,7 @@ footer {
 }
 .form input {
   width: 100%;
-  padding-left: 10px;
+  padding-right: 10px;
   border: none;
   outline: none;
   font-size: 13px;
@@ -499,14 +499,14 @@ footer {
 .inputBoxAuth {
   display: flex;
   align-items: center;
-  width: 85%;
   padding: 15px;
-  margin-left: 5%;
   background: rgb(241, 241, 241);
   margin-bottom: 15px;
+  border-radius: 4px;
 }
 .inputBoxAuth i {
   font-size: 12px;
+  opacity: 0.8;
 }
 .inputWrapper {
   display: flex;
