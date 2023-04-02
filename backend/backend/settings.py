@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 import dotenv
 
@@ -45,7 +46,11 @@ INSTALLED_APPS = [
     #'corsheaders',
     #'storages',
     'django_filters',
-    'job.apps.JobConfig'
+    'job.apps.JobConfig',
+    'account.apps.AccountConfig',
+
+
+
 
 ]
 
@@ -91,7 +96,7 @@ DATABASES = {
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT')
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
@@ -114,6 +119,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=15),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
