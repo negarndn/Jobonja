@@ -38,7 +38,9 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <i aria-hidden className="fas fa-user"></i>
-                <span>{user.first_name || "خوش آمدید"}</span>
+                <span>
+                  {user.first_name + " " + user.last_name || "خوش آمدید"}
+                </span>
               </a>
 
               <div
