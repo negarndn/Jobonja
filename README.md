@@ -52,7 +52,7 @@ To access the Jobonja website API endpoints, use a REST client like Postman.
 
 ## API Documentation
 
-The website also includes a RESTful API that can be used to create, read, update, and delete job listings and user profiles. The API documentation can be found in the `api/` directory of this repository.
+The website also includes a RESTful API that can be used to create, read, update, and delete job listings and user profiles. The API documentation can be found in the `API_Documetation.json` file of this repository.
 
 ## Usage
 
