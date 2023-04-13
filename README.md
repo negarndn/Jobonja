@@ -58,11 +58,13 @@ The website also includes a RESTful API that can be used to create, read, update
 
 ### Authentication
 
-To use the website, users must first create an account. They can do so by clicking the "Register" link in the top-right corner of the homepage. After filling out the registration form.
+To use the website, users must first create an account. They can do so by clicking the "Register" link in the homepage and filling out the registration form to create a new account.
 
 ### Job Application Ad
 
-Users can create job listings by logging in and clicking the "Post a Job" button on the dashboard. They will need to provide information about the job, such as the title, description, and location. Job seekers can search for job listings by entering keywords into the search bar on the homepage. They can also filter job listings by category and location.
+Users can create job listings by logging in and clicking the "Post a Job" button. They will need to provide information about the job, such as the title, description, and location. Job seekers can search for job listings by entering keywords into the search bar on the homepage. They can also filter job listings.
 
+## Contributing
+If you would like to contribute to the backend of Jobonja, please fork the repository and submit a pull request with your changes. Before submitting a pull request, please make sure that your changes are well-tested and follow the project's coding standards.
 
 
