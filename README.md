@@ -39,7 +39,7 @@ Create a superuser account using the following command:
 ```
 python manage.py createsuperuser
 ```
-## Usage
+
 Run the Django server using the following command:
 
 ```
