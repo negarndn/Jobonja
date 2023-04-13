@@ -1,6 +1,6 @@
 # Jobonja Backend
-Jobonja is a job portal website built using Django Rest Framework, JWT, and PostgreSQL as its primary database. This repository contains the backend code for the Jobonja website.
-
+This is a job portal website developed using Django Rest Framework, JWT, and PostgreSQL.
+It allows users to create profiles and search for job listings, while they can also post job listings and search for job seekers.
 ## Prerequisites
 Before running the project, you need to have the following software installed on your system:
 
@@ -49,16 +49,20 @@ Open a web browser and navigate to `http://127.0.0.1:8000/admin` to access the D
 
 To access the Jobonja website API endpoints, use a REST client like Postman.
 
-## Authentication
-The Jobonja website uses JWT for authentication. To authenticate a user, send a POST request to `/api/token/` with the user's username and password in the request body. The server will respond with an access token. Use the access token to access the protected API endpoints.
 
-## API Endpoints
-The Jobonja website API endpoints are as follows:
+## API Documentation
 
-- /api/register/: Register a new user.
-- /api/token/: Obtain an access token.
-- /api/jobs/: List all jobs or create a new job.
-- /api/jobs/{job_id}/: Retrieve, update or delete a job.
-- ...
-## Contributing
-If you would like to contribute to the backend of Jobonja, please fork the repository and submit a pull request with your changes. Before submitting a pull request, please make sure that your changes are well-tested and follow the project's coding standards.
+The website also includes a RESTful API that can be used to create, read, update, and delete job listings and user profiles. The API documentation can be found in the `api/` directory of this repository.
+
+## Usage
+
+### Authentication
+
+To use the website, users must first create an account. They can do so by clicking the "Register" link in the top-right corner of the homepage. After filling out the registration form.
+
+### Job Application Ad
+
+Users can create job listings by logging in and clicking the "Post a Job" button on the dashboard. They will need to provide information about the job, such as the title, description, and location. Job seekers can search for job listings by entering keywords into the search bar on the homepage. They can also filter job listings by category and location.
+
+
+
