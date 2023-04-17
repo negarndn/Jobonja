@@ -142,3 +142,15 @@ def isApplied(request, pk):
     applied = job.candidatesapplied_set.filter(user=user).exists()
 
     return Response(applied)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getCurrentUserJobs(request):
+
+    args = { 'user': request.user.id }
+
+    jobs = Job.objects.filter(**args)
+    serializer = JobSerializer(jobs, many=True)
+
+    return Response(serializer.data)
