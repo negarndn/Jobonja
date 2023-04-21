@@ -1,15 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import moment from "moment";
 import "moment/locale/fa";
 import FromNow from "./../../utils/FromNow";
 import eArabic from "./../../utils/eArabic";
 
-const JobDetails = ({ job, candidates }) => {
+import JobContext from "../../context/JobContext";
+import { toast } from "react-toastify";
+
+const JobDetails = ({ job, candidates, access_token }) => {
+  const { applyToJob, checkJobApplied, applied, clearErrors, error, loading } =
+    useContext(JobContext);
   const [lastDate, setLastDate] = useState("");
 
   useEffect(() => {
+    console.log(job);
     setLastDate(moment(job.lastDate).locale("fa").format("YYYY/M/D"));
-  }, [job]);
+
+    if (error) {
+      toast.error(error);
+      clearErrors();
+    }
+
+    checkJobApplied(job.id, access_token);
+  }, [job, error]);
+
+  const applyToJobHandler = () => {
+    applyToJob(job.id, access_token);
+  };
+
+  const d1 = moment(job.lastDate);
+  const d2 = moment(Date.now());
+  const isLastDatePassed = d1.diff(d2, "days") < 0 ? true : false;
 
   return (
     <div className="job-details-wrapper">
@@ -30,9 +51,25 @@ const JobDetails = ({ job, candidates }) => {
 
                 <div className="mt-3">
                   <span>
-                    <button className="btn btn-primary px-4 py-2 apply-btn ml-4">
-                      ارسال رزومه
-                    </button>
+                    {loading ? (
+                      "در حال بارگذاری..."
+                    ) : applied ? (
+                      <button
+                        className="btn btn-success px-4 py-2 apply-btn ml-4"
+                        disabled
+                      >
+                        <i aria-hidden className="fas fa-check"></i>{" "}
+                        {loading ? "در حال بارگذاری..." : "درخواست داده شده"}
+                      </button>
+                    ) : (
+                      <button
+                        onClick={applyToJobHandler}
+                        disabled={isLastDatePassed}
+                        className="btn btn-primary px-4 py-2 apply-btn ml-4"
+                      >
+                        {loading ? "در حال بارگذاری..." : "ارسال رزومه"}
+                      </button>
+                    )}
                     <span className="text-success">
                       <b>{eArabic(candidates)}</b> نفر براین شغل درخواست
                       داده‌اند.
@@ -104,15 +141,16 @@ const JobDetails = ({ job, candidates }) => {
               <h5>آخرین مهلت ارسال رزومه:</h5>
               <p>{lastDate}</p>
             </div>
-
-            <div className="mt-5 p-0">
-              <div className="alert alert-danger">
-                <h5>اخطار:</h5>
-                دیگر نمی توانید برای این شغل درخواست دهید. این آگهی منقضی شده
-                است. آخرین مهلت درخواست برای این شغل: <b>{lastDate}</b>
-                <br /> برای اطلاع از آخرین آگهی‌ها به جاب‌اونجا سر بزنید.
+            {isLastDatePassed && (
+              <div className="mt-5 p-0">
+                <div className="alert alert-danger">
+                  <h5>اخطار:</h5>
+                  دیگر نمی توانید برای این شغل درخواست دهید. این آگهی منقضی شده
+                  است. آخرین مهلت درخواست برای این شغل: <b>{lastDate}</b>
+                  <br /> برای اطلاع از آخرین آگهی‌ها به جاب‌اونجا سر بزنید.
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
