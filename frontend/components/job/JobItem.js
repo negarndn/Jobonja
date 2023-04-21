@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 
 import FromNow from "../../utils/FromNow";
+import encodeFilters from "../../utils/encodeFilters";
+import eArabic from "../../utils/eArabic";
 
 const JobItem = ({ job }) => {
   return (
@@ -21,15 +23,15 @@ const JobItem = ({ job }) => {
           <ul>
             <li>
               <i className="fas fa-industry"></i>
-              {job.industry}
+              {encodeFilters(job.industry)}
             </li>
             <li>
               <i className="fas fa-briefcase"></i>
-              {job.jobType}
+              {encodeFilters(job.jobType)}
             </li>
             <li>
               <i className="fas fa-money-check-alt"></i>
-              {job.salary}
+              {eArabic(job.salary)}
             </li>
             <li>
               <i className="far fa-clock"></i>

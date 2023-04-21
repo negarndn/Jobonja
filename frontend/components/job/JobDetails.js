@@ -6,6 +6,7 @@ import eArabic from "./../../utils/eArabic";
 
 import JobContext from "../../context/JobContext";
 import { toast } from "react-toastify";
+import encodeFilters from "../../utils/encodeFilters";
 
 const JobDetails = ({ job, candidates, access_token }) => {
   const { applyToJob, checkJobApplied, applied, clearErrors, error, loading } =
@@ -90,31 +91,31 @@ const JobDetails = ({ job, candidates, access_token }) => {
                     <tr>
                       <td>نوع همکاری</td>
                       <td>:</td>
-                      <td>{job.jobType}</td>
+                      <td>{encodeFilters(job.jobType)}</td>
                     </tr>
 
                     <tr>
                       <td>دسته‌بندی شغلی</td>
                       <td>:</td>
-                      <td>{job.industry}</td>
+                      <td>{encodeFilters(job.industry)}</td>
                     </tr>
 
                     <tr>
-                      <td>حقوق</td>
+                      <td>دستمزد</td>
                       <td>:</td>
-                      <td>{job.salary} تومان </td>
+                      <td>{eArabic(job.salary)} تومان </td>
+                    </tr>
+
+                    <tr>
+                      <td>حداقل میزان تحصیلات</td>
+                      <td>:</td>
+                      <td>{encodeFilters(job.education)}</td>
                     </tr>
 
                     <tr>
                       <td>حداقل سابقه کار</td>
                       <td>:</td>
-                      <td>{job.education}</td>
-                    </tr>
-
-                    <tr>
-                      <td>حداقل سابقه کار</td>
-                      <td>:</td>
-                      <td>{job.experience}</td>
+                      <td>{encodeFilters(job.experience)}</td>
                     </tr>
 
                     <tr>
@@ -145,8 +146,8 @@ const JobDetails = ({ job, candidates, access_token }) => {
               <div className="mt-5 p-0">
                 <div className="alert alert-danger">
                   <h5>اخطار:</h5>
-                  دیگر نمی توانید برای این شغل درخواست دهید. این آگهی منقضی شده
-                  است. آخرین مهلت درخواست برای این شغل: <b>{lastDate}</b>
+                  مهلت ارسال درخواست برای این آگهی تمام شده است. آخرین مهلت
+                  درخواست برای این شغل: <b>{lastDate}</b>
                   <br /> برای اطلاع از آخرین آگهی‌ها به جاب‌اونجا سر بزنید.
                 </div>
               </div>

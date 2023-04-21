@@ -624,3 +624,6 @@ footer {
   vertical-align: unset;
   opacity: 0.9;
 }
+.df{
+  display: flex;
+}
