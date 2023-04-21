@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 import dotenv
 
@@ -28,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -40,10 +41,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis'
+
+    'rest_framework',
+    'corsheaders',
+    'storages',
+    'django_filters',
+    'job.apps.JobConfig',
+    'account.apps.AccountConfig',
+
+
+
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,12 +92,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT':os.environ.get('DATABASE_PORT')
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
@@ -108,6 +120,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=15),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -120,6 +143,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -129,7 +156,16 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
+# DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
+# DROPBOX_APP_SECRET = os.environ.get('DROPBOX_APP_SECRET')
+# DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+#
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
-GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'
+# GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
+# GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'

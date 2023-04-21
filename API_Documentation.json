@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "3e16bab5-cf38-4afe-a7dd-cf18e76e1567",
+		"name": "OOD-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26616715"
+	},
+	"item": [
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "Get All Jobs (with filters and search keyword and pagination)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/?min_salary=60000",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								""
+							],
+							"query": [
+								{
+									"key": "education",
+									"value": "Masters",
+									"disabled": true
+								},
+								{
+									"key": "jobType",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "experience",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "min_salary",
+									"value": "60000"
+								},
+								{
+									"key": "max_salary",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "job1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a job by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/2",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/new/?Title=job2&Description=test2&Email=job2@email.com&Address=test2&JobType=Permanent&Education=Masters&Industry=It&Experience=One Year&Salary=100000&Positions=2&Company=tech&LastDate=2023-08-24&User=negar",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"new",
+								""
+							],
+							"query": [
+								{
+									"key": "Title",
+									"value": "job2"
+								},
+								{
+									"key": "Description",
+									"value": "test2"
+								},
+								{
+									"key": "Email",
+									"value": "job2@email.com"
+								},
+								{
+									"key": "Address",
+									"value": "test2"
+								},
+								{
+									"key": "JobType",
+									"value": "Permanent"
+								},
+								{
+									"key": "Education",
+									"value": "Masters"
+								},
+								{
+									"key": "Industry",
+									"value": "It"
+								},
+								{
+									"key": "Experience",
+									"value": "One Year"
+								},
+								{
+									"key": "Salary",
+									"value": "100000"
+								},
+								{
+									"key": "Positions",
+									"value": "2"
+								},
+								{
+									"key": "Company",
+									"value": "tech"
+								},
+								{
+									"key": "LastDate",
+									"value": "2023-08-24"
+								},
+								{
+									"key": "User",
+									"value": "negar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/2/update/?title&description&email&address&jobType&education&industry&experience&salary&positions&company",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"2",
+								"update",
+								""
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": null
+								},
+								{
+									"key": "description",
+									"value": null
+								},
+								{
+									"key": "email",
+									"value": null
+								},
+								{
+									"key": "address",
+									"value": null
+								},
+								{
+									"key": "jobType",
+									"value": null
+								},
+								{
+									"key": "education",
+									"value": null
+								},
+								{
+									"key": "industry",
+									"value": null
+								},
+								{
+									"key": "experience",
+									"value": null
+								},
+								{
+									"key": "salary",
+									"value": null
+								},
+								{
+									"key": "positions",
+									"value": null
+								},
+								{
+									"key": "company",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/1/delete/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"1",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().access)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "momeni@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Domain}}/api/token/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "nafis",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "momeni",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "momeni@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Domain}}/api/register/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get current user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxNjQ4MDc2LCJpYXQiOjE2ODAzNTIwNzYsImp0aSI6ImQwNTAxZGNkYzc2ZTQ0OTQ4MWQyODc0YTM3ZDJlNTc3IiwidXNlcl9pZCI6Mn0.NSWjA8uaNuYT9OJCdtDqqRJU7C1gMZuRqAnkx1N5eCc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Domain}}/api/me/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
