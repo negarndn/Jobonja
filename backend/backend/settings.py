@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.gis',
+
     'rest_framework',
     'corsheaders',
-    #'storages',
+    'storages',
     'django_filters',
     'job.apps.JobConfig',
     'account.apps.AccountConfig',
@@ -155,6 +155,15 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+# DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
+# DROPBOX_APP_SECRET = os.environ.get('DROPBOX_APP_SECRET')
+# DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+#
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

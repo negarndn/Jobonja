@@ -5,6 +5,7 @@ from rest_framework import status
 
 from django.contrib.auth.hashers import make_password
 from .serializers import SignUpSerializer, UserSerializer
+from .validators import validate_file_extension
 
 from rest_framework.permissions import IsAuthenticated
 
@@ -69,6 +70,28 @@ def updateUser(request):
     user.save()
 
     serializer = UserSerializer(user, many=False)
+    return Response(serializer.data)
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def uploadResume(request):
+
+    user = request.user
+    resume = request.FILES['resume']
+
+    if resume == '':
+        return Response({ 'error': 'Please upload your resume.' }, status=status.HTTP_400_BAD_REQUEST)
+
+    isValidFile = validate_file_extension(resume.name)
+
+    if not isValidFile:
+        return Response({ 'error': 'Please upload only pdf file.' }, status=status.HTTP_400_BAD_REQUEST)
+
+    serializer = UserSerializer(user, many=False)
+
+    user.userprofile.resume = resume
+    user.userprofile.save()
+
     return Response(serializer.data)
 
 
