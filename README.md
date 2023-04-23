@@ -64,7 +64,7 @@ If you encounter any bugs or issues while using the Jobonja platform, please rep
 If you have any questions or suggestions, you can contact us through the following channels:
 
 - [Email](support@jobonja.com)
-- [Twitter](https://peyvand.com/)
+- [Twitter](https://twitter.com/MadLlamaGames?s=20)
 
 ## Developers
 The Jobonja platform was developed by a team of software developers who are passionate about creating innovative and useful tools for job seekers and recruiters.
