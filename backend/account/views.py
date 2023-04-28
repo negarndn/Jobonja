@@ -1,3 +1,6 @@
+import os
+
+from django.http import FileResponse
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -10,8 +13,10 @@ from .validators import validate_file_extension
 from rest_framework.permissions import IsAuthenticated
 
 from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your views here.
+
 
 @api_view(['POST'])
 def register(request):
@@ -89,12 +94,22 @@ def uploadResume(request):
 
     serializer = UserSerializer(user, many=False)
 
+    print(user.userprofile)
     user.userprofile.resume = resume
     user.userprofile.save()
 
     return Response(serializer.data)
 
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def downloadResume(request):
 
+    user = request.user
+    resume = user.userprofile.resume
+    filename = resume.path
+
+    response = FileResponse(open(filename, 'rb'))
+    return response
 
 
