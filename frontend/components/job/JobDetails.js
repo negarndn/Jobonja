@@ -33,6 +33,13 @@ const JobDetails = ({ job, candidates, access_token }) => {
   const d2 = moment(Date.now());
   const isLastDatePassed = d1.diff(d2, "days") < 0 ? true : false;
 
+  function generateText(candidatesLength) {
+    if (candidatesLength === 0)
+      return "تا کنون درخواستی برای این آگهی ثبت نشده است.";
+    if (candidatesLength == 1) return "نفر برای این آگهی درخواست داده است.";
+    else return "نفر برای این آگهی درخواست داده‌اند.";
+  }
+
   return (
     <div className="job-details-wrapper">
       <div className="container container-fluid">
@@ -72,8 +79,8 @@ const JobDetails = ({ job, candidates, access_token }) => {
                       </button>
                     )}
                     <span className="text-success">
-                      <b>{eArabic(candidates)}</b> نفر براین شغل درخواست
-                      داده‌اند.
+                      {candidates != 0 ? <b>{eArabic(candidates)}</b> : ""}{" "}
+                      {generateText(candidates)}
                     </span>
                   </span>
                 </div>

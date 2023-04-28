@@ -1,5 +1,5 @@
 function eArabic(x) {
-  return x.toLocaleString("ar-EG");
+  return x ? x.toLocaleString("ar-EG") : x;
 }
 
 export default eArabic;
