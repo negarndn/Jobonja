@@ -4,69 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd54403-4e1c-4aa9-9942-466891376f3f" name="Changes" comment="">
+    <list default="true" id="6e1b7f13-3df8-4b75-8c43-5208146b3465" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/components/job/JobsApplied.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/components/job/JobsApplied.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/components/user/UploadResume.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/components/user/UploadResume.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/context/JobContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/context/JobContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/utils/eArabic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/utils/eArabic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="frontend" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2NbUSG9b8tzEVklUFa6X2Krgcu2" />
+  <component name="ProjectId" id="2OmAZBUdSyLHqM3ZcyMCmpss7IG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Parisa/Desktop/Computational-Intelligence&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Parisa\Desktop\OOD-Project\backend\backend" />
-    </key>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3fd54403-4e1c-4aa9-9942-466891376f3f" name="Changes" comment="" />
-      <created>1679932272364</created>
+      <changelist id="6e1b7f13-3df8-4b75-8c43-5208146b3465" name="Changes" comment="" />
+      <created>1682155438492</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679932272364</updated>
-      <workItem from="1679932273500" duration="7966000" />
-      <workItem from="1680062709711" duration="1744000" />
-      <workItem from="1680119504497" duration="774000" />
-      <workItem from="1680278543396" duration="256000" />
-      <workItem from="1680364880809" duration="8704000" />
-      <workItem from="1680777005314" duration="32000" />
-      <workItem from="1682063549513" duration="953000" />
-      <workItem from="1682067084187" duration="1000" />
-      <workItem from="1682067213139" duration="5629000" />
+      <updated>1682155438492</updated>
+      <workItem from="1682155440542" duration="2656000" />
     </task>
     <servers />
   </component>
