@@ -6,6 +6,7 @@ import eArabic from "../../utils/eArabic";
 import moment from "moment";
 import "moment/locale/fa";
 import encodeFilters from "../../utils/encodeFilters";
+import NoData from "./NoData";
 
 const JobsApplied = ({ jobs }) => {
   const columns = [
@@ -67,7 +68,12 @@ const JobsApplied = ({ jobs }) => {
       <div className="col-2"></div>
       <div className="col-8 mt-5">
         <h4 className="my-5 df">تمام درخواست‌های شغلی شما</h4>
-        <DataTable columns={columns} data={data} responsive />
+        <DataTable
+          columns={columns}
+          data={data}
+          responsive
+          noDataComponent={<NoData />}
+        />
       </div>
       <div className="col-2"></div>
     </div>
