@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - OODP-60-frontend-ci-cd
 
 jobs:
   lintTest:
