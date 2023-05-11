@@ -14,10 +14,12 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v2
       - name: Install Dependencies
+        working-directory: ./frontend
         run: |
           echo "Running Installing Dependencies ..."
           npm install
       - name: Run Linting
+        working-directory: ./frontend
         run: |
           echo "Running Linting Tests ..."
           npm run lint
