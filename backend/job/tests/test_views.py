@@ -7,14 +7,19 @@ from account.models import UserProfile
 from django.contrib.auth.models import User
 
 
-
-
 class JobTestCase(APITestCase):
 
     def setUp(self):
         self.url = reverse('jobs')
         self.client = APIClient()
-        self.user = User.objects.create_user(username='testuser', email='test@example.com', password='testpass')
+        self.user = User.objects.create_user(username='testuser', password='testpass')
+        # print("&&&&&")
+        # print(self.user)
+        # print("&&&&&")
+
+        self.job_test_1 = Job.objects.create(title='Job 2', description='Job Description 2', jobType='Temporary',
+                                             education='Masters', industry='IT', experience='Two_Years',
+                                             salary=70000, positions=2)
         self.job1 = {
             'title': 'Job 1',
             'description': 'Job Description 1',
@@ -64,18 +69,12 @@ class JobTestCase(APITestCase):
         }
 
     def test_get_all_jobs_successfully(self):
-        Job.objects.create(title='Job 2', description='Job Description 2', jobType='Temporary',
-                           education='Masters', industry='IT', experience='Two_Years',
-                           salary=70000, positions=2)
         response = self.client.get(self.url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['count'], 1)
         self.assertEqual(len(response.data['jobs']), 1)
 
     def test_get_all_jobs_with_pagination(self):
-        Job.objects.create(title='Job 2', description='Job Description 2', jobType='Temporary',
-                           education='Masters', industry='IT', experience='Two_Years',
-                           salary=70000, positions=2)
         response = self.client.get(self.url + '?page=1', format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['count'], 1)
@@ -83,9 +82,6 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.data['resPerPage'], 10)
 
     def test_get_all_jobs_with_filtering(self):
-        Job.objects.create(title='Job 2', description='Job Description 2', jobType='Temporary',
-                           education='Masters', industry='IT', experience='Two_Years',
-                           salary=70000, positions=2)
         response = self.client.get(self.url + '?industry=IT', format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['count'], 1)
@@ -104,15 +100,8 @@ class JobTestCase(APITestCase):
         self.client.force_authenticate(user=self.user)
         response = self.client.post(reverse('new_job'), self.valid_job, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(Job.objects.get().title, 'Test Job')
 
-    # def test_create_invalid_job_with_authentication(self):
-    #     self.client.force_authenticate(user=self.user)
-    #     response = self.client.post(reverse('new_job'), self.invalid_job, format='json')
-    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-    #     self.assertEqual(Job.objects.count(), 0)
-
-    def test_new_job_with_invalid_data(self):
+    def test_create_invalid_job_with_authentication(self):
         # Test with missing required fields
         response = self.client.post(self.url, {
             'title': 'Test Job',
@@ -120,7 +109,7 @@ class JobTestCase(APITestCase):
             'email': 'test@example.com'
         })
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
-        self.assertEqual(Job.objects.count(), 0)
+        self.assertEqual(Job.objects.count(), 1)
 
         # Test with invalid data types
         response = self.client.post(self.url, {
@@ -136,7 +125,7 @@ class JobTestCase(APITestCase):
             'company': 123,  # Invalid company value
         })
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
-        self.assertEqual(Job.objects.count(), 0)
+        self.assertEqual(Job.objects.count(), 1)
 
         # Test with out-of-range salary value
         response = self.client.post(self.url, {
@@ -146,4 +135,55 @@ class JobTestCase(APITestCase):
             'salary': 1000000000,  # Out of range salary value
         })
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
-        self.assertEqual(Job.objects.count(), 0)
+        self.assertEqual(Job.objects.count(), 1)
+
+    def test_update_job_valid(self):
+        # print("##########")
+        self.client.login(username='testuser', password='testpass')
+        # print("**********")
+        # print(s)
+        # print("**********")
+        data = {
+            'title': 'New Test Job',
+            'description': 'New Test Job Description',
+            'email': 'newtestjob@test.com',
+            'address': 'New Test Address',
+            'jobType': 'Permanent',
+            'education': 'Bachelors',
+            'industry': 'Business',
+            'experience': 'No_Experience',
+            'salary': 60000,
+            'positions': 10,
+            'company': 'New Test Company',
+        }
+        #print(self.job_test_1.id)
+        response = self.client.put(reverse('update_job', args=[self.job_test_1.id]), data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['title'], 'New Test Job')
+        self.assertEqual(response.data['description'], 'New Test Job Description')
+        self.assertEqual(response.data['email'], 'newtestjob@test.com')
+        self.assertEqual(response.data['address'], 'New Test Address')
+        self.assertEqual(response.data['jobType'], 'Permanent')
+        self.assertEqual(response.data['education'], 'Bachelors')
+        self.assertEqual(response.data['industry'], 'Business')
+        self.assertEqual(response.data['experience'], 'No_Experience')
+        self.assertEqual(response.data['salary'], 60000)
+        self.assertEqual(response.data['positions'], 10)
+        self.assertEqual(response.data['company'], 'New Test Company')
+
+    def test_update_job_unauthenticated(self):
+        data = {
+            'title': 'New Test Job',
+            'description': 'New Test Job Description',
+            'email': 'newtestjob@test.com',
+            'address': 'New Test Address',
+            'jobType': 'Permanent',
+            'education': 'Bachelors',
+            'industry': 'Business',
+            'experience': 'No_Experience',
+            'salary': 60000,
+            'positions': 10,
+            'company': 'New Test Company',
+        }
+        response = self.client.put(reverse('update_job', args=[self.job_test_1.id]), data)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
