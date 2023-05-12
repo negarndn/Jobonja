@@ -102,7 +102,6 @@ def uploadResume(request):
 
     serializer = UserSerializer(user, many=False)
 
-    print(user.userprofile)
     user.userprofile.resume = resume
     user.userprofile.save()
 
