@@ -13,7 +13,7 @@ on:
 jobs:
   UnitTest:
     timeout-minutes: 60
-    name: Test
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
@@ -31,7 +31,7 @@ jobs:
         env:
           CI: true
   Build:
-    name: Deploy Staging Build
+    name: Build the App
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
