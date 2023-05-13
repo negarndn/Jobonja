@@ -45,4 +45,4 @@ jobs:
         working-directory: ./frontend
         run: |
           echo "Building the App ..."
-          npm build
+          npm run build
