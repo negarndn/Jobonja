@@ -1,0 +1,48 @@
+name: Frontend-Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - OODP-60-frontend-ci-cd
+  pull_request:
+    branches: 
+      - main
+      - master
+
+jobs:
+  UnitTest:
+    timeout-minutes: 60
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        working-directory: ./frontend
+        run: |
+          echo "Installing Dependencies ..."
+          npm install
+      - name: Run Tests
+        working-directory: ./frontend
+        run: |
+          echo "Running Tests ..."
+          npm test
+        env:
+          CI: true
+  Build:
+    name: Build the App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        working-directory: ./frontend
+        run: |
+          echo "Installing Dependencies ..."
+          npm install
+      - name: Build the App
+        working-directory: ./frontend
+        run: |
+          echo "Building the App ..."
+          npm run build
