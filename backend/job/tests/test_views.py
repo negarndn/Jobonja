@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+from django.utils import timezone
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
@@ -237,7 +239,7 @@ class JobTestCase(APITestCase):
         )
         self.client.force_authenticate(user=self.user)
         response = self.client.delete(reverse('delete_job', args=[job_test_2.id]))
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
         self.assertTrue(Job.objects.filter(id=job_test_2.id).exists())
 
     def test_delete_job_invalid_id(self):
@@ -281,5 +283,45 @@ class JobTestCase(APITestCase):
         self.client.force_authenticate(user=self.user)
         url = reverse('get_candidates_applied', kwargs={'pk': job_2.id})
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_apply_to_job_with_resume(self):
+        user_2 = User.objects.create_user(
+            username='testuser2', password='testpass')
+        self.client.force_authenticate(user=user_2)
+        user_2.userprofile.resume = 'path/to/resume.pdf'
+        user_2.userprofile.save()
+
+
+        response = self.client.post(reverse('apply_to_job', args=[self.job_test_1.id]))
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^")
+        print(response)
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^")
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(response.data['applied'])
+        self.assertIn('job_id', response.data)
+        self.assertTrue(CandidatesApplied.objects.filter(job=self.job_test_1, user=self.user).exists())
+
+    def test_apply_to_job_without_resume(self):
+        self.client.force_authenticate(user=self.user)
+
+        self.user.userprofile.resume = ''
+        self.user.userprofile.save()
+
+        response = self.client.post(reverse('apply_to_job', kwargs={'pk': self.job_test_1.id}))
+
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('error', response.data)
+        self.assertEqual(response.data['error'], 'Please upload your resume first')
+
+    def test_apply_to_expired_job(self):
+        self.client.force_authenticate(user=self.user)
+        self.job_test_1.lastDate = timezone.now() - timedelta(days=1)
+        self.job_test_1.save()
+
+        response = self.client.post(reverse('apply_to_job', args=[self.job_test_1.id]))
+
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('error', response.data)
+        self.assertEqual(response.data['error'], 'You can not apply to this job. Date is over')
 
