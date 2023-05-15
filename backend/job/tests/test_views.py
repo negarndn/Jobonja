@@ -20,7 +20,7 @@ class JobTestCase(APITestCase):
 
         self.job_test_1 = Job.objects.create(title='Job 2', description='Job Description 2', jobType='Temporary',
                                              education='Masters', industry='IT', experience='Two_Years',
-                                             salary=70000, positions=2)
+                                             salary=70000, positions=2, user=self.user)
         self.job1 = {
             'title': 'Job 1',
             'description': 'Job Description 1',
@@ -150,39 +150,39 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
         self.assertEqual(Job.objects.count(), 1)
 
-    # def test_update_job_valid(self):
-    #     # print("##########")
-    #     self.client.login(username='testuser', password='testpass')
-    #     # print("**********")
-    #     # print(s)
-    #     # print("**********")
-    #     data = {
-    #         'title': 'New Test Job',
-    #         'description': 'New Test Job Description',
-    #         'email': 'newtestjob@test.com',
-    #         'address': 'New Test Address',
-    #         'jobType': 'Permanent',
-    #         'education': 'Bachelors',
-    #         'industry': 'Business',
-    #         'experience': 'No_Experience',
-    #         'salary': 60000,
-    #         'positions': 10,
-    #         'company': 'New Test Company',
-    #     }
-    #     #print(self.job_test_1.id)
-    #     response = self.client.put(reverse('update_job', args=[self.job_test_1.id]), data)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertEqual(response.data['title'], 'New Test Job')
-    #     self.assertEqual(response.data['description'], 'New Test Job Description')
-    #     self.assertEqual(response.data['email'], 'newtestjob@test.com')
-    #     self.assertEqual(response.data['address'], 'New Test Address')
-    #     self.assertEqual(response.data['jobType'], 'Permanent')
-    #     self.assertEqual(response.data['education'], 'Bachelors')
-    #     self.assertEqual(response.data['industry'], 'Business')
-    #     self.assertEqual(response.data['experience'], 'No_Experience')
-    #     self.assertEqual(response.data['salary'], 60000)
-    #     self.assertEqual(response.data['positions'], 10)
-    #     self.assertEqual(response.data['company'], 'New Test Company')
+    def test_update_job_valid(self):
+        # print("##########")
+        self.client.force_authenticate(user=self.user)
+        # print("**********")
+        # print(s)
+        # print("**********")
+        data = {
+            'title': 'New Test Job',
+            'description': 'New Test Job Description',
+            'email': 'newtestjob@test.com',
+            'address': 'New Test Address',
+            'jobType': 'Permanent',
+            'education': 'Bachelors',
+            'industry': 'Business',
+            'experience': 'No_Experience',
+            'salary': 60000,
+            'positions': 10,
+            'company': 'New Test Company',
+        }
+        #print(self.job_test_1.id)
+        response = self.client.put(reverse('update_job', args=[self.job_test_1.id]), data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['title'], 'New Test Job')
+        self.assertEqual(response.data['description'], 'New Test Job Description')
+        self.assertEqual(response.data['email'], 'newtestjob@test.com')
+        self.assertEqual(response.data['address'], 'New Test Address')
+        self.assertEqual(response.data['jobType'], 'Permanent')
+        self.assertEqual(response.data['education'], 'Bachelors')
+        self.assertEqual(response.data['industry'], 'Business')
+        self.assertEqual(response.data['experience'], 'No_Experience')
+        self.assertEqual(response.data['salary'], 60000)
+        self.assertEqual(response.data['positions'], 10)
+        self.assertEqual(response.data['company'], 'New Test Company')
 
     def test_update_job_unauthenticated(self):
         data = {
@@ -201,14 +201,14 @@ class JobTestCase(APITestCase):
         response = self.client.put(reverse('update_job', args=[self.job_test_1.id]), data)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    # def test_delete_job(self):
-    #     self.client.login(username='testuser', password='testpass')
-    #     # print("##########")
-    #     # print(s)
-    #     # print("##########")
-    #     response = self.client.delete(reverse('delete_job', args=[self.job_test_1.id]))
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertFalse(Job.objects.filter(id=self.job_test_1.id).exists())
+    def test_delete_job(self):
+        self.client.force_authenticate(user=self.user)
+        # print("##########")
+        # print(s)
+        # print("##########")
+        response = self.client.delete(reverse('delete_job', args=[self.job_test_1.id]))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertFalse(Job.objects.filter(id=self.job_test_1.id).exists())
 
     def test_delete_job_unauthenticated(self):
         response = self.client.delete(reverse('delete_job', args=[self.job_test_1.id]))
@@ -235,25 +235,25 @@ class JobTestCase(APITestCase):
             company='Test Company 2',
             user=user2
         )
-        self.client.login(username='testuser', password='testpass')
+        self.client.force_authenticate(user=self.user)
         response = self.client.delete(reverse('delete_job', args=[job_test_2.id]))
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
         self.assertTrue(Job.objects.filter(id=job_test_2.id).exists())
 
-    # def test_delete_job_invalid_id(self):
-    #     self.client.login(username='testuser', password='testpass')
-    #     response = self.client.delete(reverse('delete_job', args=[0]))
-    #     self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-    #     self.assertTrue(Job.objects.filter(id=self.job_test_1.id).exists())
+    def test_delete_job_invalid_id(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.delete(reverse('delete_job', args=[0]))
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        self.assertTrue(Job.objects.filter(id=self.job_test_1.id).exists())
 
-    # def test_get_candidates_applied(self):
-    #     self.client.login(username='testuser', password='testpass')
-    #     url = reverse('get_candidates_applied', kwargs={'pk': self.job_test_1.id})
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     expected_data = CandidatesAppliedSerializer(
-    #         [self.candidate_1, self.candidate_2], many=True).data
-    #     self.assertEqual(response.data, expected_data)
+    def test_get_candidates_applied(self):
+        self.client.force_authenticate(user=self.user)
+        url = reverse('get_candidates_applied', kwargs={'pk': self.job_test_1.id})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        expected_data = CandidatesAppliedSerializer(
+            [self.candidate_1, self.candidate_2], many=True).data
+        self.assertEqual(response.data, expected_data)
 
     def test_get_candidates_applied_unauthenticated(self):
         self.client.logout()
@@ -278,7 +278,7 @@ class JobTestCase(APITestCase):
             company='Test Company 2',
             user=user_2
         )
-        self.client.login(username='testuser', password='testpass')
+        self.client.force_authenticate(user=self.user)
         url = reverse('get_candidates_applied', kwargs={'pk': job_2.id})
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
