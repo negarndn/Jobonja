@@ -319,9 +319,27 @@ class JobTestCase(APITestCase):
         self.job_test_1.lastDate = timezone.now() - timedelta(days=1)
         self.job_test_1.save()
 
-        response = self.client.post(reverse('apply_to_job', args=[self.job_test_1.id]))
+        response = self.client.post(reverse('apply_to_job', kwargs={'pk': self.job_test_1.id}))
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn('error', response.data)
         self.assertEqual(response.data['error'], 'You can not apply to this job. Date is over')
+
+    def test_apply_to_same_job_twice(self):
+        user_2 = User.objects.create_user(
+            username='testuser2', password='testpass')
+        self.client.force_authenticate(user=user_2)
+        user_2.userprofile.resume = 'path/to/resume.pdf'
+        user_2.userprofile.save()
+        self.client.force_authenticate(user=user_2)
+
+        response = self.client.post(reverse('apply_to_job', args=[self.job_test_1.id]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data['applied'], True)
+
+        response = self.client.post(reverse('apply_to_job', args=[self.job_test_1.id]))
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.data['error'], 'You have already apply to this job.')
+
 
