@@ -1,4 +1,4 @@
-name: Frontend-Pipeline
+name: backend
 
 on:
   push:
