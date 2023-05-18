@@ -21,6 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run migrations
+        working-directory: ./backend
         run: python manage.py migrate
       
       - name: Build the App
@@ -28,6 +29,7 @@ jobs:
         run: |
           python manage.py runserver
       - name: Run Tests
+        working-directory: ./backend
         run: |
           python manage.py test
   Coverege:
