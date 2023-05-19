@@ -39,8 +39,8 @@ jobs:
         run: |
           mkdir logs
           cd logs
-          echo. > jobonja_info.log
-          echo. > jobonja_error.log
+          cat jobonja_info.log
+          cat jobonja_error.log
       - name: Run migrations
         working-directory: ./backend
         run: |
