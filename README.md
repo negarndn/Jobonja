@@ -74,3 +74,5 @@ The Jobonja platform was developed by a team of software developers who are pass
 - Parisa Shahabi (Frontend Developer) - [LinkedIn](https://www.linkedin.com/in/parisa-shahabi/)
 
 We are always looking for talented individuals who are interested in joining our team and helping us improve the Jobonja platform. If you are interested in working with us, please check out our careers page for more information.
+
+[![codecov](https://codecov.io/github/negarndn/OOD-Project/branch/main/graph/badge.svg?token=QDULE5H92J)](https://codecov.io/github/negarndn/OOD-Project)
