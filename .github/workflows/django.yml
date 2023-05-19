@@ -35,11 +35,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Create logs directory
+        working-directory: ./backend
         run: |
           mkdir logs
           cd logs
-          touch jobonja_info.log
-          touch jobonja_error.log
+          echo. > jobonja_info.log
+          echo. > jobonja_error.log
       - name: Run migrations
         working-directory: ./backend
         run: |
