@@ -5,8 +5,7 @@ import NoResults from "../components/NoResults";
 
 describe("NoResults component", () => {
   it("should render NoResults component", () => {
-    // Arrange
-    // Act
+    // Arrange & Act
     const { getByAltText, getByText } = render(<NoResults />);
     const image = getByAltText("no_results_found");
     const message = getByText(
@@ -19,8 +18,7 @@ describe("NoResults component", () => {
   });
 
   it("should render correct image source", () => {
-    // Arrange
-    // Act
+    // Arrange & Act
     const { getByAltText } = render(<NoResults />);
     const image = getByAltText("no_results_found");
 
