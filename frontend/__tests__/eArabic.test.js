@@ -1,7 +1,7 @@
 import eArabic from "../utils/eArabic";
 
 describe("eArabic", () => {
-  test("should return a number in Arabic format", () => {
+  test("should return a number in Arabic format when given a number", () => {
     // Arrange
     const number = 12345;
 
@@ -13,22 +13,50 @@ describe("eArabic", () => {
   });
 
   test("should return Arabic formatted string for 0", () => {
-    expect(eArabic(0)).toBe("٠");
+    // Arrange
+    const number = 0;
+
+    // Act
+    const result = eArabic(number);
+
+    // Assert
+    expect(result).toBe("٠");
   });
 
   // test("should return Arabic formatted string for negative number", () => {
-  //   expect(eArabic(-123)).toBe("-١٢٣");
+  //   // Arrange
+  //   const number = -123;
+
+  //   // Act
+  //   const result = eArabic(number);
+
+  //   // Assert
+  //   expect(result).toBe("-١٢٣");
   // });
 
   test("should return Arabic formatted string for floating point number", () => {
-    expect(eArabic(123.45)).toBe("١٢٣٫٤٥");
+    // Arrange
+    const number = 123.45;
+
+    // Act
+    const result = eArabic(number);
+
+    // Assert
+    expect(result).toBe("١٢٣٫٤٥");
   });
 
-  test("should return Arabic formatted string for number in form of string", () => {
-    expect(eArabic("123")).toBe("١٢٣");
+  test("should return Arabic formatted string for number in the form of a string", () => {
+    // Arrange
+    const number = "123";
+
+    // Act
+    const result = eArabic(number);
+
+    // Assert
+    expect(result).toBe("١٢٣");
   });
 
-  test("should return a string without any changes", () => {
+  test("should return the same input string without any changes", () => {
     // Arrange
     const string = "Hello World";
 
