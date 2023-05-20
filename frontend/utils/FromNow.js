@@ -1,7 +1,10 @@
 import eArabic from "./eArabic";
 
 const FromNow = (createdAt) => {
-  if (!(typeof createdAt == "number")) {
+  // Check if the input is a valid date string
+  const isInvalidDateString = isNaN(Date.parse(createdAt));
+
+  if (!(typeof createdAt == "number") && isInvalidDateString) {
     throw new Error("Invalid Date");
   }
   const elapsed = new Date().valueOf() - new Date(createdAt);
