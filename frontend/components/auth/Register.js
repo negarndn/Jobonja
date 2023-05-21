@@ -94,7 +94,11 @@ const Register = () => {
                 </div>
               </div>
               <div className="registerButtonWrapper">
-                <button type="submit" className="registerButton">
+                <button
+                  type="submit"
+                  className="registerButton"
+                  data-testid="submit-button"
+                >
                   {loading ? "در حال بارگذاری اطلاعات..." : "ثبت‌نام"}
                 </button>
               </div>
