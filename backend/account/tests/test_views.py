@@ -10,7 +10,7 @@ class RegistrationTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def test_registration_success(self):
+    def test_registration_should_success(self):
         # arrange
         url = reverse('register')
         data = {
@@ -26,7 +26,7 @@ class RegistrationTestCase(TestCase):
         self.assertEqual(User.objects.count(), 1)
         self.assertEqual(User.objects.get().email, 'testuser@example.com')
 
-    def test_registration_empty_field(self):
+    def test_registration_should_fail_400_when_field_is_empty(self):
         # arrange
         url = reverse('register')
         data = {
@@ -41,8 +41,7 @@ class RegistrationTestCase(TestCase):
         self.assertEqual(User.objects.count(), 0)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-
-    def test_registration_existing_user(self):
+    def test_registration_should_fail_400_when_user_exists(self):
         # arrange
         User.objects.create(
             first_name='Test',
@@ -75,7 +74,7 @@ class UserProfileTestCase(TestCase):
         )
         self.client.force_authenticate(user=self.user)
 
-    def test_current_user(self):
+    def test_get_current_user_should_success(self):
         # arrange
         url = reverse('current_user')
         # act
@@ -84,7 +83,7 @@ class UserProfileTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['email'], 'testuser@example.com')
 
-    def test_update_user(self):
+    def test_update_user_should_success(self):
         # arrange
         url = reverse('update_user')
         data = {
@@ -99,7 +98,7 @@ class UserProfileTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['email'], 'updateduser@example.com')
 
-    def test_update_user_empty_password(self):
+    def test_update_user_should_fail_400_when_password_is_empty(self):
         # arrange
         url = reverse('update_user')
         data = {
@@ -114,8 +113,7 @@ class UserProfileTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data['error'], 'Please enter your password.')
 
-
-    def test_download_resume(self):
+    def test_download_resume_should_success(self):
         # arrange
         self.user.userprofile.resume = 'test_resume.pdf'
         self.user.userprofile.save()
@@ -125,8 +123,6 @@ class UserProfileTestCase(TestCase):
         # assert
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.get('Content-Disposition'), 'inline; filename="test_resume.pdf"')
-
-
 
 
 class UploadResumeViewTestCase(TestCase):
@@ -142,10 +138,7 @@ class UploadResumeViewTestCase(TestCase):
         self.pdf_file = SimpleUploadedFile('test_resume.pdf', b'Test content', content_type='application/pdf')
         self.client.force_authenticate(user=self.user)
 
-
-
-
-    def test_upload_resume_success(self):
+    def test_upload_resume_should_success_when_resume_is_valid(self):
         # act
         response = self.client.put(self.url, {'resume': self.pdf_file})
         # assert
@@ -153,8 +146,7 @@ class UploadResumeViewTestCase(TestCase):
         self.assertEqual(response.data['email'], self.user.email)
         self.assertIsNotNone(self.user.userprofile.resume)
 
-
-    def test_upload_resume_no_file(self):
+    def test_upload_resume_should_fail_400_when_there_is_no_file(self):
         # act
         response = self.client.put(self.url, {})
         # assert
@@ -162,7 +154,7 @@ class UploadResumeViewTestCase(TestCase):
         self.assertIn('error', response.data)
         self.assertEqual(response.data['error'], 'Please upload your resume.')
 
-    def test_upload_resume_invalid_file_type(self):
+    def test_upload_resume_should_fail_400_when_file_type_is_invalid(self):
         # arrange
         text_file = SimpleUploadedFile('test_resume.txt', b'Test content', content_type='text/plain')
         # act
@@ -171,5 +163,3 @@ class UploadResumeViewTestCase(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn('error', response.data)
         self.assertEqual(response.data['error'], 'Please upload only pdf file.')
-
-
