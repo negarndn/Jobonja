@@ -11,12 +11,10 @@ class UserProfileModelTestCase(TestCase):
         # act
         self.user = User.objects.create(username='testuser', password='testpass')
 
-
     def test_create_user_profile(self):
         # Assert that UserProfile is created automatically when User is created
         self.assertIsNotNone(self.user.userprofile)
         self.assertIsInstance(self.user.userprofile, UserProfile)
-
 
     def test_upload_resume(self):
         # Upload resume to UserProfile and assert that it's saved correctly
@@ -26,6 +24,3 @@ class UserProfileModelTestCase(TestCase):
 
         self.assertIsNotNone(user_profile.resume)
         self.assertEqual(user_profile.resume.name, "file.pdf")
-
-
-

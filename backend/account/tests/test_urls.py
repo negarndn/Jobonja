@@ -11,7 +11,6 @@ class TestAccountUrls(TestCase):
         url = reverse('register')
         self.assertEqual(resolve(url).func, register)
 
-
     def test_current_user_url_resolves(self):
         url = reverse('current_user')
 
