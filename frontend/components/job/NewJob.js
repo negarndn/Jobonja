@@ -79,6 +79,7 @@ const NewJob = ({ access_token }) => {
                 <h5>نوع قرارداد</h5>
                 <div className="selectWrapper">
                   <select
+                    data-testid="jobType-select"
                     className="classic"
                     value={jobType}
                     onChange={(e) => setJobType(e.target.value)}
@@ -96,6 +97,7 @@ const NewJob = ({ access_token }) => {
                 <h5>میزان تحصیلات</h5>
                 <div className="selectWrapper">
                   <select
+                    data-testid="education-select"
                     className="classic"
                     value={education}
                     onChange={(e) => setEducation(e.target.value)}
@@ -113,6 +115,7 @@ const NewJob = ({ access_token }) => {
                 <h5>دسته‌بندی شغلی</h5>
                 <div className="selectWrapper">
                   <select
+                    data-testid="industry-select"
                     className="classic"
                     value={industry}
                     onChange={(e) => setIndustry(e.target.value)}
@@ -130,6 +133,7 @@ const NewJob = ({ access_token }) => {
                 <h5>میزان تجربه</h5>
                 <div className="selectWrapper">
                   <select
+                    data-testid="experience-select"
                     className="classic"
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
