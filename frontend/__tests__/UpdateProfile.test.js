@@ -12,6 +12,7 @@ let mockValues;
 jest.mock("react-toastify", () => ({
   toast: {
     error: jest.fn(),
+    success: jest.fn(),
   },
 }));
 
