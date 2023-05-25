@@ -69,7 +69,7 @@ describe("Home component", () => {
     expect(screen.getByText("Company 2")).toBeInTheDocument();
   });
 
-  it("should render pagination", () => {
+  it("Should render pagination when the number of results is more than `resPerPage`", () => {
     // Arrange
     const data = {
       jobs: [],

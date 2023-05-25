@@ -1,10 +1,13 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Search from "../components/Search";
-import { useRouter } from "next/router";
+import router from "next/router";
 
+// Mock the next/router module
 jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
+  useRouter: jest.fn().mockReturnValue({
+    push: jest.fn(),
+  }),
 }));
 
 describe("Search component", () => {
@@ -12,7 +15,7 @@ describe("Search component", () => {
     // Arrange
     const { getByPlaceholderText } = render(<Search />);
 
-    // Act & Assert
+    // Assert
     expect(getByPlaceholderText("جستجو کنید...")).toBeInTheDocument();
   });
 
@@ -30,8 +33,6 @@ describe("Search component", () => {
 
   it("should call useRouter.push with correct search query when submitHandler is called with a keyword", () => {
     // Arrange
-    const push = jest.fn();
-    useRouter.mockImplementation(() => ({ push }));
     const { getByPlaceholderText, getByRole } = render(<Search />);
     const input = getByPlaceholderText("جستجو کنید...");
     const submitButton = getByRole("button");
@@ -41,13 +42,11 @@ describe("Search component", () => {
     fireEvent.click(submitButton);
 
     // Assert
-    expect(push).toHaveBeenCalledWith("/?keyword=test");
+    expect(router.useRouter().push).toHaveBeenCalledWith("/?keyword=test");
   });
 
   it("should call useRouter.push with '/' when submitHandler is called with no keyword", () => {
     // Arrange
-    const push = jest.fn();
-    useRouter.mockImplementation(() => ({ push }));
     const { getByRole } = render(<Search />);
     const submitButton = getByRole("button");
 
@@ -55,6 +54,6 @@ describe("Search component", () => {
     fireEvent.click(submitButton);
 
     // Assert
-    expect(push).toHaveBeenCalledWith("/");
+    expect(router.useRouter().push).toHaveBeenCalledWith("/");
   });
 });

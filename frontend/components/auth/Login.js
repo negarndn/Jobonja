@@ -75,7 +75,11 @@ const Login = () => {
                 </div>
               </div>
               <div className="loginButtonWrapper">
-                <button type="submit" className="loginButton">
+                <button
+                  type="submit"
+                  className="loginButton"
+                  data-testid="submit-button"
+                >
                   {loading ? "احراز هویت..." : "ورود"}
                 </button>
               </div>

@@ -58,14 +58,11 @@ export const AuthProvider = ({ children }) => {
         password,
       });
 
-      console.log(res.data);
-
       if (res.data.message) {
         setLoading(false);
         router.push("/login");
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
@@ -103,13 +100,49 @@ export const AuthProvider = ({ children }) => {
         setUser(res.data);
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
           (error.response.data.detail || error.response.data.error)
       );
     }
+  };
+
+  // Downloadload Resume
+  const downloadResume = async (access_token) => {
+    try {
+      setLoading(true);
+
+      const res = await axios.get(
+        `${process.env.API_URL}/api/download/resume/`,
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+          responseType: "arraybuffer",
+        }
+      );
+
+      if (res.data) {
+        setLoading(false);
+        forceDownload(res);
+      }
+    } catch (error) {
+      setLoading(false);
+      setError(
+        error.response &&
+          (error.response.data.detail || error.response.data.error)
+      );
+    }
+  };
+
+  const forceDownload = (response, title) => {
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "Resume" + ".pdf");
+    document.body.appendChild(link);
+    link.click();
   };
 
   // Upload Resume
@@ -132,7 +165,6 @@ export const AuthProvider = ({ children }) => {
         setUploaded(true);
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
@@ -206,6 +238,7 @@ export const AuthProvider = ({ children }) => {
         clearErrors,
         updateProfile,
         uploadResume,
+        downloadResume,
       }}
     >
       {children}

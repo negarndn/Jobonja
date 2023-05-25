@@ -553,6 +553,11 @@ footer {
   transition: all 0.4s ease-in-out;
 }
 
+.downloadButton{
+background: none;
+border: none;
+}
+
 .loginButton:hover,
 .registerButton:hover,
 .searchButton:hover,
