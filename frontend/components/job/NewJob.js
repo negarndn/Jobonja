@@ -60,8 +60,6 @@ const NewJob = ({ access_token }) => {
       company,
     };
 
-    console.log(data);
-
     newJob(data, access_token);
   };
 
@@ -225,7 +223,7 @@ const NewJob = ({ access_token }) => {
               </div>
             </div>
             <div className="col text-center mt-3">
-              <button className="createButton">
+              <button className="createButton" data-testid="submit-button">
                 {loading ? "در حال ثبت آگهی..." : "ثبت آگهی"}
               </button>
             </div>

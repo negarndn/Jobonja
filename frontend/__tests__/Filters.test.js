@@ -19,8 +19,8 @@ describe("Filters", () => {
   });
 
   test("should render the component without any checkbox checked", () => {
-    // Arrange
-    useRouter.mockReturnValue({});
+    // Arrange & Act
+    // No specific action needed in this test
 
     // Assert
     expect(screen.getByLabelText("تمام‌وقت")).not.toBeChecked();
@@ -78,14 +78,6 @@ describe("Filters", () => {
 
   test("should correctly handle checkHandler function", () => {
     // Arrange
-    const replaceMock = jest.fn();
-    useRouter.mockReturnValue({
-      query: {},
-      replace: replaceMock,
-    });
-
-    render(<Filters />);
-
     const fullTimeCheckbox = screen.getByLabelText("تمام‌وقت");
     const partTimeCheckbox = screen.getByLabelText("پاره‌وقت");
 
@@ -135,6 +127,23 @@ describe("Filters", () => {
     expect(partTimeCheckbox.checked).toBe(false);
     expect(useRouter().replace).toHaveBeenCalledWith({
       search: "",
+    });
+  });
+
+  test("should update query parameters and call router.replace when checking two different checkboxes", () => {
+    // Arrange
+    const fullTimeCheckbox = screen.getByLabelText("تمام‌وقت");
+    const bachelorsCheckbox = screen.getByLabelText("کارشناسی");
+
+    // Act
+    fireEvent.click(fullTimeCheckbox);
+    fireEvent.click(bachelorsCheckbox);
+
+    // Assert
+    expect(fullTimeCheckbox.checked).toBe(true);
+    expect(bachelorsCheckbox.checked).toBe(true);
+    expect(useRouter().replace).toHaveBeenCalledWith({
+      search: "jobType=Permanent&education=Bachelors",
     });
   });
 

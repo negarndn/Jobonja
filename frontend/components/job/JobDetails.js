@@ -14,7 +14,6 @@ const JobDetails = ({ job, candidates, access_token }) => {
   const [lastDate, setLastDate] = useState("");
 
   useEffect(() => {
-    console.log(job);
     setLastDate(moment(job.lastDate).locale("fa").format("YYYY/M/D"));
 
     if (error) {

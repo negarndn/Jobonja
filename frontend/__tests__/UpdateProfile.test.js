@@ -7,12 +7,12 @@ import router from "next/router";
 
 import AuthContext from "../context/AuthContext";
 
-let mockUpdateProfile;
 let mockValues;
 
 jest.mock("react-toastify", () => ({
   toast: {
     error: jest.fn(),
+    success: jest.fn(),
   },
 }));
 
@@ -30,15 +30,8 @@ const MockAuthProvider = ({ children }) => {
 };
 
 const render = (ui, options) => {
-  mockUpdateProfile = jest.fn();
   return rtlRender(ui, { wrapper: MockAuthProvider, ...options });
 };
-
-// Re-export everything
-export * from "@testing-library/react";
-
-// Override the render method
-export { render };
 
 describe("UpdateProfile", () => {
   beforeEach(() => {
@@ -59,9 +52,7 @@ describe("UpdateProfile", () => {
       register: jest.fn(),
       logout: jest.fn(),
       clearErrors: jest.fn(),
-      updateProfile: jest.fn((profileData, accessToken) =>
-        mockUpdateProfile(profileData, accessToken)
-      ),
+      updateProfile: jest.fn(),
       uploadResume: jest.fn(),
     };
   });
@@ -118,7 +109,7 @@ describe("UpdateProfile", () => {
     fireEvent.click(submitButton);
 
     // Assert
-    expect(mockUpdateProfile).toHaveBeenCalledWith(
+    expect(mockValues.updateProfile).toHaveBeenCalledWith(
       {
         firstName: "Sam",
         lastName: "Smith",
@@ -133,7 +124,6 @@ describe("UpdateProfile", () => {
     // Arrange
     const error = "An error occurred.";
     render(<UpdateProfile access_token="mockAccessToken" />);
-    jest.spyOn(toast, "error");
 
     // Act
     act(() => {
@@ -157,5 +147,21 @@ describe("UpdateProfile", () => {
 
     // Assert
     expect(router.useRouter().push).toHaveBeenCalledWith("/me");
+  });
+
+  test("should display loading state while updating profile", async () => {
+    // Arrange
+    const { getByText } = render(
+      <UpdateProfile access_token="mockAccessToken" />
+    );
+
+    // Act
+    act(() => {
+      mockValues.loading = true;
+      render(<UpdateProfile access_token="mockAccessToken" />);
+    });
+
+    // Assert
+    expect(getByText("درحال بروزرسانی...")).toBeInTheDocument();
   });
 });

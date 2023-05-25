@@ -35,12 +35,6 @@ const render = (ui, options) => {
   return rtlRender(ui, { wrapper: MockJobProvider, ...options });
 };
 
-// Re-export everything
-export * from "@testing-library/react";
-
-// Override the render method
-export { render };
-
 describe("NewJob component", () => {
   beforeEach(() => {
     mockValues = {
@@ -62,15 +56,10 @@ describe("NewJob component", () => {
     };
   });
 
-  it("should render without errors", () => {
-    render(<NewJob access_token="mockAccessToken" />);
-  });
-
   test("should display an error toast if there is an error", () => {
     // Arrange
     const error = "An error occurred.";
     render(<NewJob access_token="mockAccessToken" />);
-    jest.spyOn(toast, "error");
 
     // Act
     act(() => {
@@ -108,10 +97,10 @@ describe("NewJob component", () => {
       "آدرس ایمیل خود را وارد کنید"
     );
     const inputAddress = screen.getByPlaceholderText("آدرس شرکت را وارد کنید");
-    const inputJobType = screen.getByTestId("jobType-select"); // Get jobType select element by test ID
-    const inputEducation = screen.getByTestId("education-select"); // Get education select element by test ID
-    const inputIndustry = screen.getByTestId("industry-select"); // Get industry select element by test ID
-    const inputExperience = screen.getByTestId("experience-select"); // Get experience select element by test ID
+    const inputJobType = screen.getByTestId("jobType-select");
+    const inputEducation = screen.getByTestId("education-select");
+    const inputIndustry = screen.getByTestId("industry-select");
+    const inputExperience = screen.getByTestId("experience-select");
     const inputSalary = screen.getByPlaceholderText(
       "میزان دستمزد را وارد کنید"
     );
@@ -129,10 +118,10 @@ describe("NewJob component", () => {
       });
       fireEvent.change(inputEmail, { target: { value: data.email } });
       fireEvent.change(inputAddress, { target: { value: data.address } });
-      fireEvent.change(inputJobType, { target: { value: data.jobType } }); // Select jobType option
-      fireEvent.change(inputEducation, { target: { value: data.education } }); // Select education option
-      fireEvent.change(inputIndustry, { target: { value: data.industry } }); // Select industry option
-      fireEvent.change(inputExperience, { target: { value: data.experience } }); // Select experience option
+      fireEvent.change(inputJobType, { target: { value: data.jobType } });
+      fireEvent.change(inputEducation, { target: { value: data.education } });
+      fireEvent.change(inputIndustry, { target: { value: data.industry } });
+      fireEvent.change(inputExperience, { target: { value: data.experience } });
       fireEvent.change(inputSalary, { target: { value: data.salary } });
       fireEvent.change(inputPositions, { target: { value: data.positions } });
       fireEvent.change(inputCompany, { target: { value: data.company } });
@@ -155,5 +144,19 @@ describe("NewJob component", () => {
 
     // Assert
     expect(router.useRouter().push).toHaveBeenCalledWith("/employeer/jobs");
+  });
+
+  test("should display loading state while creating job ad", async () => {
+    // Arrange
+    const { getByText } = render(<NewJob access_token="mockAccessToken" />);
+
+    // Act
+    act(() => {
+      mockValues.loading = true;
+      render(<NewJob access_token="mockAccessToken" />);
+    });
+
+    // Assert
+    expect(getByText("در حال ثبت آگهی...")).toBeInTheDocument();
   });
 });

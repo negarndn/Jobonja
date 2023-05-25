@@ -119,7 +119,7 @@ describe("encodeFilters function", () => {
     const result = encodeFilters(filter);
 
     // Assert
-    expect(result).toEqual("فروش و بازایابی");
+    expect(result).toEqual("فروش و بازاریابی");
   });
 
   test("should encode 'IT' filter correctly", () => {
@@ -152,7 +152,7 @@ describe("encodeFilters function", () => {
     const result = encodeFilters(filter);
 
     // Assert
-    expect(result).toEqual("کارشناسی");
+    expect(result).toEqual("آموزش");
   });
 
   test("should encode 'Telecommunication' filter correctly", () => {

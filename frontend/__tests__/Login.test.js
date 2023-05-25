@@ -5,7 +5,6 @@ import Login from "../components/auth/Login";
 import AuthContext from "../context/AuthContext";
 import router from "next/router";
 
-let mockLogin;
 let mockValues;
 
 // Mock the next/router module
@@ -28,15 +27,8 @@ const MockAuthProvider = ({ children }) => {
 };
 
 const render = (ui, options) => {
-  mockLogin = jest.fn();
   return rtlRender(ui, { wrapper: MockAuthProvider, ...options });
 };
-
-// Re-export everything
-export * from "@testing-library/react";
-
-// Override the render method
-export { render };
 
 describe("Login Component", () => {
   beforeEach(() => {
@@ -53,9 +45,7 @@ describe("Login Component", () => {
       uploaded: null,
       setUpdated: jest.fn(),
       setUploaded: jest.fn(),
-      login: jest.fn(({ username, password }) =>
-        mockLogin({ username, password })
-      ),
+      login: jest.fn(),
       register: jest.fn(),
       logout: jest.fn(),
       clearErrors: jest.fn(),
@@ -87,7 +77,6 @@ describe("Login Component", () => {
     // Arrange
     const error = "Invalid credentials";
     render(<Login />);
-    jest.spyOn(toast, "error");
 
     // Act
     act(() => {
@@ -126,7 +115,7 @@ describe("Login Component", () => {
     fireEvent.click(submitButton);
 
     // Assert
-    expect(mockLogin).toHaveBeenCalledWith({
+    expect(mockValues.login).toHaveBeenCalledWith({
       username: "test@test.com",
       password: "password123",
     });

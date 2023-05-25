@@ -5,7 +5,6 @@ import Register from "../components/auth/Register";
 import AuthContext from "../context/AuthContext";
 import router from "next/router";
 
-let mockRegister;
 let mockValues;
 
 // Mock the next/router module
@@ -28,15 +27,8 @@ const MockAuthProvider = ({ children }) => {
 };
 
 const render = (ui, options) => {
-  mockRegister = jest.fn();
   return rtlRender(ui, { wrapper: MockAuthProvider, ...options });
 };
-
-// Re-export everything
-export * from "@testing-library/react";
-
-// Override the render method
-export { render };
 
 describe("Register Component", () => {
   beforeEach(() => {
@@ -44,9 +36,7 @@ describe("Register Component", () => {
       loading: false,
       error: null,
       isAuthenticated: false,
-      register: jest.fn(({ firstName, lastName, email, password }) =>
-        mockRegister({ firstName, lastName, email, password })
-      ),
+      register: jest.fn(),
       clearErrors: jest.fn(),
     };
   });
@@ -56,14 +46,12 @@ describe("Register Component", () => {
     const { getByPlaceholderText, getByText, getByTestId } = render(
       <Register />
     );
-    const submitButton = getByTestId("submit-button");
 
     // Assert
     expect(getByPlaceholderText("نام")).toBeInTheDocument();
     expect(getByPlaceholderText("نام خانوادگی")).toBeInTheDocument();
     expect(getByPlaceholderText("آدرس ایمیل")).toBeInTheDocument();
     expect(getByPlaceholderText("رمز عبور")).toBeInTheDocument();
-    expect(submitButton).toBeInTheDocument();
     expect(getByText("ثبت‌نام")).toBeInTheDocument();
   });
 
@@ -71,7 +59,6 @@ describe("Register Component", () => {
     // Arrange
     const error = "Registration failed";
     render(<Register />);
-    jest.spyOn(toast, "error");
 
     // Act
     act(() => {
@@ -114,7 +101,7 @@ describe("Register Component", () => {
     fireEvent.click(submitButton);
 
     // Assert
-    expect(mockRegister).toHaveBeenCalledWith({
+    expect(mockValues.register).toHaveBeenCalledWith({
       firstName: "Sam",
       lastName: "Smith",
       email: "samsmith@test.com",
@@ -133,7 +120,8 @@ describe("Register Component", () => {
     });
 
     // Assert
-    const submitButton = getByTestId("submit-button");
-    expect(submitButton).toHaveTextContent("در حال بارگذاری اطلاعات...");
+    expect(getByTestId("submit-button")).toHaveTextContent(
+      "در حال بارگذاری اطلاعات..."
+    );
   });
 });
