@@ -108,6 +108,43 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Downloadload Resume
+  const downloadResume = async (access_token) => {
+    try {
+      setLoading(true);
+
+      const res = await axios.get(
+        `${process.env.API_URL}/api/download/resume/`,
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+          responseType: "arraybuffer",
+        }
+      );
+
+      if (res.data) {
+        setLoading(false);
+        forceDownload(res);
+      }
+    } catch (error) {
+      setLoading(false);
+      setError(
+        error.response &&
+          (error.response.data.detail || error.response.data.error)
+      );
+    }
+  };
+
+  const forceDownload = (response, title) => {
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "Resume" + ".pdf");
+    document.body.appendChild(link);
+    link.click();
+  };
+
   // Upload Resume
   const uploadResume = async (formData, access_token) => {
     try {
@@ -201,6 +238,7 @@ export const AuthProvider = ({ children }) => {
         clearErrors,
         updateProfile,
         uploadResume,
+        downloadResume,
       }}
     >
       {children}

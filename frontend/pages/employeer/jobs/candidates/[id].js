@@ -6,12 +6,19 @@ import { isAuthenticatedUser } from "../../../../utils/isAuthenticated";
 
 import axios from "axios";
 
-export default function JobCandidatesPage({ candidatesApplied, error }) {
+export default function JobCandidatesPage({
+  candidatesApplied,
+  access_token,
+  error,
+}) {
   if (error?.includes("Not found")) return <NotFound />;
 
   return (
     <Layout title="Job Candidates">
-      <JobCandidates candidatesApplied={candidatesApplied} />
+      <JobCandidates
+        candidatesApplied={candidatesApplied}
+        access_token={access_token}
+      />
     </Layout>
   );
 }
@@ -45,6 +52,7 @@ export async function getServerSideProps({ req, params }) {
     return {
       props: {
         candidatesApplied,
+        access_token,
       },
     };
   } catch (error) {
