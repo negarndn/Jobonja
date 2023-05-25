@@ -73,7 +73,7 @@ const UpdateJob = ({ job, access_token }) => {
       positions,
       company,
     };
-    // console.log(data);
+
     updateJob(job.id, data, access_token);
   };
 
