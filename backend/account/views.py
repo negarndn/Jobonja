@@ -2,6 +2,7 @@ import os
 
 from django.http import FileResponse
 from django.shortcuts import render
+from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
@@ -45,7 +46,7 @@ def register(request):
             )
 
     else:
-        return Response(user.errors)
+        return Response(user.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -59,17 +60,23 @@ def currentUser(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateUser(request):
+
     user = request.user
-
-
     data = request.data
 
-    user.first_name = data['first_name']
-    user.last_name = data['last_name']
-    user.username = data['email']
-    user.email = data['email']
+    if data['first_name'] != '':
+        user.first_name = data['first_name']
+    if data['last_name'] != '':
+        user.last_name = data['last_name']
+    if data['email'] != '':
+        user.username = data['email']
+    if data['email'] != '':
+        user.email = data['email']
 
-    if data['password'] != '':
+
+    if data['password'] == '':
+        return Response({'error': 'Please enter your password.'}, status=status.HTTP_400_BAD_REQUEST)
+    else:
         user.password = make_password(data['password'])
 
     user.save()
@@ -82,10 +89,11 @@ def updateUser(request):
 def uploadResume(request):
 
     user = request.user
-    resume = request.FILES['resume']
+    try:
+        resume = request.FILES['resume']
+    except MultiValueDictKeyError as e:
+        return Response({'error': 'Please upload your resume.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    if resume == '':
-        return Response({ 'error': 'Please upload your resume.' }, status=status.HTTP_400_BAD_REQUEST)
 
     isValidFile = validate_file_extension(resume.name)
 
@@ -94,7 +102,6 @@ def uploadResume(request):
 
     serializer = UserSerializer(user, many=False)
 
-    print(user.userprofile)
     user.userprofile.resume = resume
     user.userprofile.save()
 
