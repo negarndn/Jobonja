@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Link from "next/link";
 
 import AuthContext from "../../context/AuthContext";
 import { toast } from "react-toastify";
@@ -19,6 +18,7 @@ const UploadResume = ({ access_token }) => {
     clearErrors,
     uploadResume,
     setUploaded,
+    downloadResume,
   } = useContext(AuthContext);
 
   useEffect(() => {
@@ -41,6 +41,10 @@ const UploadResume = ({ access_token }) => {
     formData.append("resume", resume);
 
     uploadResume(formData, access_token);
+  };
+
+  const downloadResumeHandler = () => {
+    downloadResume(access_token);
   };
 
   const onChange = (e) => {
@@ -78,17 +82,15 @@ const UploadResume = ({ access_token }) => {
               {user && user.resume && (
                 <>
                   <h5 className="text-center my-3">یا</h5>
-                  <Link
-                    className="text-success text-center ml-4"
-                    rel="noreferrer"
-                    target="_blank"
-                    href={`https://storage.jobinjacdn.com/records/files/uploads/documents/8b2bf974-5f1f-449d-8020-05731f5be933.pdf?requester=33312e372e3131392e3431&resource=753a32313037313839&from=63765f7472616e73&X-Amz-Content-Sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=oetSom924MQvtCRu9N6vvQ4bt8cG9HSpRnxWU756SyWy5NVt6nTpmfA9aV2b%2F20230421%2F%2Fs3%2Faws4_request&X-Amz-Date=20230421T095311Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=84f2740823359edf0518b5095031651fa0a87bc7a2200f8f3620f2db3f1963c4`}
+                  <button
+                    className="text-success text-center ml-4 downloadButton"
+                    onClick={downloadResumeHandler}
                   >
                     <b>
                       <i aria-hidden className="fas fa-download"></i> دریافت
                       رزومه
                     </b>
-                  </Link>
+                  </button>
                 </>
               )}
 
