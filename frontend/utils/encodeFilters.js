@@ -21,13 +21,13 @@ function encodeFilters(filter) {
     case "3 Years Above":
       return "بیش از سه سال";
     case "Business":
-      return "فروش و بازایابی";
+      return "فروش و بازاریابی";
     case "IT":
       return "وب، برنامه‌نویسی و نرم‌افزار";
     case "Banking":
       return "مالی و حسابداری";
     case "Education":
-      return "کارشناسی";
+      return "آموزش";
     case "Telecommunication":
       return "روابط عمومی";
     case "Others":

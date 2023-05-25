@@ -9,16 +9,9 @@ const render = (ui, options) => {
   return rtlRender(
     <AuthContext.Provider value={{ user, loading, logout }}>
       {ui}
-    </AuthContext.Provider>,
-    options
+    </AuthContext.Provider>
   );
 };
-
-// Re-export everything
-export * from "@testing-library/react";
-
-// Override the render method
-export { render };
 
 describe("Header Component", () => {
   test("should render logo and buttons correctly", () => {
@@ -38,8 +31,8 @@ describe("Header Component", () => {
   test("should render user dropdown when user is logged in", () => {
     // Arrange
     const user = {
-      first_name: "John",
-      last_name: "Doe",
+      first_name: "Sam",
+      last_name: "Smith",
     };
     const { getByText, getByRole } = render(<Header />, {
       user,
@@ -64,8 +57,8 @@ describe("Header Component", () => {
     const logout = jest.fn();
     const { getByText } = render(<Header />, {
       user: {
-        first_name: "John",
-        last_name: "Doe",
+        first_name: "Sam",
+        last_name: "Smith",
       },
       loading: false,
       logout,
@@ -82,8 +75,8 @@ describe("Header Component", () => {
   test("should not render login button when user is logged in", () => {
     // Arrange
     const user = {
-      first_name: "John",
-      last_name: "Doe",
+      first_name: "Sam",
+      last_name: "Smith",
     };
     const { queryByText } = render(<Header />, {
       user,

@@ -4,10 +4,6 @@ import { isAuthenticatedUser } from "../utils/isAuthenticated";
 jest.mock("axios");
 
 describe("isAuthenticatedUser", () => {
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-
   test("should return true if the API response status is 200", async () => {
     // Arrange
     axios.post.mockResolvedValueOnce({ status: 200 });

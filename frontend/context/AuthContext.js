@@ -58,14 +58,11 @@ export const AuthProvider = ({ children }) => {
         password,
       });
 
-      console.log(res.data);
-
       if (res.data.message) {
         setLoading(false);
         router.push("/login");
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
@@ -103,7 +100,6 @@ export const AuthProvider = ({ children }) => {
         setUser(res.data);
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
@@ -132,7 +128,6 @@ export const AuthProvider = ({ children }) => {
         setUploaded(true);
       }
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setError(
         error.response &&
