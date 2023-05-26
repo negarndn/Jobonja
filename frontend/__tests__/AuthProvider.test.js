@@ -165,7 +165,7 @@ describe("AuthProvider", () => {
       expect(router.useRouter().push).toHaveBeenCalledWith("/login");
     });
 
-    test("should handle registration error and set error state", async () => {
+    test("should handle registration errors and set the error state", async () => {
       // Arrange
       const TestComponent = () => {
         const { error, register } = useContext(AuthContext);
@@ -298,7 +298,7 @@ describe("AuthProvider", () => {
       expect(screen.getByTestId("updated").textContent).toBe("true");
     });
 
-    test("should handle update error and set error state", async () => {
+    test("should handle update errors and set the error state", async () => {
       // Arrange
       const TestComponent = () => {
         const { error, updateProfile } = useContext(AuthContext);
@@ -422,7 +422,7 @@ describe("AuthProvider", () => {
       expect(screen.getByTestId("uploaded").textContent).toBe("true");
     });
 
-    test("should handle upload error and set error state", async () => {
+    test("should handle upload errors and set the error state", async () => {
       // Arrange
       const TestComponent = () => {
         const { error, uploadResume } = useContext(AuthContext);
@@ -524,7 +524,7 @@ describe("AuthProvider", () => {
       expect(getByTestId("user").textContent).toBe("null");
     });
 
-    test("should handle logout error and set error state, isAuthenticated, and user state to false", async () => {
+    test("should handle logout errors and set the error state, isAuthenticated, and user state to false", async () => {
       // Arrange
       const TestComponent = () => {
         const { isAuthenticated, user, error, logout } =
@@ -573,7 +573,7 @@ describe("AuthProvider", () => {
   });
 
   describe("clearErrors method", () => {
-    test("should clear error state", async () => {
+    test("should clear the error state", async () => {
       // Arrange
       const TestComponent = () => {
         const { error, setError, clearErrors } = useContext(AuthContext);
@@ -597,6 +597,7 @@ describe("AuthProvider", () => {
       );
 
       const clearErrorsButton = getByTestId("clearErrors");
+      const errorElement = getByTestId("error");
 
       // Act
       await act(async () => {
@@ -605,7 +606,7 @@ describe("AuthProvider", () => {
       });
 
       // Assert
-      expect(getByTestId("error").textContent).toBe("");
+      expect(errorElement.textContent).toBe("");
     });
   });
 });
