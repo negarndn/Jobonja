@@ -49,9 +49,7 @@ describe("Login Component", () => {
       register: jest.fn(),
       logout: jest.fn(),
       clearErrors: jest.fn(),
-      updateProfile: jest.fn((profileData, accessToken) =>
-        mockUpdateProfile(profileData, accessToken)
-      ),
+      updateProfile: jest.fn(),
       uploadResume: jest.fn(),
     };
   });
