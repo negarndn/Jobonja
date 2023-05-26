@@ -136,7 +136,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const forceDownload = (response, title) => {
+  const forceDownload = (response) => {
     const url = window.URL.createObjectURL(new Blob([response.data]));
     const link = document.createElement("a");
     link.href = url;
@@ -230,6 +230,7 @@ export const AuthProvider = ({ children }) => {
         isAuthenticated,
         updated,
         uploaded,
+        setError,
         setUpdated,
         setUploaded,
         login,
