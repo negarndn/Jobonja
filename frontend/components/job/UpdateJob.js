@@ -92,6 +92,7 @@ const UpdateJob = ({ job, access_token }) => {
                 <div className="selectWrapper">
                   <select
                     className="classic"
+                    data-testid="jobType-select"
                     value={jobType}
                     onChange={(e) => setJobType(e.target.value)}
                   >
@@ -109,6 +110,7 @@ const UpdateJob = ({ job, access_token }) => {
                 <div className="selectWrapper">
                   <select
                     className="classic"
+                    data-testid="education-select"
                     value={education}
                     onChange={(e) => setEducation(e.target.value)}
                   >
@@ -126,6 +128,7 @@ const UpdateJob = ({ job, access_token }) => {
                 <div className="selectWrapper">
                   <select
                     className="classic"
+                    data-testid="industry-select"
                     value={industry}
                     onChange={(e) => setIndustry(e.target.value)}
                   >
@@ -143,6 +146,7 @@ const UpdateJob = ({ job, access_token }) => {
                 <div className="selectWrapper">
                   <select
                     className="classic"
+                    data-testid="experience-select"
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
                   >
