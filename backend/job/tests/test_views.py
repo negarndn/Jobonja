@@ -12,7 +12,7 @@ from job.serializers import CandidatesAppliedSerializer
 class JobTestCase(APITestCase):
 
 
-    def test_get_all_jobs_without_pagination_should_OK(self):
+    def test_get_all_jobs_should_OK_when_there_is_no_pagination(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -31,7 +31,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.data['count'], 2)
         self.assertEqual(len(response.data['jobs']), 2)
 
-    def test_get_all_jobs_with_pagination_should_OK(self):
+    def test_get_all_jobs_should_OK_when_there_no_pagination(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -51,7 +51,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(len(response.data['jobs']), 2)
         self.assertEqual(response.data['resPerPage'], 10)
 
-    def test_get_all_jobs_with_filtering_should_OK(self):
+    def test_get_all_jobs_should_OK_when_there_is_filtering(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -68,7 +68,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(len(response.data['jobs']), 1)
         self.assertEqual(response.data['jobs'][0]['industry'], 'IT')
 
-    def test_new_job_with_valid_data_without_authentication_should_UNAUTHORIZED(self):
+    def test_new_job_should_UNAUTHORIZED_when_inputs_are_valid_data_without_authentication(self):
         #arrange
         client = APIClient()
         valid_job = {
@@ -92,7 +92,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_new_job_with_invalid_data_without_authentication_should_UNAUTHORIZED(self):
+    def test_new_job_should_UNAUTHORIZED_when_inputs_are_invalid_data_without_authentication(self):
         #arrange
         client = APIClient()
         invalid_job = {
@@ -116,7 +116,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_new_job_with_valid_data_with_authentication_should_OK(self):
+    def test_new_job_should_OK_when_inputs_are_valid_data_with_authentication(self):
         #aarange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -143,7 +143,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_update_job_with_authentication_should_OK(self):
+    def test_update_job_should_OK_when_user_is_authenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -184,7 +184,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.data['positions'], 10)
         self.assertEqual(response.data['company'], 'New Test Company')
 
-    def test_update_job_without_authentication_should_UNAUTHORIZED(self):
+    def test_update_job_should_UNAUTHORIZED_when_user_is_unauthenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -212,7 +212,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_delete_job_with_authentication_should_OK(self):
+    def test_delete_job_should_OK_when_user_is_authenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -229,7 +229,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertFalse(Job.objects.filter(id=job_test_1.id).exists())
 
-    def test_delete_job_without_authentication_should_UNAUTHORIZED(self):
+    def test_delete_job_should_UNAUTHORIZED_when_user_is_unauthenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -244,7 +244,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
         self.assertTrue(Job.objects.filter(id=job_test_1.id).exists())
 
-    def test_delete_job_by_wrong_user_should_FORBIDDEN(self):
+    def test_delete_job_should_FORBIDDEN_when_user_is_wrong(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -262,7 +262,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
         self.assertTrue(Job.objects.filter(id=job_test_1.id).exists())
 
-    def test_delete_job_with_invalid_id_should_NOT_FOUND(self):
+    def test_delete_job_should_NOT_FOUND_when_job_id_is_invalid(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -278,7 +278,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertTrue(Job.objects.filter(id=job_test_1.id).exists())
 
-    def test_get_candidates_applied_with_authentication_should_OK(self):
+    def test_get_candidates_applied_should_OK_when_user_is_authenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -309,7 +309,7 @@ class JobTestCase(APITestCase):
             [candidate_1, candidate_2], many=True).data
         self.assertEqual(response.data, expected_data)
 
-    def test_get_candidates_applied_without_authentication_should_UNAUTHORIZED(self):
+    def test_get_candidates_applied_should_UNAUTHORIZED_when_user_is_unauthenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -328,7 +328,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_get_candidates_applied_by_wrong_user_should_FORBIDDEN(self):
+    def test_get_candidates_applied_should_FORBIDDEN_when_user_is_wrong(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -350,7 +350,7 @@ class JobTestCase(APITestCase):
         #assert
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-    def test_apply_to_job_with_resume_with_authentication_should_OK(self):
+    def test_apply_to_job_should_OK_when_there_is_resume_and_authentication(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -371,7 +371,7 @@ class JobTestCase(APITestCase):
         self.assertTrue(response.data['applied'])
         self.assertIn('job_id', response.data)
 
-    def test_apply_to_job_without_resume_should_BAD_REQUEST(self):
+    def test_apply_to_job_should_BAD_REQUEST_there_is_authentication_and_no_resume(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -392,7 +392,7 @@ class JobTestCase(APITestCase):
         self.assertIn('error', response.data)
         self.assertEqual(response.data['error'], 'Please upload your resume first')
 
-    def test_apply_to_job_which_expired_should_BAD_REQUEST(self):
+    def test_apply_to_job_should_BAD_REQUEST_when_job_expired(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
@@ -442,7 +442,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data['error'], 'You have already apply to this job.')
 
-    def test_get_current_user_applied_jobs_with_authentication_should_OK(self):
+    def test_get_current_user_applied_jobs_should_OK_when_user_is_authenticated(self):
         #arrange
         client = APIClient()
         user = User.objects.create_user(username='testuser', password='testpass')
