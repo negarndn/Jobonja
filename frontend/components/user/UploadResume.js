@@ -69,6 +69,7 @@ const UploadResume = ({ access_token }) => {
                 <div className="inputBoxAuth">
                   <i aria-hidden className="fas fa-upload"></i>
                   <input
+                    data-testid="file-input"
                     type="file"
                     name="resume"
                     id="customFile"
@@ -83,6 +84,7 @@ const UploadResume = ({ access_token }) => {
                 <>
                   <h5 className="text-center my-3">یا</h5>
                   <button
+                    data-testid="download-button"
                     className="text-success text-center ml-4 downloadButton"
                     onClick={downloadResumeHandler}
                   >
@@ -93,9 +95,12 @@ const UploadResume = ({ access_token }) => {
                   </button>
                 </>
               )}
-
               <div className="uploadButtonWrapper">
-                <button type="submit" className="uploadButton">
+                <button
+                  type="submit"
+                  className="uploadButton"
+                  data-testid="upload-button"
+                >
                   {loading ? "در حال بارگذاری..." : "بارگذاری"}
                 </button>
               </div>
