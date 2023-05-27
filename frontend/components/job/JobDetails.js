@@ -150,7 +150,10 @@ const JobDetails = ({ job, candidates, access_token }) => {
             </div>
             {isLastDatePassed && (
               <div className="mt-5 p-0">
-                <div className="alert alert-danger">
+                <div
+                  className="alert alert-danger"
+                  data-testid="warning-message"
+                >
                   <h5>اخطار:</h5>
                   مهلت ارسال درخواست برای این آگهی تمام شده است. آخرین مهلت
                   درخواست برای این شغل: <b>{lastDate}</b>
