@@ -1,0 +1,32 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - .:/django
+    ports:
+      - 8000:8000
+    network_mode: host
+    image: jobonja:vesion1
+    container_name: backend-container
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - PGPASSWORD=Pass2020!
+      - POSTGRES_HOST=172.17.0.2
+
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - PGPASSWORD=Pass2020!
+      - POSTGRES_HOST=172.17.0.2
+    container_name: postgres_db
+    ports:
+      - 5432:5432
+    network_mode: host
