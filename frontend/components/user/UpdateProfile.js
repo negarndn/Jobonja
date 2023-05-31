@@ -38,6 +38,7 @@ const UpdateProfile = ({ access_token }) => {
     if (updated) {
       setUpdated(false);
       router.push("/me");
+      toast.success("عملیات با موفقیت انجام شد.");
     }
   }, [error, user, updated]);
 

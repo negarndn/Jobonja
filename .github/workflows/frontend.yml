@@ -30,6 +30,12 @@ jobs:
           npm test
         env:
           CI: true
+      - name: Publish Code Coverage Reports to codecove.io
+        uses: codecov/codecov-action@v1
+        with:
+          token: 0e550e3c-c663-47ec-9bb8-febef2f71b42
+          files: ./**/coverage.cobertura.xml
+          fail_ci_if_error: true
   Build:
     name: Build the App
     runs-on: ubuntu-latest
@@ -45,11 +51,4 @@ jobs:
         working-directory: ./frontend
         run: |
           echo "Building the App ..."
-          npm run build  
-  Coverege:
-    name: codecov
-    runs-on: ubuntu-latest
-    steps:
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-    
+          npm run build

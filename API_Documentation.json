@@ -254,6 +254,206 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "upload resume",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resume",
+									"type": "file",
+									"src": "/C:/Users/momen/Documents/n_queens_problem.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Domain}}/api/upload/resume/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"upload",
+								"resume",
+								""
+							],
+							"query": [
+								{
+									"key": "resume",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply to job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/2/apply/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"2",
+								"apply",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applied jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/me/jobs/applied",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"me",
+								"jobs",
+								"applied"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check job applied",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/jobs/1/check/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"1",
+								"check",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users created jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/me/jobs/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"me",
+								"jobs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get candidates applied",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Domain}}/api/job/3/candidates/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"job",
+								"3",
+								"candidates",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -379,6 +579,61 @@
 							"path": [
 								"api",
 								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Nafis",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Momeni",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "momeni@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Domain}}/api/me/update/",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"api",
+								"me",
+								"update",
 								""
 							]
 						}

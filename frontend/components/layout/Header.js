@@ -38,9 +38,11 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <i aria-hidden className="fas fa-user"></i>
-                <span>
-                  {user.first_name + " " + user.last_name || "خوش آمدید"}
-                </span>
+                {user.first_name && user.last_name ? (
+                  <span>{user.first_name + " " + user.last_name}</span>
+                ) : (
+                  <span>خوش آمدید</span>
+                )}
               </a>
 
               <div
