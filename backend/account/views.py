@@ -16,6 +16,11 @@ from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from django.conf import settings
 
+import logging
+
+
+logger = logging.getLogger(__name__)
+
 # Create your views here.
 
 
@@ -27,6 +32,7 @@ def register(request):
 
     if user.is_valid():
         if not User.objects.filter(username=data['email']).exists():
+
            user = User.objects.create(
                first_name = data['first_name'],
                last_name = data['last_name'],
@@ -35,11 +41,14 @@ def register(request):
                password = make_password(data['password'])
            )
 
+           logger.info('User registered')
+
            return Response({
                 'message': 'User registered.'},
                 status=status.HTTP_200_OK
             )
         else:
+            logger.error('User already exists')
             return Response({
                 'error': 'User already exists'},
                 status=status.HTTP_400_BAD_REQUEST
@@ -82,6 +91,7 @@ def updateUser(request):
     user.save()
 
     serializer = UserSerializer(user, many=False)
+    logger.info('user was updated')
     return Response(serializer.data)
 
 @api_view(['PUT'])
@@ -92,18 +102,21 @@ def uploadResume(request):
     try:
         resume = request.FILES['resume']
     except MultiValueDictKeyError as e:
+        logger.error('empty resume source')
         return Response({'error': 'Please upload your resume.'}, status=status.HTTP_400_BAD_REQUEST)
-
 
     isValidFile = validate_file_extension(resume.name)
 
     if not isValidFile:
+        logger.error('wrong resume format')
         return Response({ 'error': 'Please upload only pdf file.' }, status=status.HTTP_400_BAD_REQUEST)
 
     serializer = UserSerializer(user, many=False)
 
     user.userprofile.resume = resume
     user.userprofile.save()
+
+    logger.info('resume was uploaded')
 
     return Response(serializer.data)
 
