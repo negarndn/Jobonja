@@ -1,6 +1,6 @@
 asgiref==3.6.0
-boto3==1.26.100
-botocore==1.29.100
+certifi==2022.12.7
+charset-normalizer==3.1.0
 dj-database-url==1.2.0
 Django==4.1.7
 coverage==7.2.5
@@ -10,14 +10,15 @@ django-filter==23.1
 django-storages==1.13.2
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
-jmespath==1.0.1
-psycopg2==2.9.5
 psycopg2-binary==2.9.5
 PyJWT==2.6.0
 python-dateutil==2.8.2
 pytz==2023.2
-s3transfer==0.6.0
+requests==2.28.2
 six==1.16.0
 sqlparse==0.4.3
+stone==3.3.1
 tzdata==2023.2
 urllib3==1.26.15
+codecov==2.1.13
+

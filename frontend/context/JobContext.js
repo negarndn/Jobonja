@@ -167,6 +167,7 @@ export const JobProvider = ({ children }) => {
         checkJobApplied,
         setCreated,
         setDeleted,
+        setError,
         clearErrors,
       }}
     >

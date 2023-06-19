@@ -3,6 +3,8 @@
   Jobonja Job Portal
 </h1>
 
+[![codecov](https://codecov.io/github/negarndn/OOD-Project/branch/main/graph/badge.svg?token=QDULE5H92J)](https://codecov.io/github/negarndn/OOD-Project)
+
 
 ## Introduction
 *Jobonja* is a job portal website that allows users to create profiles, post job listings, search for jobs, and apply to job openings. This project consists of two parts, the frontend and the backend. The frontend is built using **Next.js** and **Bootstrap**, while the backend is developed using **Django Rest Framework**, **JWT**, and **PostgreSQL**.
@@ -74,3 +76,4 @@ The Jobonja platform was developed by a team of software developers who are pass
 - Parisa Shahabi (Frontend Developer) - [LinkedIn](https://www.linkedin.com/in/parisa-shahabi/)
 
 We are always looking for talented individuals who are interested in joining our team and helping us improve the Jobonja platform. If you are interested in working with us, please check out our careers page for more information.
+

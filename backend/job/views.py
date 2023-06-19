@@ -13,7 +13,10 @@ from .models import CandidatesApplied, Job
 
 from django.shortcuts import get_object_or_404
 from .filters import JobsFilter
+import logging
 
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -43,6 +46,7 @@ def getJob(request, pk):
 
     serializer = JobSerializer(job, many=False)
 
+
     return Response({'job': serializer.data, 'candidates': candidates})
 
 @api_view(['POST'])
@@ -54,6 +58,9 @@ def newJob(request):
     job = Job.objects.create(**data)
 
     serializer = JobSerializer(job, many=False)
+
+    logger.info("new job was added")
+
     return Response(serializer.data)
 
 
@@ -62,6 +69,7 @@ def newJob(request):
 def updateJob(request, pk):
     job = get_object_or_404(Job, id=pk)
     if job.user != request.user:
+        logger.error('wrong user can not update this job')
         return Response({'message': 'You can not update this job'}, status=status.HTTP_403_FORBIDDEN)
 
     job.title = request.data['title']
@@ -79,6 +87,9 @@ def updateJob(request, pk):
     job.save()
 
     serializer = JobSerializer(job, many=False)
+
+    logger.info("job was updated")
+
     return Response(serializer.data)
 
 @api_view(['DELETE'])
@@ -91,6 +102,8 @@ def deleteJob(request, pk):
 
     job.delete()
 
+    logger.info("job was deleted")
+
     return Response({ 'message': 'Job is Deleted.' }, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
@@ -100,14 +113,17 @@ def applyToJob(request, pk):
     job = get_object_or_404(Job, id=pk)
 
     if user.userprofile.resume == '':
+        logger.error('apply to job without upload resume')
         return Response({'error': 'Please upload your resume first'}, status=status.HTTP_400_BAD_REQUEST)
 
     if job.lastDate < timezone.now():
+        logger.error('apply to expired job')
         return Response({'error': 'You can not apply to this job. Date is over'}, status=status.HTTP_400_BAD_REQUEST)
 
     alreadyApplied = job.candidatesapplied_set.filter(user=user).exists()
 
     if alreadyApplied:
+        logger.error('apply to job which already applied')
         return Response({'error': 'You have already apply to this job.'}, status=status.HTTP_400_BAD_REQUEST)
 
     jobApplied = CandidatesApplied.objects.create(
@@ -115,6 +131,8 @@ def applyToJob(request, pk):
         user=user,
         resume=user.userprofile.resume
     )
+
+    logger.info('successfully applied to job')
 
     return Response({
         'applied': True,
@@ -169,6 +187,7 @@ def getCandidatesApplied(request, pk):
     job = get_object_or_404(Job, id=pk)
 
     if job.user != user:
+        logger.error('wrong user can not access this job to get candidates')
         return Response({ 'error': 'You can not access this job' }, status=status.HTTP_403_FORBIDDEN)
 
     candidates = job.candidatesapplied_set.all()

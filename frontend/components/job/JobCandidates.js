@@ -1,13 +1,14 @@
-import React from "react";
-
-import Link from "next/link";
+import React, { useContext } from "react";
 import DataTable from "react-data-table-component";
 import eArabic from "./../../utils/eArabic";
 import moment from "moment";
 import "moment/locale/fa";
 import NoData from "./NoData";
+import AuthContext from "../../context/AuthContext";
 
-const JobCandidates = ({ candidatesApplied }) => {
+const JobCandidates = ({ candidatesApplied, access_token }) => {
+  const { downloadResume } = useContext(AuthContext);
+
   const columns = [
     {
       name: "عنوان آگهی",
@@ -33,6 +34,10 @@ const JobCandidates = ({ candidatesApplied }) => {
 
   const data = [];
 
+  const downloadResumeHandler = () => {
+    downloadResume(access_token);
+  };
+
   function generateText(candidatesLength) {
     if (candidatesLength === 0) return "فهرست متقاضیان";
     if (candidatesLength == 1) return "متقاضی برای این آگهی درخواست داده است.";
@@ -46,16 +51,14 @@ const JobCandidates = ({ candidatesApplied }) => {
         id: eArabic(item.user),
         salary: eArabic(item.salary),
         resume: (
-          <Link
-            href={`https://storage.jobinjacdn.com/records/files/uploads/documents/8b2bf974-5f1f-449d-8020-05731f5be933.pdf?requester=33312e372e3131392e3431&resource=753a32313037313839&from=63765f7472616e73&X-Amz-Content-Sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=oetSom924MQvtCRu9N6vvQ4bt8cG9HSpRnxWU756SyWy5NVt6nTpmfA9aV2b%2F20230421%2F%2Fs3%2Faws4_request&X-Amz-Date=20230421T095311Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=84f2740823359edf0518b5095031651fa0a87bc7a2200f8f3620f2db3f1963c4`}
-            className="text-success text-center ml-4"
-            rel="noreferrer"
-            target="_blank"
+          <button
+            className="text-success text-center ml-4 downloadButton"
+            onClick={downloadResumeHandler}
           >
             <b>
               <i aria-hidden className="fas fa-download"></i> دریافت رزومه
             </b>
-          </Link>
+          </button>
         ),
         appliedAt: moment(item.appliedAt.substring(0, 10))
           .locale("fa")
