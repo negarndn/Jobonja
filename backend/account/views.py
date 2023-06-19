@@ -113,6 +113,11 @@ def uploadResume(request):
 
     serializer = UserSerializer(user, many=False)
 
+    # Delete the previous resume if a new one is uploaded
+    if user.userprofile.resume:
+        if os.path.isfile(user.userprofile.resume.path):
+            os.remove(user.userprofile.resume.path)
+
     user.userprofile.resume = resume
     user.userprofile.save()
 
