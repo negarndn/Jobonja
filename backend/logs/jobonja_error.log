@@ -1,0 +1,571 @@
+WARNING 2023-05-25 23:48:19,423 django.request Thread-1 (process_request_thread) 12960 log log.py 241 django.request log_response 18560 Not Found: /
+WARNING 2023-05-25 23:48:19,425 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET / HTTP/1.1" 404 2495
+WARNING 2023-05-25 23:48:19,590 django.request Thread-1 (process_request_thread) 12960 log log.py 241 django.request log_response 18560 Not Found: /favicon.ico
+WARNING 2023-05-25 23:48:19,591 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /favicon.ico HTTP/1.1" 404 2546
+WARNING 2023-05-25 23:59:48,205 django.request Thread-5 (process_request_thread) 18428 log log.py 241 django.request log_response 16748 Bad Request: /api/jobs/1/apply/
+WARNING 2023-05-25 23:59:48,207 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/jobs/1/apply/ HTTP/1.1" 400 43
+WARNING 2023-05-26 00:24:04,360 django.request Thread-1 (process_request_thread) 14956 log log.py 241 django.request log_response 9316 Not Found: /
+WARNING 2023-05-26 00:24:04,362 django.server Thread-1 (process_request_thread) 14956 basehttp basehttp.py 187 django.server log_message 9316 "GET / HTTP/1.1" 404 2495
+WARNING 2023-05-26 00:24:58,973 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Bad Request: /api/register/
+WARNING 2023-05-26 00:24:58,977 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "POST /api/register/ HTTP/1.1" 400 31
+WARNING 2023-05-26 00:25:12,475 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Unauthorized: /api/upload/resume/
+WARNING 2023-05-26 00:25:12,478 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "PUT /api/upload/resume/ HTTP/1.1" 401 183
+WARNING 2023-05-26 00:25:26,818 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Unauthorized: /api/download/resume/
+WARNING 2023-05-26 00:25:26,825 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "GET /api/download/resume/ HTTP/1.1" 401 183
+WARNING 2023-06-19 21:38:48,666 django.request Thread-1 (process_request_thread) 16468 log log.py 241 django.request log_response 11372 Not Found: /
+WARNING 2023-06-19 21:38:48,667 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET / HTTP/1.1" 404 2495
+WARNING 2023-06-19 21:38:48,961 django.request Thread-1 (process_request_thread) 16468 log log.py 241 django.request log_response 11372 Not Found: /favicon.ico
+WARNING 2023-06-19 21:38:48,962 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /favicon.ico HTTP/1.1" 404 2546
+ERROR 2023-06-19 22:13:39,415 django.request Thread-1 (process_request_thread) 17096 log log.py 241 django.request log_response 17300 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 29, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 80, in open
+    self.connection = self.connection_class(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+ERROR 2023-06-19 22:13:39,428 django.server Thread-1 (process_request_thread) 17096 basehttp basehttp.py 187 django.server log_message 17300 "POST /api/register/ HTTP/1.1" 500 182470
+WARNING 2023-06-19 22:14:46,212 django.request Thread-1 (process_request_thread) 17276 log log.py 241 django.request log_response 19276 Bad Request: /api/register/
+WARNING 2023-06-19 22:14:46,213 django.server Thread-1 (process_request_thread) 17276 basehttp basehttp.py 187 django.server log_message 19276 "POST /api/register/ HTTP/1.1" 400 31
+WARNING 2023-06-19 22:15:04,395 django.request Thread-2 (process_request_thread) 2620 log log.py 241 django.request log_response 19276 Not Found: /
+WARNING 2023-06-19 22:15:04,397 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET / HTTP/1.1" 404 2495
+ERROR 2023-06-19 22:15:52,918 django.request Thread-1 (process_request_thread) 17276 log log.py 241 django.request log_response 19276 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 31, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 80, in open
+    self.connection = self.connection_class(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+ERROR 2023-06-19 22:15:52,931 django.server Thread-1 (process_request_thread) 17276 basehttp basehttp.py 187 django.server log_message 19276 "POST /api/register/ HTTP/1.1" 500 182230
+ERROR 2023-06-19 22:18:16,533 django.request Thread-2 (process_request_thread) 18376 log log.py 241 django.request log_response 19348 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 31, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials a18-20020ac25212000000b004f849379c0asm19098lfl.166 - gsmtp')
+ERROR 2023-06-19 22:18:16,544 django.server Thread-2 (process_request_thread) 18376 basehttp basehttp.py 187 django.server log_message 19348 "POST /api/register/ HTTP/1.1" 500 178134
+WARNING 2023-06-19 22:39:52,110 django.request Thread-1 (process_request_thread) 3504 log log.py 241 django.request log_response 19256 Not Found: /
+WARNING 2023-06-19 22:39:52,112 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET / HTTP/1.1" 404 2495
+WARNING 2023-06-19 22:56:19,714 django.request Thread-1 (process_request_thread) 14208 log log.py 241 django.request log_response 16464 Bad Request: /api/register/
+WARNING 2023-06-19 22:56:19,715 django.server Thread-1 (process_request_thread) 14208 basehttp basehttp.py 187 django.server log_message 16464 "POST /api/register/ HTTP/1.1" 400 31
+WARNING 2023-06-19 23:04:37,322 django.request Thread-1 (process_request_thread) 14984 log log.py 241 django.request log_response 7036 Not Found: /
+WARNING 2023-06-19 23:04:37,323 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET / HTTP/1.1" 404 2495
+ERROR 2023-06-20 15:38:58,889 django.request Thread-1 (process_request_thread) 9240 log log.py 241 django.request log_response 14344 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:38:58,891 django.server Thread-1 (process_request_thread) 9240 basehttp basehttp.py 187 django.server log_message 14344 "PUT /api/upload/resume/ HTTP/1.1" 500 41
+ERROR 2023-06-20 15:39:27,173 django.request Thread-1 (process_request_thread) 9240 log log.py 241 django.request log_response 14344 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:39:27,174 django.server Thread-1 (process_request_thread) 9240 basehttp basehttp.py 187 django.server log_message 14344 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+WARNING 2023-06-20 15:41:40,350 django.request Thread-1 (process_request_thread) 15900 log log.py 241 django.request log_response 15248 Unauthorized: /api/token/
+WARNING 2023-06-20 15:41:40,351 django.server Thread-1 (process_request_thread) 15900 basehttp basehttp.py 187 django.server log_message 15248 "POST /api/token/ HTTP/1.1" 401 63
+WARNING 2023-06-20 15:43:24,025 django.request Thread-1 (process_request_thread) 18868 log log.py 241 django.request log_response 11996 Unauthorized: /api/upload/resume/
+ERROR 2023-06-20 15:43:40,006 django.request Thread-2 (process_request_thread) 11124 log log.py 241 django.request log_response 11996 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:43:40,007 django.server Thread-2 (process_request_thread) 11124 basehttp basehttp.py 187 django.server log_message 11996 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+ERROR 2023-06-20 15:47:28,667 django.request Thread-1 (process_request_thread) 856 log log.py 241 django.request log_response 15588 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 87, in uploadResume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:47:28,678 django.server Thread-1 (process_request_thread) 856 basehttp basehttp.py 187 django.server log_message 15588 "PUT /api/upload/resume/ HTTP/1.1" 500 136335
+ERROR 2023-06-20 15:55:55,748 django.request Thread-1 (process_request_thread) 18852 log log.py 241 django.request log_response 7124 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 76, in uploadResume
+    user_service = UserService(UserRepository())
+TypeError: UserService.__init__() takes 1 positional argument but 2 were given
+ERROR 2023-06-20 15:55:55,757 django.server Thread-1 (process_request_thread) 18852 basehttp basehttp.py 187 django.server log_message 7124 "PUT /api/upload/resume/ HTTP/1.1" 500 107167
+ERROR 2023-06-20 15:57:25,455 django.request Thread-1 (process_request_thread) 3004 log log.py 241 django.request log_response 11536 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.update_resume(user, resume)
+AttributeError: 'UserService' object has no attribute 'update_resume'
+ERROR 2023-06-20 15:57:25,463 django.server Thread-1 (process_request_thread) 3004 basehttp basehttp.py 187 django.server log_message 11536 "PUT /api/upload/resume/ HTTP/1.1" 500 107408
+ERROR 2023-06-20 15:57:58,868 django.request Thread-1 (process_request_thread) 11728 log log.py 241 django.request log_response 4908 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py", line 28, in upload_resume
+    return self.user_repository.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py", line 61, in upload_resume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:57:58,879 django.server Thread-1 (process_request_thread) 11728 basehttp basehttp.py 187 django.server log_message 4908 "PUT /api/upload/resume/ HTTP/1.1" 500 144310
+ERROR 2023-06-20 15:59:11,599 django.request Thread-1 (process_request_thread) 16660 log log.py 241 django.request log_response 19812 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py", line 28, in upload_resume
+    return self.user_repository.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py", line 61, in upload_resume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:59:11,610 django.server Thread-1 (process_request_thread) 16660 basehttp basehttp.py 187 django.server log_message 19812 "PUT /api/upload/resume/ HTTP/1.1" 500 144310
+ERROR 2023-06-20 16:02:37,179 django.request Thread-1 (process_request_thread) 19664 log log.py 241 django.request log_response 15228 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 16:02:37,183 django.server Thread-1 (process_request_thread) 19664 basehttp basehttp.py 187 django.server log_message 15228 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+ERROR 2023-06-20 16:04:19,770 django.request Thread-1 (process_request_thread) 15812 log log.py 241 django.request log_response 19344 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 87, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:04:19,781 django.server Thread-1 (process_request_thread) 15812 basehttp basehttp.py 187 django.server log_message 19344 "PUT /api/upload/resume/ HTTP/1.1" 500 136994
+WARNING 2023-06-20 16:15:56,459 django.request Thread-1 (process_request_thread) 13764 log log.py 241 django.request log_response 5392 Not Found: /
+WARNING 2023-06-20 16:15:56,461 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET / HTTP/1.1" 404 2495
+ERROR 2023-06-20 16:18:50,430 django.request Thread-1 (process_request_thread) 720 log log.py 241 django.request log_response 840 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:18:50,444 django.server Thread-1 (process_request_thread) 720 basehttp basehttp.py 187 django.server log_message 840 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+ERROR 2023-06-20 16:20:52,005 django.request Thread-1 (process_request_thread) 15752 log log.py 241 django.request log_response 12480 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:20:52,018 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+ERROR 2023-06-20 16:21:26,600 django.request Thread-1 (process_request_thread) 15752 log log.py 241 django.request log_response 12480 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:21:26,606 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+ERROR 2023-06-20 16:23:26,040 django.request Thread-1 (process_request_thread) 7036 log log.py 241 django.request log_response 19140 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 121, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:23:26,046 django.server Thread-1 (process_request_thread) 7036 basehttp basehttp.py 187 django.server log_message 19140 "PUT /api/upload/resume/ HTTP/1.1" 500 136999

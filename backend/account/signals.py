@@ -1,19 +1,17 @@
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save, pre_save, pre_delete
-from account.models import UserProfile
+from .models import UserProfile
 from django.core.mail import send_mail
 from django.conf import settings
 import os
 
 
 
-
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, created, **kwargs):
     user = instance
-    print(user)
-
+    print(f'user created signal {user}')
     if created:
         profile = UserProfile(user=user)
         profile.save()
@@ -22,7 +20,6 @@ def save_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def send_welcome_email(sender, instance, created, **kwargs):
     if created:
-        print('email signal')
         user = instance
         subject = 'Welcome to Jobonja'
         message = f'Dear {user.first_name},\n\nWelcome to Jobonja! We are excited to have you join us.'

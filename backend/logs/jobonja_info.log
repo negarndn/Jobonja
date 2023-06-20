@@ -1,0 +1,827 @@
+INFO 2023-05-25 23:48:10,257 django.utils.autoreload MainThread 19148 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18560 Watching for file changes with StatReloader
+WARNING 2023-05-25 23:48:19,423 django.request Thread-1 (process_request_thread) 12960 log log.py 241 django.request log_response 18560 Not Found: /
+WARNING 2023-05-25 23:48:19,425 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET / HTTP/1.1" 404 2495
+WARNING 2023-05-25 23:48:19,590 django.request Thread-1 (process_request_thread) 12960 log log.py 241 django.request log_response 18560 Not Found: /favicon.ico
+WARNING 2023-05-25 23:48:19,591 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /favicon.ico HTTP/1.1" 404 2546
+WARNING 2023-05-25 23:48:24,980 django.security.SuspiciousSession Thread-1 (process_request_thread) 12960 base base.py 108 django.security.SuspiciousSession decode 18560 Session data corrupted
+INFO 2023-05-25 23:48:24,998 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /admin/ HTTP/1.1" 302 0
+WARNING 2023-05-25 23:48:25,070 django.security.SuspiciousSession Thread-1 (process_request_thread) 12960 base base.py 108 django.security.SuspiciousSession decode 18560 Session data corrupted
+INFO 2023-05-25 23:48:25,160 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218
+INFO 2023-05-25 23:48:25,525 django.server Thread-3 (process_request_thread) 3664 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2619
+INFO 2023-05-25 23:48:25,557 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/base.css HTTP/1.1" 200 20344
+INFO 2023-05-25 23:48:25,586 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2023-05-25 23:48:25,587 django.server Thread-2 (process_request_thread) 15684 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 796
+INFO 2023-05-25 23:48:25,588 django.server Thread-5 (process_request_thread) 13612 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18854
+INFO 2023-05-25 23:48:25,603 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2023-05-25 23:48:25,624 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3763
+INFO 2023-05-25 23:48:25,653 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2023-05-25 23:48:25,668 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+WARNING 2023-05-25 23:48:27,722 django.security.SuspiciousSession Thread-4 (process_request_thread) 14820 base base.py 108 django.security.SuspiciousSession decode 18560 Session data corrupted
+INFO 2023-05-25 23:48:28,025 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-05-25 23:48:28,150 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /admin/ HTTP/1.1" 200 5982
+INFO 2023-05-25 23:48:28,215 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2023-05-25 23:48:28,251 django.server Thread-5 (process_request_thread) 13612 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-05-25 23:48:28,253 django.server Thread-1 (process_request_thread) 12960 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-05-25 23:48:28,253 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-05-25 23:48:28,275 django.server Thread-4 (process_request_thread) 14820 basehttp basehttp.py 187 django.server log_message 18560 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2023-05-25 23:49:38,429 django.utils.autoreload MainThread 10672 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 16748 Watching for file changes with StatReloader
+INFO 2023-05-25 23:58:41,247 django.server Thread-1 (process_request_thread) 9688 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 301 0
+INFO 2023-05-25 23:58:41,379 django.server Thread-2 (process_request_thread) 8348 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 200 975
+INFO 2023-05-25 23:59:12,044 django.server Thread-3 (process_request_thread) 14124 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 301 0
+INFO 2023-05-25 23:59:12,367 django.server Thread-4 (process_request_thread) 10096 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 200 975
+INFO 2023-05-25 23:59:31,969 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "OPTIONS /api/register/ HTTP/1.1" 200 0
+INFO 2023-05-25 23:59:32,317 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-05-25 23:59:36,733 django.server Thread-7 (process_request_thread) 16660 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-05-25 23:59:37,035 django.server Thread-9 (process_request_thread) 1064 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 301 0
+INFO 2023-05-25 23:59:37,059 django.server Thread-8 (process_request_thread) 19988 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/me/ HTTP/1.1" 200 130
+INFO 2023-05-25 23:59:37,124 django.server Thread-10 (process_request_thread) 19620 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 200 975
+INFO 2023-05-25 23:59:42,768 django.server Thread-11 (process_request_thread) 20448 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1 HTTP/1.1" 200 339
+INFO 2023-05-25 23:59:42,822 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "OPTIONS /api/jobs/1/check/ HTTP/1.1" 200 0
+INFO 2023-05-25 23:59:42,903 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-25 23:59:42,977 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-25 23:59:48,129 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "OPTIONS /api/jobs/1/apply/ HTTP/1.1" 200 0
+WARNING 2023-05-25 23:59:48,205 django.request Thread-5 (process_request_thread) 18428 log log.py 241 django.request log_response 16748 Bad Request: /api/jobs/1/apply/
+WARNING 2023-05-25 23:59:48,207 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/jobs/1/apply/ HTTP/1.1" 400 43
+INFO 2023-05-25 23:59:48,301 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-25 23:59:48,400 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-25 23:59:55,202 django.server Thread-12 (process_request_thread) 12712 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/token/verify/ HTTP/1.1" 200 2
+INFO 2023-05-26 00:00:15,307 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "OPTIONS /api/upload/resume/ HTTP/1.1" 200 0
+INFO 2023-05-26 00:00:15,419 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "PUT /api/upload/resume/ HTTP/1.1" 200 137
+INFO 2023-05-26 00:00:15,445 django.server Thread-13 (process_request_thread) 19660 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/token/verify/ HTTP/1.1" 200 2
+INFO 2023-05-26 00:00:19,878 django.server Thread-14 (process_request_thread) 20420 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 301 0
+INFO 2023-05-26 00:00:19,941 django.server Thread-15 (process_request_thread) 2172 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/?keyword=&page=1&jobType=&education=&experience=&min_salary=&max_salary= HTTP/1.1" 200 975
+INFO 2023-05-26 00:00:22,251 django.server Thread-16 (process_request_thread) 16420 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1 HTTP/1.1" 200 339
+INFO 2023-05-26 00:00:22,359 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-26 00:00:22,424 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-05-26 00:00:25,736 django.server Thread-5 (process_request_thread) 18428 basehttp basehttp.py 187 django.server log_message 16748 "POST /api/jobs/1/apply/ HTTP/1.1" 200 27
+INFO 2023-05-26 00:21:45,520 django.utils.autoreload MainThread 17264 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9316 Watching for file changes with StatReloader
+WARNING 2023-05-26 00:24:04,360 django.request Thread-1 (process_request_thread) 14956 log log.py 241 django.request log_response 9316 Not Found: /
+WARNING 2023-05-26 00:24:04,362 django.server Thread-1 (process_request_thread) 14956 basehttp basehttp.py 187 django.server log_message 9316 "GET / HTTP/1.1" 404 2495
+INFO 2023-05-26 00:24:08,088 django.server Thread-1 (process_request_thread) 14956 basehttp basehttp.py 187 django.server log_message 9316 "GET /admin/ HTTP/1.1" 200 5982
+WARNING 2023-05-26 00:24:58,973 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Bad Request: /api/register/
+WARNING 2023-05-26 00:24:58,977 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "POST /api/register/ HTTP/1.1" 400 31
+INFO 2023-05-26 00:25:06,974 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "POST /api/register/ HTTP/1.1" 200 30
+WARNING 2023-05-26 00:25:12,475 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Unauthorized: /api/upload/resume/
+WARNING 2023-05-26 00:25:12,478 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "PUT /api/upload/resume/ HTTP/1.1" 401 183
+WARNING 2023-05-26 00:25:26,818 django.request Thread-2 (process_request_thread) 22356 log log.py 241 django.request log_response 9316 Unauthorized: /api/download/resume/
+WARNING 2023-05-26 00:25:26,825 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "GET /api/download/resume/ HTTP/1.1" 401 183
+INFO 2023-05-26 00:25:53,947 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-05-26 00:25:59,648 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "PUT /api/upload/resume/ HTTP/1.1" 200 144
+INFO 2023-05-26 00:26:03,866 django.server Thread-2 (process_request_thread) 22356 basehttp basehttp.py 187 django.server log_message 9316 "GET /api/download/resume/ HTTP/1.1" 200 787241
+INFO 2023-06-19 21:30:36,161 django.utils.autoreload MainThread 18132 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15984 Watching for file changes with StatReloader
+INFO 2023-06-19 21:37:42,582 django.utils.autoreload MainThread 15312 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18592 Watching for file changes with StatReloader
+INFO 2023-06-19 21:38:01,892 django.utils.autoreload MainThread 15312 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18592 E:\uni\Term 8\projects\OOD-Project\backend\account\apps.py changed, reloading.
+INFO 2023-06-19 21:38:02,596 django.utils.autoreload MainThread 7936 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19196 Watching for file changes with StatReloader
+INFO 2023-06-19 21:38:07,292 django.utils.autoreload MainThread 17692 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18532 Watching for file changes with StatReloader
+INFO 2023-06-19 21:38:28,772 django.utils.autoreload MainThread 19120 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 16196 Watching for file changes with StatReloader
+INFO 2023-06-19 21:38:45,189 django.utils.autoreload MainThread 11832 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11372 Watching for file changes with StatReloader
+WARNING 2023-06-19 21:38:48,666 django.request Thread-1 (process_request_thread) 16468 log log.py 241 django.request log_response 11372 Not Found: /
+WARNING 2023-06-19 21:38:48,667 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET / HTTP/1.1" 404 2495
+WARNING 2023-06-19 21:38:48,961 django.request Thread-1 (process_request_thread) 16468 log log.py 241 django.request log_response 11372 Not Found: /favicon.ico
+WARNING 2023-06-19 21:38:48,962 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /favicon.ico HTTP/1.1" 404 2546
+INFO 2023-06-19 21:38:53,102 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-06-19 21:38:53,230 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218
+INFO 2023-06-19 21:38:53,603 django.server Thread-2 (process_request_thread) 11936 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2619
+INFO 2023-06-19 21:38:53,607 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/base.css HTTP/1.1" 200 20344
+INFO 2023-06-19 21:38:53,610 django.server Thread-3 (process_request_thread) 3572 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 796
+INFO 2023-06-19 21:38:53,616 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18854
+INFO 2023-06-19 21:38:53,623 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2023-06-19 21:38:53,640 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2023-06-19 21:38:53,653 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3763
+INFO 2023-06-19 21:38:53,698 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2023-06-19 21:38:53,698 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2023-06-19 21:38:56,286 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-06-19 21:38:56,393 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/ HTTP/1.1" 200 5982
+INFO 2023-06-19 21:38:56,478 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2023-06-19 21:38:56,505 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-06-19 21:38:56,509 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-06-19 21:38:56,512 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-06-19 21:38:56,543 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2023-06-19 21:39:02,469 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/auth/user/add/ HTTP/1.1" 200 7988
+INFO 2023-06-19 21:39:02,590 django.server Thread-2 (process_request_thread) 11936 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2023-06-19 21:39:02,597 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/forms.css HTTP/1.1" 200 8944
+INFO 2023-06-19 21:39:02,637 django.server Thread-6 (process_request_thread) 19060 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8985
+INFO 2023-06-19 21:39:02,599 django.server Thread-3 (process_request_thread) 3572 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2023-06-19 21:39:02,655 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 21:39:02,673 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 288580
+INFO 2023-06-19 21:39:02,707 django.server Thread-3 (process_request_thread) 3572 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2023-06-19 21:39:02,710 django.server Thread-5 (process_request_thread) 15964 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-06-19 21:39:02,711 django.server Thread-2 (process_request_thread) 11936 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2023-06-19 21:39:02,713 django.server Thread-6 (process_request_thread) 19060 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+INFO 2023-06-19 21:39:02,730 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2023-06-19 21:39:02,769 django.server Thread-4 (process_request_thread) 13656 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-06-19 21:39:02,790 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2023-06-19 21:39:41,125 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "POST /admin/auth/user/add/ HTTP/1.1" 200 8365
+INFO 2023-06-19 21:39:41,273 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 21:40:04,034 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "POST /admin/auth/user/add/ HTTP/1.1" 200 8281
+INFO 2023-06-19 21:40:04,173 django.server Thread-1 (process_request_thread) 16468 basehttp basehttp.py 187 django.server log_message 11372 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 21:41:01,432 django.utils.autoreload MainThread 11464 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14428 Watching for file changes with StatReloader
+INFO 2023-06-19 21:42:07,651 django.server Thread-1 (process_request_thread) 15704 basehttp basehttp.py 187 django.server log_message 14428 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-06-19 21:43:44,879 django.utils.autoreload MainThread 11464 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14428 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 21:43:45,950 django.utils.autoreload MainThread 20316 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18296 Watching for file changes with StatReloader
+INFO 2023-06-19 21:43:59,961 django.utils.autoreload MainThread 20316 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18296 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 21:44:01,093 django.utils.autoreload MainThread 18636 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15400 Watching for file changes with StatReloader
+INFO 2023-06-19 21:45:01,688 django.utils.autoreload MainThread 18636 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15400 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 21:45:02,601 django.utils.autoreload MainThread 17224 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18416 Watching for file changes with StatReloader
+INFO 2023-06-19 22:06:57,179 django.utils.autoreload MainThread 17224 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18416 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 22:06:58,201 django.utils.autoreload MainThread 8436 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15684 Watching for file changes with StatReloader
+INFO 2023-06-19 22:07:31,270 django.utils.autoreload MainThread 8436 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15684 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 22:07:32,747 django.utils.autoreload MainThread 20256 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19652 Watching for file changes with StatReloader
+INFO 2023-06-19 22:08:10,938 django.utils.autoreload MainThread 20256 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19652 E:\uni\Term 8\projects\OOD-Project\backend\backend\settings.py changed, reloading.
+INFO 2023-06-19 22:08:12,264 django.utils.autoreload MainThread 15496 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11952 Watching for file changes with StatReloader
+INFO 2023-06-19 22:12:21,148 django.utils.autoreload MainThread 15496 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11952 E:\uni\Term 8\projects\OOD-Project\backend\backend\settings.py changed, reloading.
+INFO 2023-06-19 22:12:22,258 django.utils.autoreload MainThread 17996 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19976 Watching for file changes with StatReloader
+INFO 2023-06-19 22:12:57,929 django.utils.autoreload MainThread 17336 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18812 Watching for file changes with StatReloader
+INFO 2023-06-19 22:13:08,931 django.utils.autoreload MainThread 17336 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18812 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 22:13:09,848 django.utils.autoreload MainThread 19184 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17300 Watching for file changes with StatReloader
+ERROR 2023-06-19 22:13:39,415 django.request Thread-1 (process_request_thread) 17096 log log.py 241 django.request log_response 17300 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 29, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 80, in open
+    self.connection = self.connection_class(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+ERROR 2023-06-19 22:13:39,428 django.server Thread-1 (process_request_thread) 17096 basehttp basehttp.py 187 django.server log_message 17300 "POST /api/register/ HTTP/1.1" 500 182470
+INFO 2023-06-19 22:14:38,615 django.utils.autoreload MainThread 19184 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17300 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 22:14:39,519 django.utils.autoreload MainThread 17888 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19276 Watching for file changes with StatReloader
+WARNING 2023-06-19 22:14:46,212 django.request Thread-1 (process_request_thread) 17276 log log.py 241 django.request log_response 19276 Bad Request: /api/register/
+WARNING 2023-06-19 22:14:46,213 django.server Thread-1 (process_request_thread) 17276 basehttp basehttp.py 187 django.server log_message 19276 "POST /api/register/ HTTP/1.1" 400 31
+WARNING 2023-06-19 22:15:04,395 django.request Thread-2 (process_request_thread) 2620 log log.py 241 django.request log_response 19276 Not Found: /
+WARNING 2023-06-19 22:15:04,397 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET / HTTP/1.1" 404 2495
+INFO 2023-06-19 22:15:08,511 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /admin/ HTTP/1.1" 200 5982
+INFO 2023-06-19 22:15:11,982 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /admin/auth/user/ HTTP/1.1" 200 12350
+INFO 2023-06-19 22:15:12,184 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:15:12,270 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6395
+INFO 2023-06-19 22:15:12,289 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2023-06-19 22:15:12,311 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2023-06-19 22:15:12,322 django.server Thread-4 (process_request_thread) 20312 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2023-06-19 22:15:12,340 django.server Thread-2 (process_request_thread) 2620 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2023-06-19 22:15:12,349 django.server Thread-4 (process_request_thread) 20312 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2023-06-19 22:15:12,353 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/js/filters.js HTTP/1.1" 200 966
+INFO 2023-06-19 22:15:41,712 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "POST /admin/auth/user/ HTTP/1.1" 200 6773
+INFO 2023-06-19 22:15:41,802 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2023-06-19 22:15:43,665 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-19 22:15:43,749 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "GET /admin/auth/user/ HTTP/1.1" 200 9482
+INFO 2023-06-19 22:15:43,892 django.server Thread-3 (process_request_thread) 20056 basehttp basehttp.py 187 django.server log_message 19276 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-06-19 22:15:52,918 django.request Thread-1 (process_request_thread) 17276 log log.py 241 django.request log_response 19276 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 31, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 80, in open
+    self.connection = self.connection_class(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+ERROR 2023-06-19 22:15:52,931 django.server Thread-1 (process_request_thread) 17276 basehttp basehttp.py 187 django.server log_message 19276 "POST /api/register/ HTTP/1.1" 500 182230
+INFO 2023-06-19 22:17:49,806 django.utils.autoreload MainThread 17888 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19276 E:\uni\Term 8\projects\OOD-Project\backend\backend\settings.py changed, reloading.
+INFO 2023-06-19 22:17:50,609 django.utils.autoreload MainThread 15800 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19348 Watching for file changes with StatReloader
+INFO 2023-06-19 22:17:58,927 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "GET /admin/auth/user/ HTTP/1.1" 200 9788
+INFO 2023-06-19 22:17:59,096 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:18:05,932 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "POST /admin/auth/user/ HTTP/1.1" 200 5535
+INFO 2023-06-19 22:18:07,513 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-19 22:18:07,596 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "GET /admin/auth/user/ HTTP/1.1" 200 9481
+INFO 2023-06-19 22:18:07,742 django.server Thread-1 (process_request_thread) 15436 basehttp basehttp.py 187 django.server log_message 19348 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-06-19 22:18:16,533 django.request Thread-2 (process_request_thread) 18376 log log.py 241 django.request log_response 19348 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 24, in register
+    user = User.objects.create(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\contrib\auth\base_user.py", line 68, in save
+    super().save(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 878, in save_base
+    post_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 31, in send_welcome_email
+    send_mail(subject, message, from_email, to_email)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\__init__.py", line 87, in send_mail
+    return mail.send()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials a18-20020ac25212000000b004f849379c0asm19098lfl.166 - gsmtp')
+ERROR 2023-06-19 22:18:16,544 django.server Thread-2 (process_request_thread) 18376 basehttp basehttp.py 187 django.server log_message 19348 "POST /api/register/ HTTP/1.1" 500 178134
+INFO 2023-06-19 22:38:56,874 django.utils.autoreload MainThread 15800 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19348 E:\uni\Term 8\projects\OOD-Project\backend\backend\settings.py changed, reloading.
+INFO 2023-06-19 22:38:58,491 django.utils.autoreload MainThread 16144 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19256 Watching for file changes with StatReloader
+WARNING 2023-06-19 22:39:52,110 django.request Thread-1 (process_request_thread) 3504 log log.py 241 django.request log_response 19256 Not Found: /
+WARNING 2023-06-19 22:39:52,112 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET / HTTP/1.1" 404 2495
+INFO 2023-06-19 22:39:56,490 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET /admin/ HTTP/1.1" 200 6757
+INFO 2023-06-19 22:39:59,034 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET /admin/auth/user/ HTTP/1.1" 200 9788
+INFO 2023-06-19 22:39:59,217 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:40:04,777 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "POST /admin/auth/user/ HTTP/1.1" 200 5535
+INFO 2023-06-19 22:40:06,381 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-19 22:40:06,461 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET /admin/auth/user/ HTTP/1.1" 200 9481
+INFO 2023-06-19 22:40:06,600 django.server Thread-1 (process_request_thread) 3504 basehttp basehttp.py 187 django.server log_message 19256 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:40:20,577 django.server Thread-2 (process_request_thread) 14612 basehttp basehttp.py 187 django.server log_message 19256 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-06-19 22:42:33,792 django.utils.autoreload MainThread 20224 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19388 Watching for file changes with StatReloader
+INFO 2023-06-19 22:42:35,853 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "GET /admin/auth/user/ HTTP/1.1" 200 9788
+INFO 2023-06-19 22:42:36,054 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:42:41,664 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "POST /admin/auth/user/ HTTP/1.1" 200 5535
+INFO 2023-06-19 22:42:43,189 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-19 22:42:43,271 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "GET /admin/auth/user/ HTTP/1.1" 200 9481
+INFO 2023-06-19 22:42:43,422 django.server Thread-1 (process_request_thread) 3832 basehttp basehttp.py 187 django.server log_message 19388 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 22:42:50,588 django.utils.autoreload MainThread 3904 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9824 Watching for file changes with StatReloader
+INFO 2023-06-19 22:43:01,459 django.server Thread-1 (process_request_thread) 8800 basehttp basehttp.py 187 django.server log_message 9824 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-06-19 22:46:16,491 django.utils.autoreload MainThread 3904 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9824 E:\uni\Term 8\projects\OOD-Project\backend\account\models.py changed, reloading.
+INFO 2023-06-19 22:46:17,456 django.utils.autoreload MainThread 18872 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17216 Watching for file changes with StatReloader
+INFO 2023-06-19 22:56:09,688 django.utils.autoreload MainThread 15056 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 16464 Watching for file changes with StatReloader
+WARNING 2023-06-19 22:56:19,714 django.request Thread-1 (process_request_thread) 14208 log log.py 241 django.request log_response 16464 Bad Request: /api/register/
+WARNING 2023-06-19 22:56:19,715 django.server Thread-1 (process_request_thread) 14208 basehttp basehttp.py 187 django.server log_message 16464 "POST /api/register/ HTTP/1.1" 400 31
+INFO 2023-06-19 22:59:37,753 django.utils.autoreload MainThread 15056 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 16464 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-19 22:59:38,689 django.utils.autoreload MainThread 18896 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18864 Watching for file changes with StatReloader
+INFO 2023-06-19 23:00:37,548 django.utils.autoreload MainThread 18896 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18864 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-19 23:00:38,352 django.utils.autoreload MainThread 784 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19120 Watching for file changes with StatReloader
+INFO 2023-06-19 23:01:03,067 django.server Thread-1 (process_request_thread) 20108 basehttp basehttp.py 187 django.server log_message 19120 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-19 23:01:10,353 django.server Thread-1 (process_request_thread) 20108 basehttp basehttp.py 187 django.server log_message 19120 "PUT /api/upload/resume/ HTTP/1.1" 200 168
+INFO 2023-06-19 23:01:31,951 django.server Thread-1 (process_request_thread) 20108 basehttp basehttp.py 187 django.server log_message 19120 "PUT /api/upload/resume/ HTTP/1.1" 200 160
+INFO 2023-06-19 23:02:00,631 django.server Thread-1 (process_request_thread) 20108 basehttp basehttp.py 187 django.server log_message 19120 "PUT /api/upload/resume/ HTTP/1.1" 200 150
+INFO 2023-06-19 23:04:26,004 django.utils.autoreload MainThread 784 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19120 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 23:04:27,135 django.utils.autoreload MainThread 18124 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7036 Watching for file changes with StatReloader
+WARNING 2023-06-19 23:04:37,322 django.request Thread-1 (process_request_thread) 14984 log log.py 241 django.request log_response 7036 Not Found: /
+WARNING 2023-06-19 23:04:37,323 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET / HTTP/1.1" 404 2495
+INFO 2023-06-19 23:04:41,529 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET /admin/ HTTP/1.1" 200 6773
+INFO 2023-06-19 23:04:43,671 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET /admin/auth/user/ HTTP/1.1" 200 9788
+INFO 2023-06-19 23:04:43,853 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 23:04:59,244 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "POST /admin/auth/user/ HTTP/1.1" 200 5535
+INFO 2023-06-19 23:05:00,812 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-19 23:05:00,893 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET /admin/auth/user/ HTTP/1.1" 200 9481
+INFO 2023-06-19 23:05:01,031 django.server Thread-1 (process_request_thread) 14984 basehttp basehttp.py 187 django.server log_message 7036 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-19 23:38:08,850 django.utils.autoreload MainThread 18124 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7036 E:\uni\Term 8\projects\OOD-Project\backend\job\models.py changed, reloading.
+INFO 2023-06-19 23:38:10,710 django.utils.autoreload MainThread 800 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 9124 Watching for file changes with StatReloader
+INFO 2023-06-19 23:45:16,515 django.utils.autoreload MainThread 800 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9124 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-19 23:45:19,017 django.utils.autoreload MainThread 11840 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13308 Watching for file changes with StatReloader
+INFO 2023-06-20 15:33:24,785 django.utils.autoreload MainThread 5544 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19856 Watching for file changes with StatReloader
+INFO 2023-06-20 15:33:53,380 django.utils.autoreload MainThread 5544 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19856 E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py changed, reloading.
+INFO 2023-06-20 15:33:54,204 django.utils.autoreload MainThread 16064 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17960 Watching for file changes with StatReloader
+INFO 2023-06-20 15:34:26,092 django.utils.autoreload MainThread 16064 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17960 E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py changed, reloading.
+INFO 2023-06-20 15:34:27,002 django.utils.autoreload MainThread 18008 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18736 Watching for file changes with StatReloader
+INFO 2023-06-20 15:34:57,992 django.utils.autoreload MainThread 18008 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18736 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 15:34:58,850 django.utils.autoreload MainThread 8888 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18832 Watching for file changes with StatReloader
+INFO 2023-06-20 15:35:23,233 django.server Thread-1 (process_request_thread) 4100 basehttp basehttp.py 187 django.server log_message 18832 "POST /api/register/ HTTP/1.1" 200 152
+INFO 2023-06-20 15:35:45,857 django.server Thread-1 (process_request_thread) 4100 basehttp basehttp.py 187 django.server log_message 18832 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-20 15:36:03,449 django.server Thread-1 (process_request_thread) 4100 basehttp basehttp.py 187 django.server log_message 18832 "GET /api/me/ HTTP/1.1" 200 114
+INFO 2023-06-20 15:36:27,202 django.server Thread-1 (process_request_thread) 4100 basehttp basehttp.py 187 django.server log_message 18832 "PUT /api/me/update/ HTTP/1.1" 200 116
+INFO 2023-06-20 15:37:09,092 django.utils.autoreload MainThread 8888 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18832 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 15:37:10,577 django.utils.autoreload MainThread 12592 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14344 Watching for file changes with StatReloader
+INFO 2023-06-20 15:37:13,868 django.server Thread-1 (process_request_thread) 9240 basehttp basehttp.py 187 django.server log_message 14344 "PUT /api/me/update/ HTTP/1.1" 200 114
+ERROR 2023-06-20 15:38:58,889 django.request Thread-1 (process_request_thread) 9240 log log.py 241 django.request log_response 14344 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:38:58,891 django.server Thread-1 (process_request_thread) 9240 basehttp basehttp.py 187 django.server log_message 14344 "PUT /api/upload/resume/ HTTP/1.1" 500 41
+ERROR 2023-06-20 15:39:27,173 django.request Thread-1 (process_request_thread) 9240 log log.py 241 django.request log_response 14344 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:39:27,174 django.server Thread-1 (process_request_thread) 9240 basehttp basehttp.py 187 django.server log_message 14344 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+INFO 2023-06-20 15:41:18,562 django.utils.autoreload MainThread 12592 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14344 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-20 15:41:20,662 django.utils.autoreload MainThread 18768 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15248 Watching for file changes with StatReloader
+WARNING 2023-06-20 15:41:40,350 django.request Thread-1 (process_request_thread) 15900 log log.py 241 django.request log_response 15248 Unauthorized: /api/token/
+WARNING 2023-06-20 15:41:40,351 django.server Thread-1 (process_request_thread) 15900 basehttp basehttp.py 187 django.server log_message 15248 "POST /api/token/ HTTP/1.1" 401 63
+INFO 2023-06-20 15:42:10,687 django.server Thread-1 (process_request_thread) 15900 basehttp basehttp.py 187 django.server log_message 15248 "POST /api/register/ HTTP/1.1" 200 152
+INFO 2023-06-20 15:42:41,776 django.utils.autoreload MainThread 18768 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15248 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-20 15:42:42,877 django.utils.autoreload MainThread 12816 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11996 Watching for file changes with StatReloader
+INFO 2023-06-20 15:42:53,884 django.server Thread-1 (process_request_thread) 18868 basehttp basehttp.py 187 django.server log_message 11996 "POST /api/register/ HTTP/1.1" 200 152
+WARNING 2023-06-20 15:43:24,025 django.request Thread-1 (process_request_thread) 18868 log log.py 241 django.request log_response 11996 Unauthorized: /api/upload/resume/
+INFO 2023-06-20 15:43:36,174 django.server Thread-2 (process_request_thread) 11124 basehttp basehttp.py 187 django.server log_message 11996 "POST /api/token/ HTTP/1.1" 200 486
+ERROR 2023-06-20 15:43:40,006 django.request Thread-2 (process_request_thread) 11124 log log.py 241 django.request log_response 11996 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 15:43:40,007 django.server Thread-2 (process_request_thread) 11124 basehttp basehttp.py 187 django.server log_message 11996 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+INFO 2023-06-20 15:47:03,491 django.utils.autoreload MainThread 12816 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11996 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:47:05,224 django.utils.autoreload MainThread 11008 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8724 Watching for file changes with StatReloader
+INFO 2023-06-20 15:47:22,510 django.utils.autoreload MainThread 11008 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8724 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:47:24,093 django.utils.autoreload MainThread 4772 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15588 Watching for file changes with StatReloader
+ERROR 2023-06-20 15:47:28,667 django.request Thread-1 (process_request_thread) 856 log log.py 241 django.request log_response 15588 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 87, in uploadResume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:47:28,678 django.server Thread-1 (process_request_thread) 856 basehttp basehttp.py 187 django.server log_message 15588 "PUT /api/upload/resume/ HTTP/1.1" 500 136335
+INFO 2023-06-20 15:48:35,028 django.utils.autoreload MainThread 4772 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15588 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:48:35,928 django.utils.autoreload MainThread 13196 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3284 Watching for file changes with StatReloader
+INFO 2023-06-20 15:52:00,662 django.utils.autoreload MainThread 13196 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3284 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:52:01,703 django.utils.autoreload MainThread 1420 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20312 Watching for file changes with StatReloader
+INFO 2023-06-20 15:54:03,809 django.utils.autoreload MainThread 1420 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20312 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 15:54:04,875 django.utils.autoreload MainThread 17020 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 16520 Watching for file changes with StatReloader
+INFO 2023-06-20 15:54:32,566 django.utils.autoreload MainThread 17020 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 16520 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 15:54:33,520 django.utils.autoreload MainThread 17544 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18288 Watching for file changes with StatReloader
+INFO 2023-06-20 15:55:04,476 django.utils.autoreload MainThread 17544 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18288 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 15:55:05,267 django.utils.autoreload MainThread 17048 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14532 Watching for file changes with StatReloader
+INFO 2023-06-20 15:55:45,815 django.utils.autoreload MainThread 17048 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14532 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:55:46,583 django.utils.autoreload MainThread 8744 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7124 Watching for file changes with StatReloader
+ERROR 2023-06-20 15:55:55,748 django.request Thread-1 (process_request_thread) 18852 log log.py 241 django.request log_response 7124 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 76, in uploadResume
+    user_service = UserService(UserRepository())
+TypeError: UserService.__init__() takes 1 positional argument but 2 were given
+ERROR 2023-06-20 15:55:55,757 django.server Thread-1 (process_request_thread) 18852 basehttp basehttp.py 187 django.server log_message 7124 "PUT /api/upload/resume/ HTTP/1.1" 500 107167
+INFO 2023-06-20 15:57:21,084 django.utils.autoreload MainThread 8744 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7124 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:57:21,894 django.utils.autoreload MainThread 19104 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11536 Watching for file changes with StatReloader
+ERROR 2023-06-20 15:57:25,455 django.request Thread-1 (process_request_thread) 3004 log log.py 241 django.request log_response 11536 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.update_resume(user, resume)
+AttributeError: 'UserService' object has no attribute 'update_resume'
+ERROR 2023-06-20 15:57:25,463 django.server Thread-1 (process_request_thread) 3004 basehttp basehttp.py 187 django.server log_message 11536 "PUT /api/upload/resume/ HTTP/1.1" 500 107408
+INFO 2023-06-20 15:57:55,308 django.utils.autoreload MainThread 19104 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11536 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 15:57:56,045 django.utils.autoreload MainThread 19688 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 4908 Watching for file changes with StatReloader
+ERROR 2023-06-20 15:57:58,868 django.request Thread-1 (process_request_thread) 11728 log log.py 241 django.request log_response 4908 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py", line 28, in upload_resume
+    return self.user_repository.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py", line 61, in upload_resume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:57:58,879 django.server Thread-1 (process_request_thread) 11728 basehttp basehttp.py 187 django.server log_message 4908 "PUT /api/upload/resume/ HTTP/1.1" 500 144310
+INFO 2023-06-20 15:59:00,420 django.utils.autoreload MainThread 19688 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4908 E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py changed, reloading.
+INFO 2023-06-20 15:59:01,158 django.utils.autoreload MainThread 3144 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19812 Watching for file changes with StatReloader
+ERROR 2023-06-20 15:59:11,599 django.request Thread-1 (process_request_thread) 16660 log log.py 241 django.request log_response 19812 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 77, in uploadResume
+    user_service.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py", line 28, in upload_resume
+    return self.user_repository.upload_resume(user, resume)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py", line 61, in upload_resume
+    user_profile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 15:59:11,610 django.server Thread-1 (process_request_thread) 16660 basehttp basehttp.py 187 django.server log_message 19812 "PUT /api/upload/resume/ HTTP/1.1" 500 144310
+INFO 2023-06-20 16:00:35,588 django.utils.autoreload MainThread 3144 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19812 E:\uni\Term 8\projects\OOD-Project\backend\account\services\user_service.py changed, reloading.
+INFO 2023-06-20 16:00:37,276 django.utils.autoreload MainThread 13704 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 5056 Watching for file changes with StatReloader
+INFO 2023-06-20 16:01:26,072 django.utils.autoreload MainThread 13704 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5056 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 16:01:27,101 django.utils.autoreload MainThread 464 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11916 Watching for file changes with StatReloader
+INFO 2023-06-20 16:02:32,574 django.utils.autoreload MainThread 464 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11916 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 16:02:33,585 django.utils.autoreload MainThread 12620 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15228 Watching for file changes with StatReloader
+ERROR 2023-06-20 16:02:37,179 django.request Thread-1 (process_request_thread) 19664 log log.py 241 django.request log_response 15228 Internal Server Error: /api/upload/resume/
+ERROR 2023-06-20 16:02:37,183 django.server Thread-1 (process_request_thread) 19664 basehttp basehttp.py 187 django.server log_message 15228 "PUT /api/upload/resume/ HTTP/1.1" 500 57
+INFO 2023-06-20 16:04:12,464 django.utils.autoreload MainThread 12620 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15228 E:\uni\Term 8\projects\OOD-Project\backend\account\repositories\user_repository.py changed, reloading.
+INFO 2023-06-20 16:04:13,879 django.utils.autoreload MainThread 15588 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19344 Watching for file changes with StatReloader
+ERROR 2023-06-20 16:04:19,770 django.request Thread-1 (process_request_thread) 15812 log log.py 241 django.request log_response 19344 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 87, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:04:19,781 django.server Thread-1 (process_request_thread) 15812 basehttp basehttp.py 187 django.server log_message 19344 "PUT /api/upload/resume/ HTTP/1.1" 500 136994
+INFO 2023-06-20 16:15:54,535 django.utils.autoreload MainThread 18736 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 5392 Watching for file changes with StatReloader
+WARNING 2023-06-20 16:15:56,459 django.request Thread-1 (process_request_thread) 13764 log log.py 241 django.request log_response 5392 Not Found: /
+WARNING 2023-06-20 16:15:56,461 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET / HTTP/1.1" 404 2495
+INFO 2023-06-20 16:16:01,257 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET /admin/ HTTP/1.1" 200 6774
+INFO 2023-06-20 16:16:04,020 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET /admin/auth/user/ HTTP/1.1" 200 10622
+INFO 2023-06-20 16:16:04,231 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 16:16:14,349 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "POST /admin/auth/user/ HTTP/1.1" 200 5940
+INFO 2023-06-20 16:16:15,421 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2023-06-20 16:16:15,502 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET /admin/auth/user/ HTTP/1.1" 200 9482
+INFO 2023-06-20 16:16:15,650 django.server Thread-1 (process_request_thread) 13764 basehttp basehttp.py 187 django.server log_message 5392 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 16:18:09,325 django.utils.autoreload MainThread 16852 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 840 Watching for file changes with StatReloader
+INFO 2023-06-20 16:18:29,875 django.server Thread-1 (process_request_thread) 720 basehttp basehttp.py 187 django.server log_message 840 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-06-20 16:18:44,062 django.server Thread-1 (process_request_thread) 720 basehttp basehttp.py 187 django.server log_message 840 "POST /api/token/ HTTP/1.1" 200 486
+ERROR 2023-06-20 16:18:50,430 django.request Thread-1 (process_request_thread) 720 log log.py 241 django.request log_response 840 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:18:50,444 django.server Thread-1 (process_request_thread) 720 basehttp basehttp.py 187 django.server log_message 840 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+INFO 2023-06-20 16:20:14,712 django.utils.autoreload MainThread 16852 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 840 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-20 16:20:16,216 django.utils.autoreload MainThread 12236 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14220 Watching for file changes with StatReloader
+INFO 2023-06-20 16:20:44,204 django.utils.autoreload MainThread 12236 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14220 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-20 16:20:45,344 django.utils.autoreload MainThread 13408 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12480 Watching for file changes with StatReloader
+ERROR 2023-06-20 16:20:52,005 django.request Thread-1 (process_request_thread) 15752 log log.py 241 django.request log_response 12480 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:20:52,018 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+INFO 2023-06-20 16:21:14,086 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "POST /api/register/ HTTP/1.1" 200 30
+INFO 2023-06-20 16:21:22,333 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "POST /api/token/ HTTP/1.1" 200 486
+ERROR 2023-06-20 16:21:26,600 django.request Thread-1 (process_request_thread) 15752 log log.py 241 django.request log_response 12480 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 122, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:21:26,606 django.server Thread-1 (process_request_thread) 15752 basehttp basehttp.py 187 django.server log_message 12480 "PUT /api/upload/resume/ HTTP/1.1" 500 136999
+INFO 2023-06-20 16:23:16,070 django.utils.autoreload MainThread 13408 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12480 E:\uni\Term 8\projects\OOD-Project\backend\account\views.py changed, reloading.
+INFO 2023-06-20 16:23:16,989 django.utils.autoreload MainThread 8548 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19140 Watching for file changes with StatReloader
+ERROR 2023-06-20 16:23:26,040 django.request Thread-1 (process_request_thread) 7036 log log.py 241 django.request log_response 19140 Internal Server Error: /api/upload/resume/
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\views.py", line 121, in uploadResume
+    user.userprofile.save()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py", line 37, in delete_previous_resume
+    if os.path.isfile(old_resume.path):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 60, in path
+    self._require_file()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\db\models\fields\files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'resume' attribute has no file associated with it.
+ERROR 2023-06-20 16:23:26,046 django.server Thread-1 (process_request_thread) 7036 basehttp basehttp.py 187 django.server log_message 19140 "PUT /api/upload/resume/ HTTP/1.1" 500 136999

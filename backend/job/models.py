@@ -70,7 +70,6 @@ class Job(models.Model):
     salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100000000)])
     positions = models.IntegerField(default=1)
     company = models.CharField(max_length=250, null=True)
-    # point = gismodels.PointField(default=Point(0.0, 0.0))
     lastDate = models.DateTimeField(default=return_date_time)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     createAt = models.DateTimeField(auto_now_add=True)

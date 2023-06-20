@@ -1,5 +1,4 @@
 import os
-
 from django.http import FileResponse
 from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
