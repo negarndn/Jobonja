@@ -4,3 +4,258 @@ INFO 2023-06-20 16:42:56,840 django.server Thread-1 (process_request_thread) 165
 INFO 2023-06-20 16:43:00,438 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 141
 INFO 2023-06-20 16:43:40,390 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 141
 INFO 2023-06-20 16:43:58,442 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 135
+INFO 2023-06-20 17:34:12,823 django.utils.autoreload MainThread 3596 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3292 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 17:34:13,998 django.utils.autoreload MainThread 7560 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10740 Watching for file changes with StatReloader
+INFO 2023-06-20 17:35:42,951 django.utils.autoreload MainThread 7560 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10740 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 17:35:44,184 django.utils.autoreload MainThread 13244 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15812 Watching for file changes with StatReloader
+INFO 2023-06-20 17:37:25,536 django.utils.autoreload MainThread 13244 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15812 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 17:37:26,362 django.utils.autoreload MainThread 6464 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13992 Watching for file changes with StatReloader
+INFO 2023-06-20 17:37:53,922 django.utils.autoreload MainThread 6464 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13992 E:\uni\Term 8\projects\OOD-Project\backend\job\services\job_service.py changed, reloading.
+INFO 2023-06-20 17:37:54,796 django.utils.autoreload MainThread 2628 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 10020 Watching for file changes with StatReloader
+INFO 2023-06-20 17:38:00,356 django.server Thread-1 (process_request_thread) 14164 basehttp basehttp.py 187 django.server log_message 10020 "GET /api/jobs/ HTTP/1.1" 200 975
+ERROR 2023-06-20 17:38:13,434 django.request Thread-1 (process_request_thread) 14164 log log.py 241 django.request log_response 10020 Internal Server Error: /api/jobs/2
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type CandidatesApplied is not JSON serializable
+ERROR 2023-06-20 17:38:13,444 django.server Thread-1 (process_request_thread) 14164 basehttp basehttp.py 187 django.server log_message 10020 "GET /api/jobs/2 HTTP/1.1" 500 114322
+INFO 2023-06-20 17:46:44,852 django.utils.autoreload MainThread 2628 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10020 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 17:46:45,613 django.utils.autoreload MainThread 3516 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7652 Watching for file changes with StatReloader
+INFO 2023-06-20 17:46:49,171 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/2 HTTP/1.1" 200 333
+WARNING 2023-06-20 17:47:11,170 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/new/
+WARNING 2023-06-20 17:47:11,172 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "POST /api/jobs/new/?Title=job2&Description=test2&Email=job2@email.com&Address=test2&JobType=Permanent&Education=Masters&Industry=It&Experience=One%20Year&Salary=100000&Positions=2&Company=tech&LastDate=2023-08-24&User=negar HTTP/1.1" 401 58
+WARNING 2023-06-20 17:47:31,982 django.request Thread-2 (process_request_thread) 13108 log log.py 241 django.request log_response 7652 Not Found: /
+WARNING 2023-06-20 17:47:31,985 django.server Thread-2 (process_request_thread) 13108 basehttp basehttp.py 187 django.server log_message 7652 "GET / HTTP/1.1" 404 2495
+INFO 2023-06-20 17:47:35,665 django.server Thread-2 (process_request_thread) 13108 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/ HTTP/1.1" 200 6775
+INFO 2023-06-20 17:47:37,905 django.server Thread-2 (process_request_thread) 13108 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/add/ HTTP/1.1" 200 14368
+INFO 2023-06-20 17:47:38,128 django.server Thread-3 (process_request_thread) 12636 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:47:38,190 django.server Thread-2 (process_request_thread) 13108 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2023-06-20 17:47:38,199 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+INFO 2023-06-20 17:47:38,215 django.server Thread-4 (process_request_thread) 6300 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19379
+INFO 2023-06-20 17:47:38,245 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-06-20 17:47:38,261 django.server Thread-4 (process_request_thread) 6300 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-06-20 17:47:38,368 django.server Thread-4 (process_request_thread) 6300 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-06-20 17:47:38,396 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2023-06-20 17:47:55,369 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+INFO 2023-06-20 17:48:04,479 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "POST /admin/job/job/add/ HTTP/1.1" 200 14566
+INFO 2023-06-20 17:48:04,646 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:48:12,792 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "POST /admin/job/job/add/ HTTP/1.1" 302 0
+INFO 2023-06-20 17:48:12,883 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/ HTTP/1.1" 200 7285
+INFO 2023-06-20 17:48:13,050 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:48:28,814 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/add/ HTTP/1.1" 200 14368
+INFO 2023-06-20 17:48:29,021 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:48:45,328 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "POST /admin/job/job/add/ HTTP/1.1" 200 14578
+INFO 2023-06-20 17:48:45,481 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:48:54,235 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "POST /admin/job/job/add/ HTTP/1.1" 302 0
+INFO 2023-06-20 17:48:54,319 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/ HTTP/1.1" 200 7493
+INFO 2023-06-20 17:48:54,480 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:49:15,561 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/ HTTP/1.1" 200 1606
+INFO 2023-06-20 17:49:22,224 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/2 HTTP/1.1" 200 333
+WARNING 2023-06-20 17:49:54,616 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/2/update/
+WARNING 2023-06-20 17:49:54,619 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/2/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+WARNING 2023-06-20 17:50:06,981 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Forbidden: /api/jobs/1/delete/
+WARNING 2023-06-20 17:50:06,982 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "DELETE /api/jobs/1/delete/ HTTP/1.1" 403 40
+INFO 2023-06-20 17:50:19,126 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/4 HTTP/1.1" 200 336
+INFO 2023-06-20 17:50:29,334 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/5 HTTP/1.1" 200 339
+WARNING 2023-06-20 17:50:45,898 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/5/update/
+WARNING 2023-06-20 17:50:45,899 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/5/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+WARNING 2023-06-20 17:50:50,865 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/4/update/
+WARNING 2023-06-20 17:50:50,865 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/4/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+INFO 2023-06-20 17:51:19,390 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/add/ HTTP/1.1" 200 14368
+INFO 2023-06-20 17:51:19,624 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:51:57,034 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "POST /admin/job/job/add/ HTTP/1.1" 302 0
+INFO 2023-06-20 17:51:57,265 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/job/job/ HTTP/1.1" 200 7701
+INFO 2023-06-20 17:51:57,441 django.server Thread-5 (process_request_thread) 13580 basehttp basehttp.py 187 django.server log_message 7652 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 17:52:06,588 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-20 17:52:12,685 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/5 HTTP/1.1" 200 339
+WARNING 2023-06-20 17:52:22,535 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Not Found: /api/jobs/7
+WARNING 2023-06-20 17:52:22,536 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/7 HTTP/1.1" 404 25
+INFO 2023-06-20 17:52:27,301 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/6 HTTP/1.1" 200 346
+WARNING 2023-06-20 17:52:39,308 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/6/update/
+WARNING 2023-06-20 17:52:39,310 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/6/update/?title=testtttt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+ERROR 2023-06-20 17:53:03,494 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Internal Server Error: /api/jobs/6/update/
+ERROR 2023-06-20 17:53:03,495 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/6/update/?title=testtttt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 500 33
+INFO 2023-06-20 18:00:57,449 django.utils.autoreload MainThread 3516 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7652 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:00:58,603 django.utils.autoreload MainThread 464 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3112 Watching for file changes with StatReloader
+INFO 2023-06-20 18:01:09,045 django.server Thread-1 (process_request_thread) 16784 basehttp basehttp.py 187 django.server log_message 3112 "PUT /api/jobs/6/update/?title=testtttt HTTP/1.1" 200 323
+INFO 2023-06-20 18:01:20,907 django.server Thread-1 (process_request_thread) 16784 basehttp basehttp.py 187 django.server log_message 3112 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:01:31,146 django.server Thread-1 (process_request_thread) 16784 basehttp basehttp.py 187 django.server log_message 3112 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:06:21,510 django.utils.autoreload MainThread 464 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3112 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:06:22,287 django.utils.autoreload MainThread 16696 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18148 Watching for file changes with StatReloader
+INFO 2023-06-20 18:06:35,452 django.server Thread-1 (process_request_thread) 8756 basehttp basehttp.py 187 django.server log_message 18148 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:08:44,133 django.utils.autoreload MainThread 16696 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18148 E:\uni\Term 8\projects\OOD-Project\backend\job\services\job_service.py changed, reloading.
+INFO 2023-06-20 18:08:45,004 django.utils.autoreload MainThread 8800 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 880 Watching for file changes with StatReloader
+INFO 2023-06-20 18:08:56,709 django.server Thread-1 (process_request_thread) 7208 basehttp basehttp.py 187 django.server log_message 880 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:10:29,306 django.utils.autoreload MainThread 8800 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 880 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:10:30,469 django.utils.autoreload MainThread 8756 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13424 Watching for file changes with StatReloader
+INFO 2023-06-20 18:10:34,594 django.server Thread-1 (process_request_thread) 4828 basehttp basehttp.py 187 django.server log_message 13424 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:13:57,222 django.utils.autoreload MainThread 14404 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12724 Watching for file changes with StatReloader
+WARNING 2023-06-20 18:14:07,827 django.request Thread-1 (process_request_thread) 9468 log log.py 241 django.request log_response 12724 Forbidden: /api/jobs/5/update/
+WARNING 2023-06-20 18:14:07,831 django.server Thread-1 (process_request_thread) 9468 basehttp basehttp.py 187 django.server log_message 12724 "PUT /api/jobs/5/update/?title=testtttt&description=new%20job HTTP/1.1" 403 40
+INFO 2023-06-20 18:14:12,831 django.server Thread-1 (process_request_thread) 9468 basehttp basehttp.py 187 django.server log_message 12724 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:14:32,832 django.utils.autoreload MainThread 14404 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12724 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:14:33,717 django.utils.autoreload MainThread 3144 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20216 Watching for file changes with StatReloader
+INFO 2023-06-20 18:14:36,678 django.server Thread-1 (process_request_thread) 10512 basehttp basehttp.py 187 django.server log_message 20216 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job HTTP/1.1" 200 323
+INFO 2023-06-20 18:14:48,823 django.server Thread-1 (process_request_thread) 10512 basehttp basehttp.py 187 django.server log_message 20216 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 200 323
+INFO 2023-06-20 18:15:23,320 django.utils.autoreload MainThread 3144 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20216 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:15:24,396 django.utils.autoreload MainThread 5176 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8668 Watching for file changes with StatReloader
+INFO 2023-06-20 18:15:28,030 django.server Thread-1 (process_request_thread) 17900 basehttp basehttp.py 187 django.server log_message 8668 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 200 323
+INFO 2023-06-20 18:15:42,794 django.utils.autoreload MainThread 5176 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8668 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:15:44,193 django.utils.autoreload MainThread 17820 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19024 Watching for file changes with StatReloader
+ERROR 2023-06-20 18:15:52,585 django.request Thread-1 (process_request_thread) 18928 log log.py 241 django.request log_response 19024 Internal Server Error: /api/jobs/6/update/
+ERROR 2023-06-20 18:15:52,586 django.server Thread-1 (process_request_thread) 18928 basehttp basehttp.py 187 django.server log_message 19024 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 500 33
+INFO 2023-06-20 18:16:14,816 django.utils.autoreload MainThread 17820 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19024 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:16:15,669 django.utils.autoreload MainThread 13992 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 856 Watching for file changes with StatReloader
+INFO 2023-06-20 18:16:19,484 django.server Thread-1 (process_request_thread) 12112 basehttp basehttp.py 187 django.server log_message 856 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 200 323
+INFO 2023-06-20 18:16:36,650 django.utils.autoreload MainThread 13992 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 856 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:16:37,720 django.utils.autoreload MainThread 7064 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 2692 Watching for file changes with StatReloader
+INFO 2023-06-20 18:16:40,769 django.server Thread-1 (process_request_thread) 4800 basehttp basehttp.py 187 django.server log_message 2692 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 200 323
+INFO 2023-06-20 18:20:55,932 django.utils.autoreload MainThread 7064 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 2692 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:20:56,847 django.utils.autoreload MainThread 17944 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20476 Watching for file changes with StatReloader
+INFO 2023-06-20 18:21:08,497 django.utils.autoreload MainThread 17944 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20476 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:21:09,494 django.utils.autoreload MainThread 7576 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17664 Watching for file changes with StatReloader
+INFO 2023-06-20 18:21:28,070 django.server Thread-1 (process_request_thread) 15248 basehttp basehttp.py 187 django.server log_message 17664 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 200 323
+INFO 2023-06-20 18:21:53,540 django.utils.autoreload MainThread 7576 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17664 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:21:54,554 django.utils.autoreload MainThread 5272 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 18244 Watching for file changes with StatReloader
+INFO 2023-06-20 18:22:06,366 django.server Thread-1 (process_request_thread) 7452 basehttp basehttp.py 187 django.server log_message 18244 "PUT /api/jobs/6/update/?title=new%20job%20title&description=new%20job&email&address&jobType HTTP/1.1" 200 299
+INFO 2023-06-20 18:23:25,860 django.utils.autoreload MainThread 5272 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18244 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:23:27,311 django.utils.autoreload MainThread 14616 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11220 Watching for file changes with StatReloader
+INFO 2023-06-20 18:25:48,646 django.utils.autoreload MainThread 14616 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11220 E:\uni\Term 8\projects\OOD-Project\backend\job\services\job_service.py changed, reloading.
+INFO 2023-06-20 18:25:49,461 django.utils.autoreload MainThread 18880 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 7872 Watching for file changes with StatReloader
+INFO 2023-06-20 18:26:15,070 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "DELETE /api/jobs/6/delete/ HTTP/1.1" 200 28
+WARNING 2023-06-20 18:26:24,863 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Unauthorized: /api/jobs/new/
+WARNING 2023-06-20 18:26:24,867 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/new/?Title=job2&Description=test2&Email=job2@email.com&Address=test2&JobType=Permanent&Education=Masters&Industry=It&Experience=One%20Year&Salary=100000&Positions=2&Company=tech&LastDate=2023-08-24&User=negar HTTP/1.1" 401 58
+WARNING 2023-06-20 18:26:34,368 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Bad Request: /api/jobs/2/apply/
+WARNING 2023-06-20 18:26:34,369 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/2/apply/ HTTP/1.1" 400 65
+ERROR 2023-06-20 18:26:41,182 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Internal Server Error: /api/jobs/5/apply/
+ERROR 2023-06-20 18:26:41,183 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/5/apply/ HTTP/1.1" 500 33
+INFO 2023-06-20 18:28:15,213 django.utils.autoreload MainThread 18880 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7872 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 18:28:16,104 django.utils.autoreload MainThread 13136 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13620 Watching for file changes with StatReloader
+INFO 2023-06-20 18:28:20,309 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "POST /api/jobs/5/apply/ HTTP/1.1" 200 27
+INFO 2023-06-20 18:28:45,066 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/me/jobs/applied HTTP/1.1" 301 0
+ERROR 2023-06-20 18:28:45,138 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/me/jobs/applied/
+ERROR 2023-06-20 18:28:45,139 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/me/jobs/applied/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:30:54,628 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/jobs/1/check/
+ERROR 2023-06-20 18:30:54,629 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/jobs/1/check/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:31:09,886 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:31:09,886 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:31:29,321 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Not Found: /api/job/6/candidates/
+WARNING 2023-06-20 18:31:29,322 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/job/6/candidates/ HTTP/1.1" 404 25
+WARNING 2023-06-20 18:31:34,487 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:31:34,487 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+INFO 2023-06-20 18:34:06,058 django.utils.autoreload MainThread 13136 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13620 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:34:07,637 django.utils.autoreload MainThread 19552 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17948 Watching for file changes with StatReloader
+INFO 2023-06-20 18:40:11,966 django.utils.autoreload MainThread 19552 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17948 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:40:13,426 django.utils.autoreload MainThread 12724 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 14864 Watching for file changes with StatReloader
+INFO 2023-06-20 18:41:53,910 django.utils.autoreload MainThread 12724 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14864 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:41:54,906 django.utils.autoreload MainThread 5468 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20460 Watching for file changes with StatReloader
+INFO 2023-06-20 18:45:14,627 django.utils.autoreload MainThread 5468 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20460 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:45:16,368 django.utils.autoreload MainThread 15988 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17812 Watching for file changes with StatReloader
+WARNING 2023-06-20 18:45:21,408 django.request Thread-1 (process_request_thread) 12252 log log.py 241 django.request log_response 17812 Bad Request: /api/jobs/5/apply/
+WARNING 2023-06-20 18:45:21,409 django.server Thread-1 (process_request_thread) 12252 basehttp basehttp.py 187 django.server log_message 17812 "POST /api/jobs/5/apply/ HTTP/1.1" 400 49
+INFO 2023-06-20 18:47:20,765 django.utils.autoreload MainThread 15988 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17812 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:47:21,820 django.utils.autoreload MainThread 13100 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13664 Watching for file changes with StatReloader
+INFO 2023-06-20 18:48:26,230 django.utils.autoreload MainThread 13100 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13664 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:48:26,978 django.utils.autoreload MainThread 18984 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20476 Watching for file changes with StatReloader
+INFO 2023-06-20 18:49:38,706 django.utils.autoreload MainThread 18984 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20476 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:49:39,486 django.utils.autoreload MainThread 6432 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 8548 Watching for file changes with StatReloader
+INFO 2023-06-20 18:52:59,326 django.utils.autoreload MainThread 6432 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8548 E:\uni\Term 8\projects\OOD-Project\backend\job\services\job_service.py changed, reloading.
+INFO 2023-06-20 18:53:00,140 django.utils.autoreload MainThread 14776 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 19164 Watching for file changes with StatReloader
+INFO 2023-06-20 18:53:06,889 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/applied HTTP/1.1" 301 0
+INFO 2023-06-20 18:53:06,979 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/applied/ HTTP/1.1" 200 95
+INFO 2023-06-20 18:53:11,590 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/1/check/ HTTP/1.1" 200 5
+INFO 2023-06-20 18:53:19,646 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/4/check/ HTTP/1.1" 200 5
+ERROR 2023-06-20 18:53:28,448 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:53:28,449 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:55:15,212 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:55:15,213 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+INFO 2023-06-20 18:55:24,219 django.server Thread-2 (process_request_thread) 19760 basehttp basehttp.py 187 django.server log_message 19164 "GET /admin/job/job/add/ HTTP/1.1" 200 14368
+INFO 2023-06-20 18:55:24,479 django.server Thread-2 (process_request_thread) 19760 basehttp basehttp.py 187 django.server log_message 19164 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 18:55:39,244 django.server Thread-2 (process_request_thread) 19760 basehttp basehttp.py 187 django.server log_message 19164 "POST /admin/job/job/add/ HTTP/1.1" 302 0
+INFO 2023-06-20 18:55:39,348 django.server Thread-2 (process_request_thread) 19760 basehttp basehttp.py 187 django.server log_message 19164 "GET /admin/job/job/ HTTP/1.1" 200 7701
+INFO 2023-06-20 18:55:39,540 django.server Thread-2 (process_request_thread) 19760 basehttp basehttp.py 187 django.server log_message 19164 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 18:55:51,490 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/ HTTP/1.1" 200 1932
+WARNING 2023-06-20 18:55:58,289 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Not Found: /api/jobs/6
+WARNING 2023-06-20 18:55:58,290 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/6 HTTP/1.1" 404 25
+INFO 2023-06-20 18:56:03,027 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/5 HTTP/1.1" 200 339
+INFO 2023-06-20 18:56:17,892 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/7 HTTP/1.1" 200 348
+INFO 2023-06-20 18:56:33,609 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/7/check/ HTTP/1.1" 200 5
+ERROR 2023-06-20 18:56:37,293 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:56:37,294 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:56:40,236 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:56:40,237 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+ERROR 2023-06-20 18:56:45,668 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/job/7/candidates/
+ERROR 2023-06-20 18:56:45,669 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/7/candidates/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:57:00,301 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:57:00,302 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+INFO 2023-06-20 18:58:42,550 django.utils.autoreload MainThread 14776 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19164 E:\uni\Term 8\projects\OOD-Project\backend\job\services\job_service.py changed, reloading.
+INFO 2023-06-20 18:58:43,913 django.utils.autoreload MainThread 14616 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12012 Watching for file changes with StatReloader
+INFO 2023-06-20 18:59:36,589 django.utils.autoreload MainThread 14616 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12012 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 18:59:38,470 django.utils.autoreload MainThread 19420 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 20060 Watching for file changes with StatReloader
+INFO 2023-06-20 19:02:13,534 django.utils.autoreload MainThread 19420 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20060 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 19:02:14,843 django.utils.autoreload MainThread 12144 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 11220 Watching for file changes with StatReloader
+INFO 2023-06-20 19:03:26,626 django.utils.autoreload MainThread 12144 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 11220 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 19:03:27,562 django.utils.autoreload MainThread 15968 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12832 Watching for file changes with StatReloader
+INFO 2023-06-20 19:04:39,654 django.utils.autoreload MainThread 15968 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12832 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 19:04:40,710 django.utils.autoreload MainThread 16588 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 15944 Watching for file changes with StatReloader
+INFO 2023-06-20 19:04:54,683 django.utils.autoreload MainThread 16588 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15944 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 19:04:57,570 django.utils.autoreload MainThread 18332 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 17176 Watching for file changes with StatReloader
+INFO 2023-06-20 19:05:03,329 django.server Thread-1 (process_request_thread) 12028 basehttp basehttp.py 187 django.server log_message 17176 "GET /api/me/jobs/ HTTP/1.1" 200 327
+ERROR 2023-06-20 19:05:12,084 django.request Thread-1 (process_request_thread) 12028 log log.py 241 django.request log_response 17176 Internal Server Error: /api/job/7/candidates/
+ERROR 2023-06-20 19:05:12,085 django.server Thread-1 (process_request_thread) 12028 basehttp basehttp.py 187 django.server log_message 17176 "GET /api/job/7/candidates/ HTTP/1.1" 500 33
+INFO 2023-06-20 19:07:45,974 django.utils.autoreload MainThread 18332 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17176 E:\uni\Term 8\projects\OOD-Project\backend\job\repositories\job_repository.py changed, reloading.
+INFO 2023-06-20 19:07:46,853 django.utils.autoreload MainThread 5272 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 13688 Watching for file changes with StatReloader
+INFO 2023-06-20 19:07:48,662 django.server Thread-1 (process_request_thread) 16524 basehttp basehttp.py 187 django.server log_message 13688 "GET /api/job/7/candidates/ HTTP/1.1" 200 2
+WARNING 2023-06-20 19:08:04,290 django.request Thread-1 (process_request_thread) 16524 log log.py 241 django.request log_response 13688 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 19:08:04,291 django.server Thread-1 (process_request_thread) 16524 basehttp basehttp.py 187 django.server log_message 13688 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+INFO 2023-06-20 19:08:37,724 django.server Thread-1 (process_request_thread) 16524 basehttp basehttp.py 187 django.server log_message 13688 "POST /api/register/ HTTP/1.1" 200 152
+INFO 2023-06-20 19:09:25,244 django.utils.autoreload MainThread 5272 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13688 E:\uni\Term 8\projects\OOD-Project\backend\account\signals.py changed, reloading.
+INFO 2023-06-20 19:09:26,240 django.utils.autoreload MainThread 2296 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 12620 Watching for file changes with StatReloader
+INFO 2023-06-20 19:09:38,843 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/token/ HTTP/1.1" 200 486
+WARNING 2023-06-20 19:09:47,193 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Bad Request: /api/jobs/7/apply/
+WARNING 2023-06-20 19:09:47,194 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/jobs/7/apply/ HTTP/1.1" 400 43
+INFO 2023-06-20 19:09:54,517 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "PUT /api/upload/resume/ HTTP/1.1" 200 139
+INFO 2023-06-20 19:10:01,791 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/jobs/7/apply/ HTTP/1.1" 200 27
+INFO 2023-06-20 19:10:05,394 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/me/jobs/applied HTTP/1.1" 301 0
+INFO 2023-06-20 19:10:05,466 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/me/jobs/applied/ HTTP/1.1" 200 95
+INFO 2023-06-20 19:10:39,183 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-20 19:10:44,383 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/jobs/7/check/ HTTP/1.1" 200 5
+INFO 2023-06-20 19:10:46,288 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/jobs/7/check/ HTTP/1.1" 200 5
+INFO 2023-06-20 19:10:51,181 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/me/jobs/ HTTP/1.1" 200 327
+WARNING 2023-06-20 19:10:54,978 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 19:10:54,979 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+INFO 2023-06-20 19:10:58,856 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/job/7/candidates/ HTTP/1.1" 200 424
+WARNING 2023-06-20 19:13:40,122 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Unauthorized: /api/token/
+WARNING 2023-06-20 19:13:40,123 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/token/ HTTP/1.1" 401 63
+INFO 2023-06-20 19:13:50,771 django.server Thread-2 (process_request_thread) 7712 basehttp basehttp.py 187 django.server log_message 12620 "GET /admin/auth/user/ HTTP/1.1" 200 11069
+INFO 2023-06-20 19:13:50,967 django.server Thread-2 (process_request_thread) 7712 basehttp basehttp.py 187 django.server log_message 12620 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 19:13:54,250 django.server Thread-2 (process_request_thread) 7712 basehttp basehttp.py 187 django.server log_message 12620 "GET /admin/auth/user/ HTTP/1.1" 200 11069
+INFO 2023-06-20 19:13:54,420 django.server Thread-2 (process_request_thread) 7712 basehttp basehttp.py 187 django.server log_message 12620 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-06-20 19:14:04,862 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-20 19:14:10,837 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/me/jobs/applied HTTP/1.1" 301 0
+INFO 2023-06-20 19:14:10,909 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/me/jobs/applied/ HTTP/1.1" 200 95
+INFO 2023-06-20 19:14:14,476 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/jobs/7/check/ HTTP/1.1" 200 4
+INFO 2023-06-20 19:17:30,721 django.utils.autoreload MainThread 2296 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12620 E:\uni\Term 8\projects\OOD-Project\backend\job\views.py changed, reloading.
+INFO 2023-06-20 19:17:32,047 django.utils.autoreload MainThread 12152 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 16032 Watching for file changes with StatReloader
+INFO 2023-06-20 19:17:36,387 django.server Thread-1 (process_request_thread) 13184 basehttp basehttp.py 187 django.server log_message 16032 "GET /api/me/jobs/applied HTTP/1.1" 301 0
+INFO 2023-06-20 19:17:36,489 django.server Thread-1 (process_request_thread) 13184 basehttp basehttp.py 187 django.server log_message 16032 "GET /api/me/jobs/applied/ HTTP/1.1" 200 424

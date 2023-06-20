@@ -18,14 +18,14 @@ def save_profile(sender, instance, created, **kwargs):
         profile.save()
 
 
-@receiver(post_save, sender=User)
-def send_welcome_email(sender, instance, created, **kwargs):
-    if created:
-        print('email signal')
-        user = instance
-        subject = 'Welcome to Jobonja'
-        message = f'Dear {user.first_name},\n\nWelcome to Jobonja! We are excited to have you join us.'
-        from_email = settings.EMAIL_HOST_USER
-        to_email = [user.email]
-
-        send_mail(subject, message, from_email, to_email)
+# @receiver(post_save, sender=User)
+# def send_welcome_email(sender, instance, created, **kwargs):
+#     if created:
+#         print('email signal')
+#         user = instance
+#         subject = 'Welcome to Jobonja'
+#         message = f'Dear {user.first_name},\n\nWelcome to Jobonja! We are excited to have you join us.'
+#         from_email = settings.EMAIL_HOST_USER
+#         to_email = [user.email]
+#
+#         send_mail(subject, message, from_email, to_email)

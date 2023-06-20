@@ -1,0 +1,90 @@
+ERROR 2023-06-20 17:38:13,434 django.request Thread-1 (process_request_thread) 14164 log log.py 241 django.request log_response 10020 Internal Server Error: /api/jobs/2
+Traceback (most recent call last):
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "E:\uni\Term 8\projects\OOD-Project\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\momen\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type CandidatesApplied is not JSON serializable
+ERROR 2023-06-20 17:38:13,444 django.server Thread-1 (process_request_thread) 14164 basehttp basehttp.py 187 django.server log_message 10020 "GET /api/jobs/2 HTTP/1.1" 500 114322
+WARNING 2023-06-20 17:47:11,170 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/new/
+WARNING 2023-06-20 17:47:11,172 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "POST /api/jobs/new/?Title=job2&Description=test2&Email=job2@email.com&Address=test2&JobType=Permanent&Education=Masters&Industry=It&Experience=One%20Year&Salary=100000&Positions=2&Company=tech&LastDate=2023-08-24&User=negar HTTP/1.1" 401 58
+WARNING 2023-06-20 17:47:31,982 django.request Thread-2 (process_request_thread) 13108 log log.py 241 django.request log_response 7652 Not Found: /
+WARNING 2023-06-20 17:47:31,985 django.server Thread-2 (process_request_thread) 13108 basehttp basehttp.py 187 django.server log_message 7652 "GET / HTTP/1.1" 404 2495
+WARNING 2023-06-20 17:49:54,616 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/2/update/
+WARNING 2023-06-20 17:49:54,619 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/2/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+WARNING 2023-06-20 17:50:06,981 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Forbidden: /api/jobs/1/delete/
+WARNING 2023-06-20 17:50:06,982 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "DELETE /api/jobs/1/delete/ HTTP/1.1" 403 40
+WARNING 2023-06-20 17:50:45,898 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/5/update/
+WARNING 2023-06-20 17:50:45,899 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/5/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+WARNING 2023-06-20 17:50:50,865 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/4/update/
+WARNING 2023-06-20 17:50:50,865 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/4/update/?title=testtt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+WARNING 2023-06-20 17:52:22,535 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Not Found: /api/jobs/7
+WARNING 2023-06-20 17:52:22,536 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "GET /api/jobs/7 HTTP/1.1" 404 25
+WARNING 2023-06-20 17:52:39,308 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Unauthorized: /api/jobs/6/update/
+WARNING 2023-06-20 17:52:39,310 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/6/update/?title=testtttt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 401 58
+ERROR 2023-06-20 17:53:03,494 django.request Thread-1 (process_request_thread) 13048 log log.py 241 django.request log_response 7652 Internal Server Error: /api/jobs/6/update/
+ERROR 2023-06-20 17:53:03,495 django.server Thread-1 (process_request_thread) 13048 basehttp basehttp.py 187 django.server log_message 7652 "PUT /api/jobs/6/update/?title=testtttt&description&email&address&jobType&education&industry&experience&salary&positions&company HTTP/1.1" 500 33
+WARNING 2023-06-20 18:14:07,827 django.request Thread-1 (process_request_thread) 9468 log log.py 241 django.request log_response 12724 Forbidden: /api/jobs/5/update/
+WARNING 2023-06-20 18:14:07,831 django.server Thread-1 (process_request_thread) 9468 basehttp basehttp.py 187 django.server log_message 12724 "PUT /api/jobs/5/update/?title=testtttt&description=new%20job HTTP/1.1" 403 40
+ERROR 2023-06-20 18:15:52,585 django.request Thread-1 (process_request_thread) 18928 log log.py 241 django.request log_response 19024 Internal Server Error: /api/jobs/6/update/
+ERROR 2023-06-20 18:15:52,586 django.server Thread-1 (process_request_thread) 18928 basehttp basehttp.py 187 django.server log_message 19024 "PUT /api/jobs/6/update/?title=testtttt&description=new%20job&email&address&jobType HTTP/1.1" 500 33
+WARNING 2023-06-20 18:26:24,863 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Unauthorized: /api/jobs/new/
+WARNING 2023-06-20 18:26:24,867 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/new/?Title=job2&Description=test2&Email=job2@email.com&Address=test2&JobType=Permanent&Education=Masters&Industry=It&Experience=One%20Year&Salary=100000&Positions=2&Company=tech&LastDate=2023-08-24&User=negar HTTP/1.1" 401 58
+WARNING 2023-06-20 18:26:34,368 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Bad Request: /api/jobs/2/apply/
+WARNING 2023-06-20 18:26:34,369 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/2/apply/ HTTP/1.1" 400 65
+ERROR 2023-06-20 18:26:41,182 django.request Thread-1 (process_request_thread) 18716 log log.py 241 django.request log_response 7872 Internal Server Error: /api/jobs/5/apply/
+ERROR 2023-06-20 18:26:41,183 django.server Thread-1 (process_request_thread) 18716 basehttp basehttp.py 187 django.server log_message 7872 "POST /api/jobs/5/apply/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:28:45,138 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/me/jobs/applied/
+ERROR 2023-06-20 18:28:45,139 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/me/jobs/applied/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:30:54,628 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/jobs/1/check/
+ERROR 2023-06-20 18:30:54,629 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/jobs/1/check/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:31:09,886 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:31:09,886 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:31:29,321 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Not Found: /api/job/6/candidates/
+WARNING 2023-06-20 18:31:29,322 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/job/6/candidates/ HTTP/1.1" 404 25
+WARNING 2023-06-20 18:31:34,487 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 13620 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:31:34,487 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 187 django.server log_message 13620 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+WARNING 2023-06-20 18:45:21,408 django.request Thread-1 (process_request_thread) 12252 log log.py 241 django.request log_response 17812 Bad Request: /api/jobs/5/apply/
+WARNING 2023-06-20 18:45:21,409 django.server Thread-1 (process_request_thread) 12252 basehttp basehttp.py 187 django.server log_message 17812 "POST /api/jobs/5/apply/ HTTP/1.1" 400 49
+ERROR 2023-06-20 18:53:28,448 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:53:28,449 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:55:15,212 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:55:15,213 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+WARNING 2023-06-20 18:55:58,289 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Not Found: /api/jobs/6
+WARNING 2023-06-20 18:55:58,290 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/jobs/6 HTTP/1.1" 404 25
+ERROR 2023-06-20 18:56:37,293 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:56:37,294 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+WARNING 2023-06-20 18:56:40,236 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 18:56:40,237 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+ERROR 2023-06-20 18:56:45,668 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/job/7/candidates/
+ERROR 2023-06-20 18:56:45,669 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/job/7/candidates/ HTTP/1.1" 500 33
+ERROR 2023-06-20 18:57:00,301 django.request Thread-1 (process_request_thread) 12724 log log.py 241 django.request log_response 19164 Internal Server Error: /api/me/jobs/
+ERROR 2023-06-20 18:57:00,302 django.server Thread-1 (process_request_thread) 12724 basehttp basehttp.py 187 django.server log_message 19164 "GET /api/me/jobs/ HTTP/1.1" 500 33
+ERROR 2023-06-20 19:05:12,084 django.request Thread-1 (process_request_thread) 12028 log log.py 241 django.request log_response 17176 Internal Server Error: /api/job/7/candidates/
+ERROR 2023-06-20 19:05:12,085 django.server Thread-1 (process_request_thread) 12028 basehttp basehttp.py 187 django.server log_message 17176 "GET /api/job/7/candidates/ HTTP/1.1" 500 33
+WARNING 2023-06-20 19:08:04,290 django.request Thread-1 (process_request_thread) 16524 log log.py 241 django.request log_response 13688 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 19:08:04,291 django.server Thread-1 (process_request_thread) 16524 basehttp basehttp.py 187 django.server log_message 13688 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+WARNING 2023-06-20 19:09:47,193 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Bad Request: /api/jobs/7/apply/
+WARNING 2023-06-20 19:09:47,194 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/jobs/7/apply/ HTTP/1.1" 400 43
+WARNING 2023-06-20 19:10:54,978 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Forbidden: /api/job/5/candidates/
+WARNING 2023-06-20 19:10:54,979 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "GET /api/job/5/candidates/ HTTP/1.1" 403 38
+WARNING 2023-06-20 19:13:40,122 django.request Thread-1 (process_request_thread) 15376 log log.py 241 django.request log_response 12620 Unauthorized: /api/token/
+WARNING 2023-06-20 19:13:40,123 django.server Thread-1 (process_request_thread) 15376 basehttp basehttp.py 187 django.server log_message 12620 "POST /api/token/ HTTP/1.1" 401 63
