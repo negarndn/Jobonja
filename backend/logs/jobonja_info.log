@@ -1,0 +1,6 @@
+INFO 2023-06-20 16:42:24,747 django.utils.autoreload MainThread 3596 autoreload autoreload.py 677 django.utils.autoreload run_with_reloader 3292 Watching for file changes with StatReloader
+INFO 2023-06-20 16:42:46,842 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "POST /api/register/ HTTP/1.1" 200 156
+INFO 2023-06-20 16:42:56,840 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "POST /api/token/ HTTP/1.1" 200 486
+INFO 2023-06-20 16:43:00,438 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 141
+INFO 2023-06-20 16:43:40,390 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 141
+INFO 2023-06-20 16:43:58,442 django.server Thread-1 (process_request_thread) 16544 basehttp basehttp.py 187 django.server log_message 3292 "PUT /api/upload/resume/ HTTP/1.1" 200 135
