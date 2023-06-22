@@ -17,6 +17,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 
 import logging
+from .factories import UserFactory
+
 
 
 logger = logging.getLogger(__name__)
@@ -33,13 +35,8 @@ def register(request):
     if user.is_valid():
         if not User.objects.filter(username=data['email']).exists():
 
-           user = User.objects.create(
-               first_name = data['first_name'],
-               last_name = data['last_name'],
-               username = data['email'],
-               email = data['email'],
-               password = make_password(data['password'])
-           )
+           user_factory = UserFactory()
+           created_user = user_factory.create_user(data)
 
            logger.info('User registered')
 
