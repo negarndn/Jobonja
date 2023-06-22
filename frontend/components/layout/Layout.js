@@ -1,12 +1,16 @@
 import React from "react";
 import Head from "next/head";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 
-import Header from "./Header";
-import Footer from "./Footer";
+const Header = dynamic(() => import("./Header"));
+const Footer = dynamic(() => import("./Footer"));
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// const { ToastContainer } = dynamic(() => import("react-toastify"));
+// dynamic(() => import("react-toastify/dist/ReactToastify.css"));
 
 const Layout = ({ children, title = "جاب‌اونجا" }) => {
   return (

@@ -1,6 +1,8 @@
 import Layout from "../../../components/layout/Layout";
-import MyJobs from "../../../components/job/MyJobs";
+// import MyJobs from "../../../components/job/MyJobs";
+import dynamic from "next/dynamic";
 
+const MyJobs = dynamic(() => import("../../../components/job/MyJobs"));
 import { isAuthenticatedUser } from "../../../utils/isAuthenticated";
 import axios from "axios";
 

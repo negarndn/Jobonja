@@ -1,8 +1,13 @@
 import Layout from "../../components/layout/Layout";
-import NotFound from "../../components/layout/NotFound";
-import JobDetails from "../../components/job/JobDetails";
+// import NotFound from "../../components/layout/NotFound";
+// import JobDetails from "../../components/job/JobDetails";
 
 import axios from "axios";
+
+import dynamic from "next/dynamic";
+
+const NotFound = dynamic(() => import("../../components/layout/NotFound"));
+const JobDetails = dynamic(() => import("../../components/job/JobDetails"));
 
 export default function JobDetailsPage({
   job,
