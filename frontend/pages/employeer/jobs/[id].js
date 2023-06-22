@@ -1,6 +1,10 @@
 import Layout from "../../../components/layout/Layout";
-import NotFound from "../../../components/layout/NotFound";
-import UpdateJob from "../../../components/job/UpdateJob";
+// import NotFound from "../../../components/layout/NotFound";
+// import UpdateJob from "../../../components/job/UpdateJob";
+import dynamic from "next/dynamic";
+
+const NotFound = dynamic(() => import("../../../components/layout/NotFound"));
+const UpdateJob = dynamic(() => import("../../../components/job/UpdateJob"));
 
 import { isAuthenticatedUser } from "../../../utils/isAuthenticated";
 

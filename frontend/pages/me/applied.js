@@ -1,7 +1,9 @@
 import axios from "axios";
 import Layout from "../../components/layout/Layout";
-import JobsApplied from "../../components/job/JobsApplied";
+// import JobsApplied from "../../components/job/JobsApplied";
+import dynamic from "next/dynamic";
 
+const JobsApplied = dynamic(() => import("../../components/job/JobsApplied"));
 import { isAuthenticatedUser } from "../../utils/isAuthenticated";
 
 export default function JobsAppliedPage({ jobs }) {

@@ -4,6 +4,12 @@ import Image from "next/image";
 
 import AuthContext from "../../context/AuthContext";
 
+import dynamic from "next/dynamic";
+
+// const Link = dynamic(() => import("next/link"));
+// const Image = dynamic(() => import("next/image"));
+// const AuthContext = dynamic(() => import("../../context/AuthContext"));
+
 const Header = () => {
   const { loading, user, logout } = useContext(AuthContext);
 
