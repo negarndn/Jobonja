@@ -114,6 +114,16 @@ if os.environ.get('GITHUB_WORKFLOW'):
         }
     }
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # or the appropriate port number
+EMAIL_HOST_USER = 'jobonjawebsite@gmail.com'
+EMAIL_HOST_PASSWORD = 'uqykhewazknklxon'
+EMAIL_USE_TLS = True  # or False if your email host doesn't support TLS
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -253,6 +263,3 @@ LOGGING = {
     "handlers": HANDLERS,
     "loggers": LOGGERS[0],
 }
-
-# GEOS_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\geos_c.dll'
-# GDAL_LIBRARY_PATH = 'C:\\Users\Dear User\\.virtualenvs\\backendood\\Lib\\site-packages\\osgeo\\gdal304.dll'

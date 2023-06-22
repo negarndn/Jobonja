@@ -1,197 +1,250 @@
-from django.shortcuts import render
+import logging
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import Avg, Min, Max, Count
 from rest_framework.pagination import PageNumberPagination
-
 from rest_framework.permissions import IsAuthenticated
-
-from .serializers import CandidatesAppliedSerializer, JobSerializer
-from .models import CandidatesApplied, Job
-
-from django.shortcuts import get_object_or_404
 from .filters import JobsFilter
-import logging
-
+from .models import Job
+from .serializers import JobSerializer, CandidatesAppliedSerializer
+from .services.job_service import JobService, CandidatesAppliedService
 
 logger = logging.getLogger(__name__)
 
-# Create your views here.
-
-
 @api_view(['GET'])
 def getAllJobs(request):
-    filterset = JobsFilter(request.GET, queryset=Job.objects.all().order_by('id'))
-    count = filterset.qs.count()
-    # pagination
-    resPerPage = 10
-    paginator = PageNumberPagination()
-    paginator.page_size = resPerPage
-    queryset = paginator.paginate_queryset(filterset.qs, request)
+    try:
+        job_service = JobService()
+        jobs = job_service.get_all_jobs()
 
-    serializer = JobSerializer(queryset, many=True)
-    return Response({
-        "count": count,
-        "resPerPage": resPerPage,
-        "jobs": serializer.data})
+        filterset = JobsFilter(request.GET, queryset=jobs)
+        count = filterset.qs.count()
 
+        # Pagination
+        resPerPage = 10
+        paginator = PageNumberPagination()
+        paginator.page_size = resPerPage
+        queryset = paginator.paginate_queryset(filterset.qs, request)
+
+        serializer = JobSerializer(queryset, many=True)
+        return Response({
+            "count": count,
+            "resPerPage": resPerPage,
+            "jobs": serializer.data
+        })
+    except Exception as e:
+        logger.exception("Error occurred while retrieving all jobs: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
 def getJob(request, pk):
-    job = get_object_or_404(Job, id=pk)
+    try:
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    candidates = job.candidatesapplied_set.all().count()
+        candidates_applied_service = CandidatesAppliedService()
+        candidates = candidates_applied_service.get_candidates_applied(job)
 
-    serializer = JobSerializer(job, many=False)
+        serializer = JobSerializer(job, many=False)
 
-
-    return Response({'job': serializer.data, 'candidates': candidates})
+        return Response({'job': serializer.data, 'candidates': candidates})
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while retrieving job details: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def newJob(request):
-    request.data['user'] = request.user
-    data = request.data
+    try:
+        request.data['user'] = request.user
+        data = request.data
 
-    job = Job.objects.create(**data)
+        job_service = JobService()
+        job = job_service.create_job(data)
 
-    serializer = JobSerializer(job, many=False)
+        serializer = JobSerializer(job, many=False)
 
-    logger.info("new job was added")
+        logger.info("New job was added")
 
-    return Response(serializer.data)
-
+        return Response(serializer.data)
+    except Exception as e:
+        logger.exception("Error occurred while creating a new job: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateJob(request, pk):
-    job = get_object_or_404(Job, id=pk)
-    if job.user != request.user:
-        logger.error('wrong user can not update this job')
-        return Response({'message': 'You can not update this job'}, status=status.HTTP_403_FORBIDDEN)
+    try:
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    job.title = request.data['title']
-    job.description = request.data['description']
-    job.email = request.data['email']
-    job.address = request.data['address']
-    job.jobType = request.data['jobType']
-    job.education = request.data['education']
-    job.industry = request.data['industry']
-    job.experience = request.data['experience']
-    job.salary = request.data['salary']
-    job.positions = request.data['positions']
-    job.company = request.data['company']
+        if job.user != request.user:
+            logger.warning('Wrong user tried to update job with id %s', pk)
+            return Response({'message': 'You cannot update this job'}, status=status.HTTP_403_FORBIDDEN)
 
-    job.save()
+        job_service.update_job(job, request.query_params)
 
-    serializer = JobSerializer(job, many=False)
 
-    logger.info("job was updated")
+        serializer = JobSerializer(job, many=False)
 
-    return Response(serializer.data)
+        logger.info("Job was updated")
+
+        return Response(serializer.data)
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while updating the job: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 def deleteJob(request, pk):
-    job = get_object_or_404(Job, id=pk)
+    try:
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    if job.user != request.user:
-        return Response({ 'message': 'You can not delete this job' }, status=status.HTTP_403_FORBIDDEN)
+        if job.user != request.user:
+            logger.warning('Wrong user tried to delete job with id %s', pk)
+            return Response({'message': 'You cannot delete this job'}, status=status.HTTP_403_FORBIDDEN)
 
-    job.delete()
+        job_service.delete_job(job)
 
-    logger.info("job was deleted")
+        logger.info("Job was deleted")
 
-    return Response({ 'message': 'Job is Deleted.' }, status=status.HTTP_200_OK)
+        return Response({'message': 'Job is deleted'}, status=status.HTTP_200_OK)
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while deleting the job: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def applyToJob(request, pk):
-    user = request.user
-    job = get_object_or_404(Job, id=pk)
+    try:
+        user = request.user
 
-    if user.userprofile.resume == '':
-        logger.error('apply to job without upload resume')
-        return Response({'error': 'Please upload your resume first'}, status=status.HTTP_400_BAD_REQUEST)
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    if job.lastDate < timezone.now():
-        logger.error('apply to expired job')
-        return Response({'error': 'You can not apply to this job. Date is over'}, status=status.HTTP_400_BAD_REQUEST)
+        candidates_applied_service = CandidatesAppliedService()
+        already_applied = candidates_applied_service.get_candidate_applied(job, user)
 
-    alreadyApplied = job.candidatesapplied_set.filter(user=user).exists()
+        if user.userprofile.resume == '':
+            logger.warning('User tried to apply to job without uploading a resume')
+            return Response({'error': 'Please upload your resume first'}, status=status.HTTP_400_BAD_REQUEST)
 
-    if alreadyApplied:
-        logger.error('apply to job which already applied')
-        return Response({'error': 'You have already apply to this job.'}, status=status.HTTP_400_BAD_REQUEST)
+        if job.lastDate < timezone.now():
+            logger.warning('User tried to apply to an expired job')
+            return Response({'error': 'You cannot apply to this job. The deadline has passed'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
-    jobApplied = CandidatesApplied.objects.create(
-        job=job,
-        user=user,
-        resume=user.userprofile.resume
-    )
+        if already_applied:
+            logger.warning('User tried to apply to a job they have already applied to')
+            return Response({'error': 'You have already applied to this job.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    logger.info('successfully applied to job')
+        candidates_applied_service.create_candidate_applied(job, user, user.userprofile.resume)
 
-    return Response({
-        'applied': True,
-        'job_id': jobApplied.id
-    },
-        status=status.HTTP_200_OK
-    )
+        logger.info('Successfully applied to the job')
 
+        return Response({
+            'applied': True,
+            'job_id': job.id
+        }, status=status.HTTP_200_OK)
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while applying to the job: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getCurrentUserAppliedJobs(request):
+    try:
+        user = request.user
 
-    args = { 'user_id': request.user.id }
+        candidates_applied_service = CandidatesAppliedService()
+        jobs = candidates_applied_service.get_applied_jobs_by_user(user)
 
-    jobs = CandidatesApplied.objects.filter(**args)
+        serializer = CandidatesAppliedSerializer(jobs, many=True)
 
-    serializer = CandidatesAppliedSerializer(jobs, many=True)
-
-    return Response(serializer.data)
+        logger.info("Retrieved current user's applied jobs")
+        return Response(serializer.data)
+    except Exception as e:
+        logger.exception("Error occurred while retrieving current user's applied jobs: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def isApplied(request, pk):
+    try:
+        user = request.user
 
-    user = request.user
-    job = get_object_or_404(Job, id=pk)
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    applied = job.candidatesapplied_set.filter(user=user).exists()
+        candidates_applied_service = CandidatesAppliedService()
+        applied = candidates_applied_service.is_job_applied(job, user)
 
-    return Response(applied)
-
+        return Response(applied)
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while checking if the job is applied: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getCurrentUserJobs(request):
+    try:
+        user = request.user
 
-    args = { 'user': request.user.id }
+        job_service = JobService()
+        jobs = job_service.get_jobs_by_user(user)
 
-    jobs = Job.objects.filter(**args)
-    serializer = JobSerializer(jobs, many=True)
+        serializer = JobSerializer(jobs, many=True)
 
-    return Response(serializer.data)
+        logger.info("Retrieved current user's jobs")
+        return Response(serializer.data)
+    except Exception as e:
+        logger.exception("Error occurred while retrieving current user's jobs: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getCandidatesApplied(request, pk):
+    try:
+        user = request.user
 
-    user = request.user
-    job = get_object_or_404(Job, id=pk)
+        job_service = JobService()
+        job = job_service.get_job_by_id(pk)
 
-    if job.user != user:
-        logger.error('wrong user can not access this job to get candidates')
-        return Response({ 'error': 'You can not access this job' }, status=status.HTTP_403_FORBIDDEN)
+        if job.user != user:
+            logger.warning('Wrong user tried to access candidates for job with id %s', pk)
+            return Response({'error': 'You cannot access this job'}, status=status.HTTP_403_FORBIDDEN)
 
-    candidates = job.candidatesapplied_set.all()
+        candidates_applied_service = CandidatesAppliedService()
+        candidates = candidates_applied_service.get_candidates_applied(job)
 
-    serializer = CandidatesAppliedSerializer(candidates, many=True)
+        serializer = CandidatesAppliedSerializer(candidates, many=True)
 
-    return Response(serializer.data)
+        return Response(serializer.data)
+    except Job.DoesNotExist:
+        logger.warning("Job with id %s does not exist", pk)
+        return Response({"error": "Job not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.exception("Error occurred while retrieving candidates applied for the job: %s", str(e))
+        return Response({"error": "Internal Server Error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
